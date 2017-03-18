@@ -1,4 +1,7 @@
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="views/assets/js/jquery.min.js"></script>
+    <script src="views/assets/js/bootstrap.min.js"></script>
+    <script src="views/assets/js/jquery.dataTables.min.js"></script>
+    <script src="views/assets/js/app.js"></script>
+    <script src="views/assets/js/main.js"></script>
   </body>
 </html>
