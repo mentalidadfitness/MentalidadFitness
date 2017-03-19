@@ -29,42 +29,10 @@
          <span style="font-size:30px;cursor:pointer;color:#ffb81f;margin-left:1%;margin-top:3px;position:absolute" onclick="openNav()">&#9776;</span>
          </div>
          <div class="" id="main">
-
+           <img src="views/assets/images/images_principal/MF.jpg" style="margin-top: 51px;">
          </div>
        </nav>
      </header>
    </div>
-<img src="views/assets/images/images_principal/MF.jpg" style="margin-top: 51px;">
-   <script>
-   function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
 
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-        document.body.style.backgroundColor = "white";
-    }
-
-    var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function(){
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
-        this.classList.toggle("active");
-
-        /* Toggle between hiding and showing the active panel */
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    }
-}
-
-   </script>
+  

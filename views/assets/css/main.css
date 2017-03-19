@@ -4,6 +4,7 @@ body {
 	font-size: 10px;
 	margin: 0;
 	overflow-y:hidden!important;
+	overflow-x:hidden!important;
 }
 .btn-group-lg>.btn, .btn-lg {
     padding: 20px 20px;
