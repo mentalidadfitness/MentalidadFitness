@@ -3,6 +3,7 @@ body {
   -webkit-font-smoothing: antialiased;
 	font-size: 10px;
 	margin: 0;
+	overflow-y:hidden!important;
 }
 .btn-group-lg>.btn, .btn-lg {
     padding: 20px 20px;
@@ -116,4 +117,71 @@ body {
 form {
     display: block;
     margin-top: -7%;
+}
+
+.sidenav {
+   height: 100%;
+   width: 0;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   background-color: grey;
+   overflow-x: hidden;
+   transition: 0.5s;
+   padding-top: 60px;
+}
+
+.sidenav a {
+   padding: 28px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 15px;
+   color: black;
+   display: block;
+   transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+   color: #f1f1f1;
+   background-color: #2E2E2E;
+}
+
+.sidenav .closebtn {
+   position: absolute;
+   top: 0;
+   right: 25px;
+   font-size: 36px;
+   margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+ .sidenav {padding-top: 15px;}
+ .sidenav a {font-size: 18px;}
+}
+
+#cerrar{
+ cursor: pointer;
+}
+
+button.accordion {
+		color: black;
+    background-color: grey;
+    color: #2E2E2E;
+    cursor: pointer;
+    padding: 28px 8px 8px 32px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #2E2E2E;
+}
+
+div.panel {
+    padding: 0 0px;
+    background-color: grey;
+    display: none
 }

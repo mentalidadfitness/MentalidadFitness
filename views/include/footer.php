@@ -2,6 +2,5 @@
     <script src="views/assets/js/bootstrap.min.js"></script>
     <script src="views/assets/js/jquery.dataTables.min.js"></script>
     <script src="views/assets/js/app.js"></script>
-    <script src="views/assets/js/main.js"></script>
   </body>
 </html>

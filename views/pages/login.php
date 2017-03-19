@@ -1,6 +1,6 @@
 <img src="views/assets/images/images_principal/Logo.png" id="logo">
 <img  src="views/assets/images/images_principal/1fit.png" style="width:100%" id="img2">
-<img src="views/assets/images/images_principal/imagenes/triangulo.png" id="triangulo" style="width: 100%">
+<img src="views/assets/images/images_principal/triangulo.png" id="triangulo" style="width: 100%">
 <form>
   <div class="form-group" id="campo1">
     <input type="email" class="form-control" placeholder="Email" required="Este campo es obligatorio">
