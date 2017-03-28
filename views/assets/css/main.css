@@ -2,6 +2,9 @@ body,html{
 	height: 100%;
 	overflow-x:hidden;
 	overflow-y:hidden;
+	font-family: Roboto;
+	-webkit-font-smoothing: antialiased;
+	margin: 0;
 }
 
 .main .row{
@@ -129,4 +132,68 @@ nav:hover .forAnimate{
 
 section{
 	padding-left: 15px;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    padding: 15px 20px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+.btn-primary {
+    color: #000;
+    background-color: #ffed00;
+    border-color: #ffed00;
+    border-radius: 0;
+    font-size: 3vh;
+    margin-top: 10%;
+}
+#btn1 {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    border-radius: 0;
+    border-color: rgba(0, 0, 0, 0);
+    color: white;
+    background-color: grey;
+    font-size: 2.5vh;
+}
+#btn2 {
+    position: absolute;
+    font-size: 15px;
+    bottom: 0;
+    right: 0;
+    border-radius: 0;
+    border-color: rgba(0, 0, 0, 0);
+    color: #ffc800;
+    font-size: 2.8vh;
+}
+#logo {
+    width: 60%;
+    position: absolute;
+    z-index: 2;
+    margin-left: 20%;
+    margin-top: 4vh;
+}
+#campo1{
+	margin-top: 20%;
+}
+.form-control {
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    height: 5vh;
+    padding: 6px 6vh;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    font-size: 3vh;
+}
+#triangulo {
+    width: 100%;
+    margin-top: -22%;
 }
