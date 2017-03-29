@@ -45,7 +45,7 @@
               <li><a href="#">Pagina</a></li>
             </ul>
           </li>
-  				<li ><a href="#">EJERCICIO<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-scale"></span></a></li>
+  				<li class="active"><a href="#">EJERCICIO<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-scale"></span></a></li>
   			</ul>
   		</div>
   	</div>
