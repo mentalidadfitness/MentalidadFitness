@@ -20,4 +20,5 @@
             </form>
         </div>
     </div>
+    <?php require_once 'views/modules/food_mod/lunch_manage/read.lunch.php'; ?>
 </div>

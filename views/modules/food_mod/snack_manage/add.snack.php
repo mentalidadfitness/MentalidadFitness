@@ -20,4 +20,5 @@
             </form>
         </div>
     </div>
+    <?php require_once 'views/modules/food_mod/snack_manage/read.snack.php'; ?>
 </div>

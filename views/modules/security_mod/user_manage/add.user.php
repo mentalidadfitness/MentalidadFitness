@@ -44,4 +44,5 @@
             </form>
         </div>
     </div>
+    <?php require_once 'views/modules/security_mod/user_manage/read.user.php'; ?>
 </div>

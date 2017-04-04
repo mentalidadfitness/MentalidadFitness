@@ -20,4 +20,5 @@
             </form>
         </div>
     </div>
+    <?php require_once 'views/modules/security_mod/role_manage/read.role.php'; ?>
 </div>

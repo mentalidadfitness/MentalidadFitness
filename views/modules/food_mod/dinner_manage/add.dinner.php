@@ -20,4 +20,5 @@
             </form>
         </div>
     </div>
+    <?php require_once 'views/modules/food_mod/dinner_manage/read.dinner.php'; ?>
 </div>

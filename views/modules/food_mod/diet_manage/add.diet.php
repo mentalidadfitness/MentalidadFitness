@@ -60,4 +60,5 @@
             </form>
         </div>
     </div>
+    <?php require_once 'views/modules/food_mod/diet_manage/read.diet.php'; ?>
 </div>
