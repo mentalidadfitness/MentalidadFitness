@@ -13,9 +13,9 @@
 
         public function createDinner($data){
             try {
-                $sql = "INSERT INTO comida VALUES('',?,?)";
+                $sql = "INSERT INTO dinner VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1]));
+                $query->execute(array($data[3],$data[0],$data[1]));
 
                 $msn = "Comida guardada correctamente";
             } catch (PDOException $e) {
@@ -26,7 +26,7 @@
 
         public function readDinner(){
             try {
-                $sql="SELECT * FROM comida ORDER BY nombre";
+                $sql="SELECT * FROM dinner ORDER BY nameDinner";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -39,7 +39,7 @@
 
         public function readDinnerByCode($field){
             try {
-                $sql="SELECT * FROM comida WHERE cod_comida = ?";
+                $sql="SELECT * FROM dinner WHERE code_dinner = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -52,7 +52,7 @@
 
         public function updateDinner($data){
             try {
-                $sql="UPDATE comida SET nombre = ?, descripcion = ? WHERE cod_comida = ?";
+                $sql="UPDATE dinner SET nameDinner = ?, descriptionDinner = ? WHERE code_dinner = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2]));
 
@@ -65,7 +65,7 @@
 
         public function deleteDinner($field){
             try {
-                $sql = "DELETE FROM comida WHERE cod_comida = ?";
+                $sql = "DELETE FROM dinner WHERE code_dinner = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $msn = "Comida Eliminada correctamente!";
