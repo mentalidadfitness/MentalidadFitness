@@ -21,7 +21,4 @@
         $controller->mainPage();
     }
 
-    if (isset($_GET["msn"])) {
-        echo "<script>alert('".$_GET["msn"]."')</script>";
-    }
 ?>
