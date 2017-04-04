@@ -1,6 +1,6 @@
 <?php
 
-    class DietaModel{
+    class DietModel{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,7 +11,7 @@
             }
         }
 
-        public function createDieta($data){
+        public function createDiet($data){
             try {
                 $sql = "INSERT INTO mi_dieta VALUES('',?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
@@ -22,7 +22,8 @@
             }
             return $msn;
         }
-        public function readDesayuno(){
+
+        public function readBreakfast(){
             try {
                 $sql="SELECT * FROM desayuno ORDER BY nombre";
                 $query = $this->pdo->prepare($sql);
@@ -34,7 +35,7 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
         }
-        public function readAlmuerzo(){
+        public function readLunch(){
             try {
                 $sql="SELECT * FROM almuerzo ORDER BY nombre";
                 $query = $this->pdo->prepare($sql);
@@ -46,7 +47,7 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
         }
-        public function readComida(){
+        public function readDinner(){
             try {
                 $sql="SELECT * FROM comida ORDER BY nombre";
                 $query = $this->pdo->prepare($sql);
@@ -70,7 +71,7 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
         }
-        public function readUsuario(){
+        public function readUser(){
             try {
                 $sql="SELECT * FROM usuario ORDER BY nombre";
                 $query = $this->pdo->prepare($sql);
@@ -83,7 +84,7 @@
             }
         }
 
-        public function readDieta(){
+        public function readDiet(){
             try {
                 $sql="SELECT * FROM mi_dieta";
                 $query = $this->pdo->prepare($sql);
@@ -96,7 +97,7 @@
             }
         }
 
-        public function readDietaByCode($field){
+        public function readDietByCode($field){
             try {
                 $sql="SELECT * FROM mi_dieta WHERE cod_miDieta = ?";
                 $query = $this->pdo->prepare($sql);
@@ -109,7 +110,7 @@
 
         }
 
-        public function updateDieta($data){
+        public function updateDiet($data){
             try {
                 $sql="UPDATE mi_dieta SET dias = ?, estado = ? WHERE cod_miDieta = ?";
                 $query = $this->pdo->prepare($sql);
@@ -121,7 +122,7 @@
             return $msn;
         }
 
-        public function deleteDieta($field){
+        public function deleteDiet($field){
             try {
                 $sql = "DELETE FROM mi_dieta WHERE cod_miDieta = ?";
                 $query = $this->pdo->prepare($sql);

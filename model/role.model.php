@@ -1,6 +1,6 @@
 <?php
 
-    class RolModel{
+    class RoleModel{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,7 +11,7 @@
             }
         }
 
-        public function createRol($data){
+        public function createRole($data){
             try {
                 $sql = "INSERT INTO rol VALUES('',?,?)";
                 $query = $this->pdo->prepare($sql);
@@ -24,7 +24,7 @@
             return $msn;
         }
 
-        public function readRol(){
+        public function readRole(){
             try {
                 $sql="SELECT * FROM rol ORDER BY rolNom";
                 $query = $this->pdo->prepare($sql);
@@ -37,7 +37,7 @@
             }
         }
 
-        public function readRolByCode($field){
+        public function readRoleByCode($field){
             try {
                 $sql="SELECT * FROM rol WHERE cod_rol = ?";
                 $query = $this->pdo->prepare($sql);
@@ -50,7 +50,7 @@
 
         }
 
-        public function updateRol($data){
+        public function updateRole($data){
             try {
                 $sql="UPDATE rol SET rolNom = ?, estado = ? WHERE cod_rol = ?";
                 $query = $this->pdo->prepare($sql);
@@ -63,7 +63,7 @@
             return $msn;
         }
 
-        public function deleteRol($field){
+        public function deleteRole($field){
             try {
                 $sql = "DELETE FROM rol WHERE cod_rol = ?";
                 $query = $this->pdo->prepare($sql);

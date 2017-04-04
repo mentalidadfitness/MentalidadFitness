@@ -1,6 +1,6 @@
 <?php
 
-    class AlimentoModel{
+    class FoodModel{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,7 +11,7 @@
             }
         }
 
-        public function createAlimento($data){
+        public function createFood($data){
             try {
                 $sql = "INSERT INTO alimento VALUES('',?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
@@ -24,7 +24,7 @@
             return $msn;
         }
 
-        public function readAlimento(){
+        public function readFood(){
             try {
                 $sql="SELECT * FROM alimento ORDER BY alimento";
                 $query = $this->pdo->prepare($sql);
@@ -37,7 +37,7 @@
             }
         }
 
-        public function readAlimentoByCode($field){
+        public function readFoodByCode($field){
             try {
                 $sql="SELECT * FROM alimento WHERE cod_alimento = ?";
                 $query = $this->pdo->prepare($sql);
@@ -50,7 +50,7 @@
 
         }
 
-        public function updateAlimento($data){
+        public function updateFood($data){
             try {
                 $sql="UPDATE alimento SET alimento = ?, proteinas = ?, calorias = ?, azucares = ?, carbohidratos = ?, fibras = ?, vitaminas = ? WHERE cod_alimento = ?";
                 $query = $this->pdo->prepare($sql);
@@ -63,7 +63,7 @@
             return $msn;
         }
 
-        public function deleteAlimento($field){
+        public function deleteFood($field){
             try {
                 $sql = "DELETE FROM alimento WHERE cod_alimento = ?";
                 $query = $this->pdo->prepare($sql);

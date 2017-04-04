@@ -1,11 +1,11 @@
 <?php
-    require_once "model/almuerzo.model.php";
+    require_once "model/lunch.model.php";
 
-    class AlmuerzoController{
-        private $ALmodel;
+    class LunchController{
+        private $LunchM;
 
         public function __CONSTRUCT(){
-          $this->ALmodel = new AlmuerzoModel();
+          $this->LunchM = new LunchModel();
         }
 
         public function mainPage(){
@@ -13,14 +13,14 @@
             header("location:index.php?c=main");
             }
             require_once 'views/include/header.php';
-            require_once 'views/modules/mod_almuerzo/almuerzo.add.php';
+            require_once 'views/modules/food_mod/lunch_manage/add.lunch.php';
             require_once 'views/include/footer.php';
         }
 
         public function create(){
             $data = $_POST["data"];
-            $result = $this->ALmodel->createAlmuerzo($data);
-            header("Location: index.php?c=almuerzo&msn=$result");
+            $result = $this->LunchM->createLunch($data);
+            header("Location: index.php?c=lunch&msn=$result");
         }
 
         public function update(){
@@ -29,20 +29,20 @@
           }
           $field = $_GET["alcode"];
           require_once 'views/include/header.php';
-          require_once 'views/modules/mod_almuerzo/almuerzo.update.php';
+          require_once 'views/modules/food_mod/lunch_manage/update.lunch.php';
           require_once 'views/include/footer.php';
         }
 
         public function updateData(){
             $data = $_POST["data"];
-            $result = $this->ALmodel->updateAlmuerzo($data);
-            header("Location: index.php?c=almuerzo&msn=$result");
+            $result = $this->LunchM->updateLunch($data);
+            header("Location: index.php?c=lunch&msn=$result");
         }
 
         public function delete(){
             $data = $_GET["alcode"];
-            $result = $this->ALmodel->deleteAlmuerzo($data);
-            header("Location: index.php?c=almuerzo&msn=$result");
+            $result = $this->LunchM->deleteLunch($data);
+            header("Location: index.php?c=lunch&msn=$result");
         }
 
     }
