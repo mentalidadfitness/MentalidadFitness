@@ -1,11 +1,10 @@
 <?php
-    require_once "model/desayuno.model.php";
-
-    class DesayunoController{
-        private $DEmodel;
+    require_once "model/breakfast.model.php";
+    class BreakfastController{
+        private $BreakfastM;
 
         public function __CONSTRUCT(){
-          $this->DEmodel = new DesayunoModel();
+          $this->BreakfastM = new BreakfastModel();
         }
 
         public function mainPage(){
@@ -13,14 +12,14 @@
               header("location:index.php?c=main");
             }
             require_once 'views/include/header.php';
-            require_once 'views/modules/mod_desayuno/desayuno.add.php';
+            require_once 'views/modules/food_mod/breakfast_manage/add.breakfast.php';
             require_once 'views/include/footer.php';
         }
 
         public function create(){
             $data = $_POST["data"];
-            $result = $this->DEmodel->createDesayuno($data);
-            header("Location: index.php?c=desayuno&msn=$result");
+            $result = $this->BreakfastM->createBreakfast($data);
+            header("Location: index.php?c=breakfast&msn=$result");
         }
 
         public function update(){
@@ -29,20 +28,20 @@
           }
           $field = $_GET["decode"];
           require_once 'views/include/header.php';
-          require_once 'views/modules/mod_desayuno/desayuno.update.php';
+          require_once 'views/modules/food_mod/breakfast_manage/update.breakfast.php';
           require_once 'views/include/footer.php';
         }
 
         public function updateData(){
             $data = $_POST["data"];
-            $result = $this->DEmodel->updateDesayuno($data);
-            header("Location: index.php?c=desayuno&msn=$result");
+            $result = $this->BreakfastM->updateBreakfast($data);
+            header("Location: index.php?c=breakfast&msn=$result");
         }
 
         public function delete(){
             $data = $_GET["decode"];
-            $result = $this->DEmodel->deleteDesayuno($data);
-            header("Location: index.php?c=desayuno&msn=$result");
+            $result = $this->BreakfastM->deleteBreakfast($data);
+            header("Location: index.php?c=breakfast&msn=$result");
         }
 
     }

@@ -1,6 +1,6 @@
 <?php
 
-    class PaginaModel{
+    class PageModel{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,7 +11,7 @@
             }
         }
 
-        public function createPagina($data){
+        public function createPage($data){
             try {
                 $sql = "INSERT INTO pagina VALUES('',?,?,?,?,?,?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
@@ -24,7 +24,7 @@
             return $msn;
         }
 
-        public function readPagina(){
+        public function readPage(){
             try {
                 $sql="SELECT * FROM pagina ORDER BY nombre";
                 $query = $this->pdo->prepare($sql);
@@ -37,7 +37,7 @@
             }
         }
 
-        public function readPaginaByCode($field){
+        public function readPageByCode($field){
             try {
                 $sql="SELECT * FROM pagina WHERE cod_pagina = ?";
                 $query = $this->pdo->prepare($sql);
@@ -50,7 +50,7 @@
 
         }
 
-        public function updatePagina($data){
+        public function updatePage($data){
             try {
                 $sql="UPDATE pagina SET nombre = ?, iconos = ?, menu = ?, colores = ?, URL = ?, foto = ?, descripcion = ?, botones = ?, propiedades = ?, secciones = ?, imagenes = ?, estado = ? WHERE cod_pagina = ?";
                 $query = $this->pdo->prepare($sql);
@@ -63,7 +63,7 @@
             return $msn;
         }
 
-        public function deletePagina($field){
+        public function deletePage($field){
             try {
                 $sql = "DELETE FROM pagina WHERE cod_pagina = ?";
                 $query = $this->pdo->prepare($sql);

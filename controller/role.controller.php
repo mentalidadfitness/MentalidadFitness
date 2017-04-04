@@ -1,12 +1,11 @@
 <?php
+    require_once "model/role.model.php";
 
-    require_once "model/rol.model.php";
-
-    class RolController{
-        private $Rmodel;
+    class RoleControleler{
+        private $RoleM;
 
         public function __CONSTRUCT(){
-          $this->Rmodel = new RolModel();
+          $this->RoleM = new RoleModel();
         }
 
         public function mainPage(){
@@ -14,7 +13,7 @@
               header("location:index.php?c=main");
             }
             require_once 'views/include/header.php';
-            require_once 'views/modules/mod_rol/rol.add.php';
+            require_once 'views/modules/security_mod/role_manage/add.role.php';
             require_once 'views/include/footer.php';
         }
 
@@ -22,10 +21,10 @@
             $data = $_POST["data"];
             if(empty($data[0]) || empty($data[1])) {
               $msn="Campos Nulos";
-              header("Location: index.php?c=rol&msn=$msn");
+              header("Location: index.php?c=role&msn=$msn");
             }else{
-              $result = $this->Rmodel->createRol($data);
-              header("Location: index.php?c=rol&msn=$result");
+              $result = $this->RoleM->createRole($data);
+              header("Location: index.php?c=role&msn=$result");
             }
         }
 
@@ -35,20 +34,20 @@
           }
           $field = $_GET["rcode"];
           require_once 'views/include/header.php';
-          require_once 'views/modules/mod_rol/rol.update.php';
+          require_once 'views/modulessecurity_mod/role_manage/update.role.php';
           require_once 'views/include/footer.php';
         }
 
         public function updateData(){
             $data = $_POST["data"];
-            $result = $this->Rmodel->updateRol($data);
-            header("Location: index.php?c=rol&msn=$result");
+            $result = $this->RoleM->updateRole($data);
+            header("Location: index.php?c=role&msn=$result");
         }
 
         public function delete(){
             $data = $_GET["rcode"];
-            $result = $this->Rmodel->deleteRol($data);
-            header("Location: index.php?c=rol&msn=$result");
+            $result = $this->RoleM->deleteRole($data);
+            header("Location: index.php?c=role&msn=$result");
         }
 
     }

@@ -1,6 +1,6 @@
 <?php
 
-    class UsuarioModel{
+    class UserModel{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,7 +11,7 @@
             }
         }
 
-        public function createUsuario($userId,$data,$tokken,$n){
+        public function createUser($userId,$data,$tokken,$n){
             try {
                 $sql = "INSERT INTO usuario VALUES(?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
@@ -25,7 +25,7 @@
             }
             return $msn;
         }
-        public function readRol(){
+        public function readRole(){
             try {
                 $sql="SELECT * FROM rol ORDER BY rolNom";
                 $query = $this->pdo->prepare($sql);
@@ -38,7 +38,7 @@
             }
         }
 
-        public function readCiudad(){
+        public function readCity(){
             try {
                 $sql="SELECT * FROM ciudad ORDER BY nombre";
                 $query = $this->pdo->prepare($sql);
@@ -51,7 +51,7 @@
             }
         }
 
-        public function readUsuario(){
+        public function readUser(){
             try {
                 $sql="SELECT * FROM usuario INNER JOIN acceso ON(usuario.cod_usu=acceso.cod_usu)";
                 $query = $this->pdo->prepare($sql);
@@ -64,7 +64,7 @@
             }
         }
 
-        public function readUsuarioByCode($field){
+        public function readUserByCode($field){
             try {
                 $sql="SELECT * FROM usuario INNER JOIN acceso ON(usuario.cod_usu=acceso.cod_usu) WHERE usuario.cod_usu = ?";
                 $query = $this->pdo->prepare($sql);
@@ -77,7 +77,7 @@
 
         }
 
-        public function updateUsuario($data){
+        public function updateUser($data){
             try {
                 $sql="UPDATE usuario SET nombre = ? WHERE cod_usu = ?";
                 $query = $this->pdo->prepare($sql);
@@ -92,7 +92,7 @@
             return $msn;
         }
 
-        public function deleteUsuario($field){
+        public function deleteUser($field){
             try {
                 $sql = "DELETE FROM usuario WHERE cod_usu = ?";
                 $query = $this->pdo->prepare($sql);

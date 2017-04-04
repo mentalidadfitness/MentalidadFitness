@@ -1,11 +1,11 @@
 <?php
-    require_once "model/comida.model.php";
+    require_once "model/dinner.model.php";
 
-    class ComidaController{
-        private $COmodel;
+    class DinnerController{
+        private $DinnerM;
 
         public function __CONSTRUCT(){
-          $this->COmodel = new ComidaModel();
+          $this->DinnerM = new ComidaModel();
         }
 
         public function mainPage(){
@@ -13,14 +13,14 @@
               header("location:index.php?c=main");
             }
             require_once 'views/include/header.php';
-            require_once 'views/modules/mod_comida/comida.add.php';
+            require_once 'views/modules/food_mod/dinner_manage/add.dinner.php';
             require_once 'views/include/footer.php';
         }
 
         public function create(){
             $data = $_POST["data"];
-            $result = $this->COmodel->createComida($data);
-            header("Location: index.php?c=comida&msn=$result");
+            $result = $this->DinnerM->createDinner($data);
+            header("Location: index.php?c=dinner&msn=$result");
         }
 
         public function update(){
@@ -29,20 +29,20 @@
           }
           $field = $_GET["cocode"];
           require_once 'views/include/header.php';
-          require_once 'views/modules/mod_comida/comida.update.php';
+          require_once 'views/modules/food_mod/dinner_manage/update.dinner.php';
           require_once 'views/include/footer.php';
         }
 
         public function updateData(){
             $data = $_POST["data"];
-            $result = $this->COmodel->updateComida($data);
-            header("Location: index.php?c=comida&msn=$result");
+            $result = $this->DinnerM->updateDinner($data);
+            header("Location: index.php?c=dinner&msn=$result");
         }
 
         public function delete(){
             $data = $_GET["cocode"];
-            $result = $this->COmodel->deleteComida($data);
-            header("Location: index.php?c=comida&msn=$result");
+            $result = $this->DinnerM->deleteDinner($data);
+            header("Location: index.php?c=dinner&msn=$result");
         }
 
     }
