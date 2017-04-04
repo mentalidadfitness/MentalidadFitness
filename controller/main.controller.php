@@ -2,7 +2,7 @@
 // Hay que eliminar el main, arrancar el user.controlle.php
 // Para poner la conexion protected y el login ponerlo en el user.controller.php
 // Los archivos read va la tabla con los iconos de delete y update
-require_once 'model/login.model.php';
+require_once 'model/signin.model.php';
 class MainController{
 
   private $Lmodel;

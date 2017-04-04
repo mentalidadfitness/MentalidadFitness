@@ -1,6 +1,6 @@
 <?php
 
-    class UserModel{
+    class UserModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -13,10 +13,10 @@
 
         public function createUser($userId,$data,$tokken,$n){
             try {
-                $sql = "INSERT INTO usuario VALUES(?,?,?,?)";
+                $sql = "INSERT INTO user VALUES(?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($userId,$data[0],$data[3],$data[4]));
-                $sql2 = "INSERT INTO acceso VALUES(?,?,?,?,?,?)";
+                $sql2 = "INSERT INTO access VALUES(?,?,?,?,?,?)";
                 $query2 = $this->pdo->prepare($sql2);
                 $query2->execute(array($tokken,$data[2],$data[1],$n,$data[0],$userId));
                 $msn = "Usuario guardado correctamente";
@@ -27,7 +27,7 @@
         }
         public function readRole(){
             try {
-                $sql="SELECT * FROM rol ORDER BY rolNom";
+                $sql="SELECT * FROM role ORDER BY nameRole";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -40,7 +40,7 @@
 
         public function readCity(){
             try {
-                $sql="SELECT * FROM ciudad ORDER BY nombre";
+                $sql="SELECT * FROM city ORDER BY nameCity";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -53,7 +53,7 @@
 
         public function readUser(){
             try {
-                $sql="SELECT * FROM usuario INNER JOIN acceso ON(usuario.cod_usu=acceso.cod_usu)";
+                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -66,7 +66,7 @@
 
         public function readUserByCode($field){
             try {
-                $sql="SELECT * FROM usuario INNER JOIN acceso ON(usuario.cod_usu=acceso.cod_usu) WHERE usuario.cod_usu = ?";
+                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user) WHERE user.code_user = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -79,10 +79,10 @@
 
         public function updateUser($data){
             try {
-                $sql="UPDATE usuario SET nombre = ? WHERE cod_usu = ?";
+                $sql="UPDATE user SET nameUser = ? WHERE code_user = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[3]));
-                $sql2="UPDATE acceso SET  email = ?, password = ? WHERE cod_usu = ?";
+                $sql2="UPDATE access SET  emailAcc = ?, passwordAcc = ? WHERE code_user = ?";
                 $query2 = $this->pdo->prepare($sql2);
                 $query2->execute(array($data[1],$data[2],$data[3]));
                 $msn = "Usuario Modifico con exito!";
@@ -94,10 +94,10 @@
 
         public function deleteUser($field){
             try {
-                $sql = "DELETE FROM usuario WHERE cod_usu = ?";
+                $sql = "DELETE FROM user WHERE code_user = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
-                $sql2 = "DELETE FROM acceso WHERE cod_usu = ?";
+                $sql2 = "DELETE FROM access WHERE code_user = ?";
                 $query2 = $this->pdo->prepare($sql2);
                 $query2->execute(array($field));
                 $msn = "Usuario Eliminado correctamente!";
