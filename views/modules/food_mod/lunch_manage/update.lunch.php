@@ -1,22 +1,22 @@
 <?php $almuerzo = $this->ALmodel->readAlmuerzoByCode($field) ?>
-<div class="container">
-    <div class="col-sm-12">
+<div class="">
+    <div class="">
         <h1>MODIFICAR ALMUERZO</h1>
     </div>
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="">
         <form class="" action="?c=almuerzo&a=updateData" method="post">
-        <div class="form-group">
+        <div class="">
             <label for"name">Nombre</label>
-            <input  type="text" class="form-control" name="data[]" value="<?php echo $almuerzo['nombre']; ?>">
+            <input  type="text" class="" name="data[]" value="<?php echo $almuerzo['nombre']; ?>">
         </div>
-            <div class="form-group">
+            <div class="">
                 <label for="desc">Descripcion</label>
-                <input type="text" class="form-control" name="data[]" value="<?php echo $almuerzo['descripcion']; ?>">
+                <input type="text" class="" name="data[]" value="<?php echo $almuerzo['descripcion']; ?>">
             </div>
             <input type="hidden" readonly value="<?php echo $almuerzo['cod_almuerzo']; ?>" name="data[]">
-        <div class="col-sm-888 col-sm-offset-2">
-            <a class="btn btn-primary" href="?c=almuerzo">Atras</a>
-            <button class="btn btn-success">Actualizar
+        <div class="">
+            <a class="" href="?c=almuerzo">Atras</a>
+            <button class="">Actualizar
             </button>
         </div>
         </form>

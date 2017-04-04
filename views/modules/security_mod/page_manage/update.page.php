@@ -1,62 +1,62 @@
 <?php $pagina = $this->Pmodel->readPaginaByCode($field) ?>
-<div class="container">
-    <div class="col-sm-12">
+<div class="">
+    <div class="">
         <h1>MODIFICAR PAGINA</h1>
     </div>
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="">
         <form class="" action="?c=pagina&a=updateData" method="post">
-        <div class="form-group">
+        <div class="">
             <label for="nombre">Nombre</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['nombre']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['nombre']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="iconos">Iconos</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['iconos']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['iconos']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="menu">Menu</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['menu']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['menu']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="colores">Colores</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['colores']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['colores']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="url">URL</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['URL']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['URL']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="foto">Foto</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['foto']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['foto']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="des">Descripcion</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['descripcion']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['descripcion']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="botones">Botones</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['botones']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['botones']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="propiedades">Propiedades</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['propiedades']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['propiedades']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="seccion">Seccion</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['secciones']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['secciones']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="imagenes">Imagenes</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['imagenes']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['imagenes']; ?>">
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="estado">Estado</label>
-            <input type="text" class="form-control" name="data[]" value="<?php echo $pagina['estado']; ?>">
+            <input type="text" class="" name="data[]" value="<?php echo $pagina['estado']; ?>">
         </div>
             <input type="hidden" readonly value="<?php echo $pagina['cod_pagina']; ?>" name="data[]">
-        <div class="col-sm-888 col-sm-offset-2">
-            <a class="btn btn-primary" href="?c=pagina">Atras</a>
-            <button class="btn btn-success">Actualizar
+        <div class="">
+            <a class="" href="?c=pagina">Atras</a>
+            <button class="">Actualizar
             </button>
         </div>
         </form>

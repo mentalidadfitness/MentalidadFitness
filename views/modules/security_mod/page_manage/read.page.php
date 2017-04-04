@@ -1,7 +1,7 @@
-<div class="container-fluid">
-<div class="row">
-    <div class="col-sm-12">
-        <table id="dataTable" class="displat table-hover" width="100%">
+<div class="">
+<div class="">
+    <div class="">
+        <table id="dataTable" class="" width="100%">
             <thead>
                 <tr>
                     <th>#</th>
@@ -41,10 +41,10 @@
                         <td><?php echo $row["estado"]; ?></td>
                         <td>
                             <a href="?c=pagina&a=update&pcode=<?php echo $row['cod_pagina'];?>">
-                                <i class="material-icons">border_color</i>
+                                <i class="">border_color</i>
                             </a>
                             <a href="?c=pagina&a=delete&pcode=<?php echo $row['cod_pagina'];?>">
-                                <i class="material-icons">delete</i>
+                                <i class="">delete</i>
                             </a>
                         </td>
                     </tr>

@@ -1,22 +1,22 @@
 <?php $dieta = $this->DImodel->readDietaByCode($field) ?>
-<div class="container">
-    <div class="col-sm-12">
+<div class="">
+    <div class="">
         <h1>MODIFICAR DIETA</h1>
     </div>
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="">
         <form class="" action="?c=dieta&a=updateData" method="post">
-        <div class="form-group">
+        <div class="">
             <label for"dias">Dias</label>
-            <input  type="text" class="form-control" name="data[]" value="<?php echo $dieta['dias']; ?>">
+            <input  type="text" class="" name="data[]" value="<?php echo $dieta['dias']; ?>">
         </div>
-            <div class="form-group">
+            <div class="">
                 <label for="estado">Estado</label>
-                <input type="text" class="form-control" name="data[]" value="<?php echo $dieta['estado']; ?>">
+                <input type="text" class="" name="data[]" value="<?php echo $dieta['estado']; ?>">
             </div>
             <input type="hidden" readonly value="<?php echo $dieta['cod_miDieta']; ?>" name="data[]">
-        <div class="col-sm-888 col-sm-offset-2">
-            <a class="btn btn-primary" href="?c=dieta">Atras</a>
-            <button class="btn btn-success">Actualizar
+        <div class="">
+            <a class="" href="?c=dieta">Atras</a>
+            <button class="">Actualizar
             </button>
         </div>
         </form>

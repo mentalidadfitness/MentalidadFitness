@@ -1,23 +1,23 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
+<div class="">
+    <div class="">
+        <div class="">
             <h1>GESTIONAR USUARIO</h1>
         </div>
-        <div class="col-sm-4 col-sm-offset-4">
+        <div class="">
             <form class="" action="?c=usuario&a=create" method="post">
-                <div class="form-group">
+                <div class="">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" name="data[]" id="nom" required>
+                    <input type="text" class="" name="data[]" id="nom" required>
                 </div>
-                <div class="form-group">
+                <div class="">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" name="data[]" id="ema" required>
+                    <input type="text" class="" name="data[]" id="ema" required>
                 </div>
-                <div class="form-group">
+                <div class="">
                     <label for="contraseña">Contraseña</label>
-                    <input type="password" class="form-control" name="data[]" id="con" required>
+                    <input type="password" class="" name="data[]" id="con" required>
                 </div>
-                <div class="form-group">
+                <div class="">
                     <select name="data[]">
                         <?php foreach ($this->USmodel->readRol() as $row) { ?>
                             <option value="<?php echo $row['cod_rol']; ?>"><?php echo $row["rolNom"]; ?></option>
@@ -25,7 +25,7 @@
                     </select>
                     <label>Cod_rol</label>
                 </div>
-                <div class="form-group">
+                <div class="">
                     <select name="data[]">
                         <?php foreach ($this->USmodel->readCiudad() as $row) { ?>
                             <option value="<?php echo $row['cod_ciudad']; ?>"><?php echo $row["nombre"]; ?></option>
@@ -33,13 +33,13 @@
                     </select>
                     <label>Ciudad</label>
                 </div>
-                <div class="form-group">
+                <div class="">
                     <label for="contraseña">Repetir Contraseña</label>
-                    <input type="password" class="form-control" name="data[]" id="con" required>
+                    <input type="password" class="" name="data[]" id="con" required>
                 </div>
-                <div class="col-sm-8 col-sm-offset-2">
-                    <a class="btn btn-primary" href="?c=main&a=dashboard">ATRÁS</a>
-                    <button class="btn btn-success">GUARDAR</button>
+                <div class="">
+                    <a class="" href="?c=main&a=dashboard">ATRÁS</a>
+                    <button class="">GUARDAR</button>
                 </div>
             </form>
         </div>

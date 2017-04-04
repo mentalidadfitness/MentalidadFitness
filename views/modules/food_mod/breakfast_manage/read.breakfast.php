@@ -1,6 +1,6 @@
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <table id="dataTable" class="displat table-hover" width="100%">
+<div class="">
+    <div class="">
+        <table id="dataTable" class="" width="100%">
             <thead>
                 <tr>
                     <th>#</th>
@@ -21,10 +21,10 @@
                         <td><?php echo $row["descripcion"]; ?></td>
                         <td>
                             <a href="?c=desayuno&a=update&decode=<?php echo $row['cod_desayuno'];?>">
-                                <i class="material-icons">border_color</i>
+                                <i class="">border_color</i>
                             </a>
                             <a href="?c=desayuno&a=delete&decode=<?php echo $row['cod_desayuno'];?>">
-                                <i class="material-icons">delete</i>
+                                <i class="">delete</i>
                             </a>
                         </td>
                     </tr>
