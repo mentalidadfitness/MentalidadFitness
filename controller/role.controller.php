@@ -19,6 +19,7 @@
 
         public function create(){
             $data = $_POST["data"];
+            $data[2] = "ROL".randAlphanum('15').date();
             if(empty($data[0]) || empty($data[1])) {
               $msn="Campos Nulos";
               header("Location: index.php?c=role&msn=$msn");

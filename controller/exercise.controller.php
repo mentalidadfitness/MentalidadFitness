@@ -19,6 +19,7 @@
 
         public function create(){
             $data = $_POST["data"];
+            
             $result = $this->ExerciseM->createExercise($data);
             header("Location: index.php?c=exercise&msn=$result");
         }
