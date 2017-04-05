@@ -13,7 +13,7 @@
     <div class="container" style="position:absolute;z-index:0">
       <div class="row">
         <div class="col-xs-12 col-md-4 col-md-offset-4">
-              <img src="img/LogoMF.png" class="img-responsive" id="MF_logoMF">
+              <img src="views/assets/images/images_principal/LogoMF.png" class="img-responsive" id="MF_logoMF">
               <form class="" name="form" action="?c=access&a=signIn" method="post" id="MF_formulario">
                 <!-- INPUT EMAIL -->
                 <div class="form-group">

@@ -202,7 +202,7 @@ section{
 
 #bodyMF{
 margin: 0;
-background-image: url("../img/fondoazul.png");
+background-image: url("../images/images_principal/fondo1.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -312,8 +312,8 @@ padding-left: 0;
 }
 
 #MF_button{
-  background-color: #2E9AFE;
-  color: white;
+  background-color: #fe0;
+  color: black;
   border-color: rgba(215, 44, 44, 0);
   border-radius: 6px;
   margin-left: 20%;
