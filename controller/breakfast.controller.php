@@ -24,9 +24,9 @@
         }
 
         public function update(){
-          if (!isset($_SESSION["usuario"])) {
+          /*if (!isset($_SESSION["usuario"])) {
             header("location:index.php?c=main");
-          }
+        }*/
           $field = $_GET["decode"];
           require_once 'views/include/header.php';
           require_once 'views/modules/food_mod/breakfast_manage/update.breakfast.php';

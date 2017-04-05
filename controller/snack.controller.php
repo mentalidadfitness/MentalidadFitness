@@ -35,7 +35,7 @@
         }*/
           $field = $_GET["scode"];
           require_once 'views/include/header.php';
-          require_once 'views/modules/food_mod/snack_manage/read.snack.php';
+          require_once 'views/modules/food_mod/snack_manage/update.snack.php';
           require_once 'views/include/footer.php';
         }
 

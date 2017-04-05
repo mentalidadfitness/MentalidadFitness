@@ -20,10 +20,10 @@
                         <td><?php echo $row["nameRole"]; ?></td>
                         <td><?php echo $row["statusRole"]; ?></td>
                         <td>
-                            <a href="?c=rol&a=update&rcode=<?php echo $row['code_role'];?>">
+                            <a href="?c=role&a=update&rcode=<?php echo $row['code_role'];?>">
                                 <i class="">border_color</i>
                             </a>
-                            <a href="?c=rol&a=delete&rcode=<?php echo $row['code_role'];?>">
+                            <a href="?c=role&a=delete&rcode=<?php echo $row['code_role'];?>">
                                 <i class="">delete</i>
                             </a>
                         </td>

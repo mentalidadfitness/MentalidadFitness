@@ -24,7 +24,7 @@
                     <td><?php echo $item; ?></td>
                     <td><?php echo $row["nameFood"]; ?></td>
                     <td><?php echo $row["proteinsFood"]; ?></td>
-                    <td><?php echo $row["caqloriesFood"]; ?></td>
+                    <td><?php echo $row["caloriesFood"]; ?></td>
                     <td><?php echo $row["sugarsFood"]; ?></td>
                     <td><?php echo $row["carbohydratesFood"]; ?></td>
                     <td><?php echo $row["fibersFood"]; ?></td>
