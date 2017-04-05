@@ -1,6 +1,5 @@
 <?php
     require_once "model/user.model.php";
-    require_once "views/assets/random/random.php";
 
     class UserController{
         private $UserM;
