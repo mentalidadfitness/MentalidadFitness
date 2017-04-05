@@ -1,6 +1,6 @@
 <?php
 
-    class ExerciseModel{
+    class ExerciseModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {

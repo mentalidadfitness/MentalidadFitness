@@ -12,18 +12,18 @@
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->Rmodel->readRol() as $row) {
+                    foreach ($this->Rmodel->readRole() as $row) {
                         $item++;
                 ?>
                     <tr>
                         <td><?php echo $item; ?></td>
-                        <td><?php echo $row["rolNom"]; ?></td>
-                        <td><?php echo $row["estado"]; ?></td>
+                        <td><?php echo $row["nameRole"]; ?></td>
+                        <td><?php echo $row["statusRole"]; ?></td>
                         <td>
-                            <a href="?c=rol&a=update&rcode=<?php echo $row['cod_rol'];?>">
+                            <a href="?c=rol&a=update&rcode=<?php echo $row['code_role'];?>">
                                 <i class="">border_color</i>
                             </a>
-                            <a href="?c=rol&a=delete&rcode=<?php echo $row['cod_rol'];?>">
+                            <a href="?c=rol&a=delete&rcode=<?php echo $row['code_role'];?>">
                                 <i class="">delete</i>
                             </a>
                         </td>

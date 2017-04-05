@@ -4,7 +4,7 @@
             <h1>GESTIONAR ROL</h1>
         </div>
         <div class="">
-            <form class="" action="?c=rol&a=create" method="post">
+            <form class="" action="?c=role&a=create" method="post">
                 <div class="">
                     <label for="name">Nombre</label>
                     <input type="text" class="" name="data[]" id="name" required>
@@ -14,7 +14,7 @@
                     <input class="" name="data[]" id="estado" required>
                 </div>
                 <div class="">
-                    <a class="" href="?c=main&a=dashboard">ATRÁS</a>
+                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button class="">GUARDAR</button>
                 </div>
             </form>

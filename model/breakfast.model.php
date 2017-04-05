@@ -1,6 +1,6 @@
 <?php
 
-    class BreakfastModel{
+    class BreakfastModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -15,7 +15,7 @@
             try {
                 $sql = "INSERT INTO breakfast VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1]));
+                $query->execute(array($data[2],$data[0],$data[1]));
 
                 $msn = "breakfast guardado correctamente";
             } catch (PDOException $e) {
@@ -26,7 +26,7 @@
 
         public function readBreakfast(){
             try {
-                $sql="SELECT * FROM breakfast ORDER BY name_Breakfast";
+                $sql="SELECT * FROM breakfast ORDER BY nameBreakfast";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -39,7 +39,7 @@
 
         public function readBreakfastByCode($field){
             try {
-                $sql="SELECT * FROM breakfast WHERE cod_breakfast = ?";
+                $sql="SELECT * FROM breakfast WHERE code_breakfast = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -52,7 +52,7 @@
 
         public function updateBreakfast($data){
             try {
-                $sql="UPDATE breakfast SET name_Breakfast = ?, descriptionBreakfast = ? WHERE cod_breakfast = ?";
+                $sql="UPDATE breakfast SET nameBreakfast = ?, descriptionBreakfast = ? WHERE code_breakfast = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2]));
 
@@ -65,7 +65,7 @@
 
         public function deleteBreakfast($field){
             try {
-                $sql = "DELETE FROM breakfast WHERE cod_breakfast = ?";
+                $sql = "DELETE FROM breakfast WHERE code_breakfast = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $msn = "breakfast Eliminado correctamente!";

@@ -1,6 +1,6 @@
 <?php
 
-    class DietModel{
+    class DietModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -99,7 +99,7 @@
 
         public function readDietByCode($field){
             try {
-                $sql="SELECT * FROM mi_dieta WHERE code_myDiet = ?";
+                $sql="SELECT * FROM mydiet WHERE code_myDiet = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -114,7 +114,7 @@
             try {
                 $sql="UPDATE mydiet SET daysDiet = ?, statusDiet = ?, code_breakfast = ?, code_lunch = ?,
                                         code_dinner = ?, code_snack = ?
-                                        WHERE cod_miDieta = ?";
+                                        WHERE code_myDiet = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5]));
                 $msn = "Dieta Modificada con exito!";
