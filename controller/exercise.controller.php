@@ -19,6 +19,7 @@
 
         public function create(){
             $data = $_POST["data"];
+            $data[3]=randAlphanum('15').date();
             $result = $this->ExerciseM->createExercise($data);
             header("Location: index.php?c=exercise&msn=$result");
         }
