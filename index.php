@@ -1,6 +1,7 @@
 <?php
     session_start();
-    require_once 'model/conn.model.php';
+    require_once "views/assets/random/random.php";
+    require_once'model/db.model.php';
     if (isset($_REQUEST["c"])) {
         $controller = strtolower($_REQUEST["c"]);
         $action = isset($_REQUEST["a"]) ? $_REQUEST["a"] : "mainPage";
@@ -12,7 +13,7 @@
 
         call_user_func(array($controller, $action));
     } else {
-        $controller = "main";
+        $controller = "access";
         require "controller/$controller.controller.php";
 
         $controller = ucwords($controller).'Controller';
@@ -20,8 +21,8 @@
 
         $controller->mainPage();
     }
-
     if (isset($_GET["msn"])) {
         echo "<script>alert('".$_GET["msn"]."')</script>";
     }
+
 ?>

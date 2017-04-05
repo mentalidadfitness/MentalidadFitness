@@ -1,6 +1,6 @@
 <?php
 
-    class SnackModel extends DataBase{
+    class PageModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,22 +11,22 @@
             }
         }
 
-        public function createSnack($data){
+        public function createPage($data){
             try {
-                $sql = "INSERT INTO snack VALUES(?,?,?)";
+                $sql = "INSERT INTO page VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[2],$data[0],$data[1]));
+                $query->execute(array($data[12],$data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7],$data[8],$data[9],$data[10],$data[11]));
 
-                $msn = "Snack guardado correctamente";
+                $msn = "Pagina guardada correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
         }
 
-        public function readSnack(){
+        public function readPage(){
             try {
-                $sql="SELECT * FROM snack ORDER BY nameSnack";
+                $sql="SELECT * FROM page ORDER BY namePage";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -37,9 +37,9 @@
             }
         }
 
-        public function readSnackByCode($field){
+        public function readPageByCode($field){
             try {
-                $sql="SELECT * FROM snack WHERE code_snack = ?";
+                $sql="SELECT * FROM page WHERE code_page = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -50,25 +50,26 @@
 
         }
 
-        public function updateSnack($data){
+        public function updatePage($data){
             try {
-                $sql="UPDATE snack SET nameSnack = ?, descriptionSnack = ? WHERE code_snack = ?";
+                $sql="UPDATE page SET namePage = ?, iconsPage = ?, menuPage = ?, colorsPage = ?, URLPage = ?,
+                photoPage = ?, descriptionPage = ?, buttonsPage = ?, propertiesPage = ?, sectionsPage = ?, imagesPage = ?, statusPage = ? WHERE code_page = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2]));
+                $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7],$data[8],$data[9],$data[10],$data[11],$data[12]));
 
-                $msn = "Snack Modifico con exito!";
+                $msn = "Pagina Modificada con exito!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
         }
 
-        public function deleteSnack($field){
+        public function deletePage($field){
             try {
-                $sql = "DELETE FROM snack WHERE code_snack = ?";
+                $sql = "DELETE FROM page WHERE code_page = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
-                $msn = "Snack Eliminado correctamente!";
+                $msn = "Pagina Eliminada correctamente!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
