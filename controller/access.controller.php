@@ -15,7 +15,7 @@ class AccessController{
             header("location:index.php?c=access&a=dashboard");
         }*/
             require_once 'views/pages/signIn.php';
-            require_once 'views/include/footer.php';
+            //require_once 'views/include/footer.php';
         }
         public function dashboard(){
           /*if (!isset($_SESSION["usuario"])) {
