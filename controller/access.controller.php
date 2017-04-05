@@ -3,42 +3,42 @@
 // Para poner la conexion protected y el login ponerlo en el user.controller.php
 // Los archivos read va la tabla con los iconos de delete y update
 require_once 'model/signin.model.php';
-class MainController{
+class AccessController{
 
-  private $Lmodel;
+  private $AccessM;
 
       public function __CONSTRUCT(){
-            $this->Lmodel  = new LoginModel();
+            $this->AccessM  = new AccessModel();
         }
         public function mainPage(){
           if (isset($_SESSION["usuario"])) {
-            header("location:index.php?c=main&a=dashboard");
+            header("location:index.php?c=access&a=dashboard");
           }
             require_once 'views/include/header.php';
-            require_once 'views/pages/login.php';
+            require_once 'views/pages/signIn.php';
             require_once 'views/include/footer.php';
         }
         public function dashboard(){
           if (!isset($_SESSION["usuario"])) {
-          	header("location:index.php?c=main");
+          	header("location:index.php?c=access");
           }
       		require_once 'views/include/header.php';
       		require_once 'views/pages/dashboard.php';
       		require_once 'views/include/footer.php';
       	}
-        public function login(){
+        public function signIn(){
           $data = $_POST["data"];
-          $result = $this->Lmodel->compruebaLogin($data);
+          $result = $this->AccessM->checkLogin($data);
           if($result==true){
-            header("Location: index.php?c=main&a=dashboard");
+            header("Location: index.php?c=access&a=dashboard");
           }else {
             $msn = "Correo o Contraseña invalida";
-            header("Location: index.php?c=main&msn=$msn");
+            header("Location: index.php?c=access&msn=$msn");
           }
         }
         public function close(){
           session_destroy();
-      		header("Location: index.php?c=main");
+      		header("Location: index.php?c=access");
         }
    }
 

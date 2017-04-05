@@ -5,25 +5,27 @@
                 <tr>
                     <th>#</th>
                     <th>Nombre</th>
-                    <th>Ejercicio</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
                     <th>Acción</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->EJmodel->readEjercicio() as $row) {
+                    foreach ($this->ExerciseM->readExercise() as $row) {
                         $item++;
                 ?>
                     <tr>
                         <td><?php echo $item; ?></td>
-                        <td><?php echo $row["nomEjercicio"]; ?></td>
-                        <td><?php echo $row["ejercicio"]; ?></td>
+                        <td><?php echo $row["nameExercise"]; ?></td>
+                        <td><?php echo $row["dateExercise"]; ?></td>
+                        <td><?php echo $row["statusExercise"]; ?></td>
                         <td>
-                            <a href="?c=ejercicio&a=update&ejcode=<?php echo $row['cod_ejer'];?>">
+                            <a href="?c=exercise&a=update&ejcode=<?php echo $row['code_exercise'];?>">
                                 <i class="">border_color</i>
                             </a>
-                            <a href="?c=ejercicio&a=delete&ejcode=<?php echo $row['cod_ejer'];?>">
+                            <a href="?c=exercise&a=delete&ejcode=<?php echo $row['code_exercise'];?>">
                                 <i class="">delete</i>
                             </a>
                         </td>

@@ -4,17 +4,21 @@
             <h1>GESTIONAR EJERCICIOS</h1>
         </div>
         <div class="">
-            <form class="" action="?c=ejercicio&a=create" method="post">
+            <form class="" action="?c=exercise&a=create" method="post">
                 <div class="">
                     <label for="name">Nombre</label>
                     <input type="text" class="" name="data[]" id="name" required>
                 </div>
                 <div class="">
-                    <label for="ejercicio">Ejercicio</label>
+                    <label for="ejercicio">Fecha</label>
                     <input type="text" class="" name="data[]" id="ejer" required>
                 </div>
                 <div class="">
-                    <a class="" href="?c=main&a=dashboard">ATRÁS</a>
+                    <label for="ejercicio">Estado</label>
+                    <input type="text" class="" name="data[]" id="ejer" required>
+                </div>
+                <div class="">
+                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button class="">GUARDAR</button>
                 </div>
             </form>
