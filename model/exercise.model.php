@@ -1,6 +1,6 @@
 <?php
 
-    class EjercicioModel{
+    class ExerciseModel{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,7 +11,7 @@
             }
         }
 
-        public function createEjercicio($data){
+        public function createExercise($data){
             try {
                 $sql = "INSERT INTO ejercicio VALUES('',?,?)";
                 $query = $this->pdo->prepare($sql);
@@ -24,7 +24,7 @@
             return $msn;
         }
 
-        public function readEjercicio(){
+        public function readExercise(){
             try {
                 $sql="SELECT * FROM ejercicio ORDER BY nomEjercicio";
                 $query = $this->pdo->prepare($sql);
@@ -37,7 +37,7 @@
             }
         }
 
-        public function readEjercicioByCode($field){
+        public function readExerciseByCode($field){
             try {
                 $sql="SELECT * FROM ejercicio WHERE cod_ejer = ?";
                 $query = $this->pdo->prepare($sql);
@@ -50,7 +50,7 @@
 
         }
 
-        public function updateEjercicio($data){
+        public function updateExercise($data){
             try {
                 $sql="UPDATE ejercicio SET nomEjercicio = ?, ejercicio = ? WHERE cod_ejer = ?";
                 $query = $this->pdo->prepare($sql);
@@ -63,7 +63,7 @@
             return $msn;
         }
 
-        public function deleteEjercicio($field){
+        public function deleteExercise($field){
             try {
                 $sql = "DELETE FROM ejercicio WHERE cod_ejer = ?";
                 $query = $this->pdo->prepare($sql);

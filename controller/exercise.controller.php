@@ -1,11 +1,11 @@
 <?php
-    require_once "model/ejercicio.model.php";
+    require_once "model/exercise.model.php";
 
-    class EjercicioController{
-        private $EJmodel;
+    class ExerciseController{
+        private $ExerciseM;
 
         public function __CONSTRUCT(){
-          $this->EJmodel = new EjercicioModel();
+          $this->ExerciseM = new ExerciseModel();
         }
 
         public function mainPage(){
@@ -13,14 +13,14 @@
               header("location:index.php?c=main");
             }
             require_once 'views/include/header.php';
-            require_once 'views/modules/mod_ejercicio/ejercicio.add.php';
+            require_once 'views/modules/exercise_mod/exercise_manage/add.exercise.php';
             require_once 'views/include/footer.php';
         }
 
         public function create(){
             $data = $_POST["data"];
-            $result = $this->EJmodel->createEjercicio($data);
-            header("Location: index.php?c=ejercicio&msn=$result");
+            $result = $this->ExerciseM->createExercise($data);
+            header("Location: index.php?c=exercise&msn=$result");
         }
 
         public function update(){
@@ -29,20 +29,20 @@
           }
           $field = $_GET["ejcode"];
           require_once 'views/include/header.php';
-          require_once 'views/modules/mod_ejercicio/ejercicio.update.php';
+          require_once 'views/modules/exercise_mod/exercise_manage/update.exercise.php';
           require_once 'views/include/footer.php';
         }
 
         public function updateData(){
             $data = $_POST["data"];
-            $result = $this->EJmodel->updateEjercicio($data);
-            header("Location: index.php?c=ejercicio&msn=$result");
+            $result = $this->ExerciseM->updateExercise($data);
+            header("Location: index.php?c=exercise&msn=$result");
         }
 
         public function delete(){
             $data = $_GET["ejcode"];
-            $result = $this->EJmodel->deleteEjercicio($data);
-            header("Location: index.php?c=ejercicio&msn=$result");
+            $result = $this->ExerciseM->deleteExercise($data);
+            header("Location: index.php?c=exercise&msn=$result");
         }
 
     }
