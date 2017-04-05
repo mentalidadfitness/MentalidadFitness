@@ -1,6 +1,6 @@
 <?php
 
-    class SnackModel extends DataBase{
+    class RoleModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,22 +11,22 @@
             }
         }
 
-        public function createSnack($data){
+        public function createRole($data){
             try {
-                $sql = "INSERT INTO snack VALUES(?,?,?)";
+                $sql = "INSERT INTO role VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[2],$data[0],$data[1]));
 
-                $msn = "Snack guardado correctamente";
+                $msn = "Rol guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
         }
 
-        public function readSnack(){
+        public function readRole(){
             try {
-                $sql="SELECT * FROM snack ORDER BY nameSnack";
+                $sql="SELECT * FROM role ORDER BY nameRole";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -37,9 +37,9 @@
             }
         }
 
-        public function readSnackByCode($field){
+        public function readRoleByCode($field){
             try {
-                $sql="SELECT * FROM snack WHERE code_snack = ?";
+                $sql="SELECT * FROM role WHERE code_role = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -50,25 +50,25 @@
 
         }
 
-        public function updateSnack($data){
+        public function updateRole($data){
             try {
-                $sql="UPDATE snack SET nameSnack = ?, descriptionSnack = ? WHERE code_snack = ?";
+                $sql="UPDATE role SET nameRole = ?, statusRole = ? WHERE code_role = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2]));
 
-                $msn = "Snack Modifico con exito!";
+                $msn = "Rol Modifico con exito!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
         }
 
-        public function deleteSnack($field){
+        public function deleteRole($field){
             try {
-                $sql = "DELETE FROM snack WHERE code_snack = ?";
+                $sql = "DELETE FROM role WHERE code_role = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
-                $msn = "Snack Eliminado correctamente!";
+                $msn = "Rol Eliminado correctamente!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
