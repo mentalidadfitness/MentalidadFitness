@@ -1,7 +1,7 @@
 <?php
     require_once "model/role.model.php";
 
-    class RoleControleler{
+    class RoleController{
         private $RoleM;
 
         public function __CONSTRUCT(){
