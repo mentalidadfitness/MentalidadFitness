@@ -18,6 +18,7 @@
 
         public function create(){
             $data = $_POST["data"];
+            $data[2] = "BRE".randAlphanum('15').date();
             $result = $this->BreakfastM->createBreakfast($data);
             header("Location: index.php?c=breakfast&msn=$result");
         }

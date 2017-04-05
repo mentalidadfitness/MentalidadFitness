@@ -15,7 +15,7 @@
             try {
                 $sql = "INSERT INTO dinner VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[3],$data[0],$data[1]));
+                $query->execute(array($data[2],$data[0],$data[1]));
 
                 $msn = "Comida guardada correctamente";
             } catch (PDOException $e) {

@@ -19,6 +19,7 @@
 
         public function create(){
             $data = $_POST["data"];
+            $data[7] = "DIE".randAlphanum('15').date();
             $result = $this->DietM->createDiet($data);
             header("Location: index.php?c=diet&msn=$result");
         }

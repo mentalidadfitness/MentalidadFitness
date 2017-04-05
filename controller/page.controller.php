@@ -20,6 +20,7 @@
 
         public function create(){
             $data = $_POST["data"];
+            $data = "PAG".randAlphanum('15').date();
             $result = $this->PageM->createPage($data);
             header("Location: index.php?c=page&msn=$result");
         }
