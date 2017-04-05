@@ -5,7 +5,7 @@
         private $DinnerM;
 
         public function __CONSTRUCT(){
-          $this->DinnerM = new ComidaModel();
+          $this->DinnerM = new DinnerModel();
         }
 
         public function mainPage(){

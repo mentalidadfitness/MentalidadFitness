@@ -4,7 +4,7 @@
             <h1>GESTIONAR PAGINA</h1>
         </div>
         <div class="">
-            <form class="" action="?c=pagina&a=create" method="post">
+            <form class="" action="?c=page&a=create" method="post">
                 <div class="">
                     <label for="name">Nombre</label>
                     <input type="text" class="" name="data[]" id="name" required>
@@ -54,7 +54,7 @@
                     <input type="text" class="" name="data[]" id="est" required>
                 </div>
                 <div class="">
-                    <a class="" href="?c=main&a=dashboard">ATRÁS</a>
+                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button class="">GUARDAR</button>
                 </div>
             </form>

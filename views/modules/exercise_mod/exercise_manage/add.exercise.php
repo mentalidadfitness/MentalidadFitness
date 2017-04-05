@@ -24,5 +24,5 @@
             </form>
         </div>
     </div>
-    <?php require_once 'views/modules/exercise_mod/exercice_manage/read.exercise.php'; ?>
+    <?php require_once 'views/modules/exercise_mod/exercise_manage/read.exercise.php'; ?>
 </div>
