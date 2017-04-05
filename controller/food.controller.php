@@ -9,9 +9,9 @@
         }
 
         public function mainPage(){
-          if (!isset($_SESSION["usuario"])) {
+          /*if (!isset($_SESSION["usuario"])) {
             header("location:index.php?c=main");
-          }
+        }*/
             require_once 'views/include/header.php';
             require_once 'views/modules/food_mod/food_manage/add.food.php';
             require_once 'views/include/footer.php';
@@ -29,9 +29,9 @@
         }
 
         public function update(){
-          if (!isset($_SESSION["usuario"])) {
+         /* if (!isset($_SESSION["usuario"])) {
             header("location:index.php?c=main");
-          }
+        }*/
           $field = $_GET["alicode"];
           require_once 'views/include/header.php';
           require_once 'views/modules/food_mod/food_manage/update.food.php';

@@ -17,23 +17,23 @@
         <tbody>
             <?php
                 $item = 0;
-                foreach ($this->ALImodel->readAlimento() as $row) {
+                foreach ($this->FoodM->readFood() as $row) {
                     $item++;
             ?>
                 <tr>
                     <td><?php echo $item; ?></td>
-                    <td><?php echo $row["alimento"]; ?></td>
-                    <td><?php echo $row["proteinas"]; ?></td>
-                    <td><?php echo $row["calorias"]; ?></td>
-                    <td><?php echo $row["azucares"]; ?></td>
-                    <td><?php echo $row["carbohidratos"]; ?></td>
-                    <td><?php echo $row["fibras"]; ?></td>
-                    <td><?php echo $row["vitaminas"]; ?></td>
+                    <td><?php echo $row["nameFood"]; ?></td>
+                    <td><?php echo $row["proteinsFood"]; ?></td>
+                    <td><?php echo $row["caqloriesFood"]; ?></td>
+                    <td><?php echo $row["sugarsFood"]; ?></td>
+                    <td><?php echo $row["carbohydratesFood"]; ?></td>
+                    <td><?php echo $row["fibersFood"]; ?></td>
+                    <td><?php echo $row["vitaminsFood"]; ?></td>
                     <td>
-                        <a href="?c=alimento&a=update&alicode=<?php echo $row['cod_alimento'];?>">
+                        <a href="?c=food&a=update&alicode=<?php echo $row['code_food'];?>">
                             <i class="">border_color</i>
                         </a>
-                        <a href="?c=alimento&a=delete&alicode=<?php echo $row['cod_alimento'];?>">
+                        <a href="?c=food&a=delete&alicode=<?php echo $row['code_food'];?>">
                             <i class="">delete</i>
                         </a>
                     </td>

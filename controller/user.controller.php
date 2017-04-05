@@ -10,9 +10,9 @@
         }
 
         public function mainPage(){
-            if (!isset($_SESSION["user"])) {
+            /*if (!isset($_SESSION["user"])) {
               header("location:index.php?c=main");
-            }
+          }*/
             require_once 'views/include/header.php';
             require_once 'views/modules/security_mod/user_manage/add.user.php';
             require_once 'views/include/footer.php';
@@ -54,9 +54,9 @@
         }
 
         public function update(){
-          if (!isset($_SESSION["user"])) {
+          /*if (!isset($_SESSION["user"])) {
             header("location:index.php?c=main");
-          }
+        }*/
           $field = $_GET["uscode"];
           require_once 'views/include/header.php';
           require_once 'views/modules/security_mod/user_manage/update.user.php';

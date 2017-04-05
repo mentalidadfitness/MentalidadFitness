@@ -9,11 +9,11 @@
         }
 
         public function mainPage(){
-            if (!isset($_SESSION["usuario"])) {
+            /*if (!isset($_SESSION["usuario"])) {
               header("location:index.php?c=main");
-            }
+          }*/
             require_once 'views/include/header.php';
-            require_once 'views/modules/mod_snack/add.snack.php';
+            require_once 'views/modules/food_mod/snack_manage/add.snack.php';
             require_once 'views/include/footer.php';
         }
 
@@ -29,12 +29,12 @@
         }
 
         public function update(){
-          if (!isset($_SESSION["usuario"])) {
+          /*if (!isset($_SESSION["usuario"])) {
             header("location:index.php?c=main");
-          }
+        }*/
           $field = $_GET["scode"];
           require_once 'views/include/header.php';
-          require_once 'views/modules/mod_snack/update.snack.php';
+          require_once 'views/modules/food_mod/snack_manage/read.snack.php';
           require_once 'views/include/footer.php';
         }
 

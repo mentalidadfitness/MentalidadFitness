@@ -11,17 +11,17 @@ class AccessController{
             $this->AccessM  = new AccessModel();
         }
         public function mainPage(){
-          if (isset($_SESSION["usuario"])) {
+          /*if (isset($_SESSION["usuario"])) {
             header("location:index.php?c=access&a=dashboard");
-          }
+        }*/
             require_once 'views/include/header.php';
             require_once 'views/pages/signIn.php';
             require_once 'views/include/footer.php';
         }
         public function dashboard(){
-          if (!isset($_SESSION["usuario"])) {
+          /*if (!isset($_SESSION["usuario"])) {
           	header("location:index.php?c=access");
-          }
+        }*/
       		require_once 'views/include/header.php';
       		require_once 'views/pages/dashboard.php';
       		require_once 'views/include/footer.php';

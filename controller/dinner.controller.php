@@ -5,13 +5,13 @@
         private $DinnerM;
 
         public function __CONSTRUCT(){
-          $this->DinnerM = new ComidaModel();
+          $this->DinnerM = new DinnerModel();
         }
 
         public function mainPage(){
-            if (!isset($_SESSION["usuario"])) {
+            /*if (!isset($_SESSION["usuario"])) {
               header("location:index.php?c=main");
-            }
+          }*/
             require_once 'views/include/header.php';
             require_once 'views/modules/food_mod/dinner_manage/add.dinner.php';
             require_once 'views/include/footer.php';
@@ -24,9 +24,9 @@
         }
 
         public function update(){
-          if (!isset($_SESSION["usuario"])) {
+          /*if (!isset($_SESSION["usuario"])) {
             header("location:index.php?c=main");
-          }
+        }*/
           $field = $_GET["cocode"];
           require_once 'views/include/header.php';
           require_once 'views/modules/food_mod/dinner_manage/update.dinner.php';

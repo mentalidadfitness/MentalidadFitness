@@ -8,9 +8,9 @@
         }
 
         public function mainPage(){
-            if (!isset($_SESSION["usuario"])) {
+            /*if (!isset($_SESSION["usuario"])) {
               header("location:index.php?c=main");
-            }
+          }*/
             require_once 'views/include/header.php';
             require_once 'views/modules/food_mod/breakfast_manage/add.breakfast.php';
             require_once 'views/include/footer.php';

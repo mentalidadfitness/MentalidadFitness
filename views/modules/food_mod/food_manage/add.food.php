@@ -4,7 +4,7 @@
             <h1>GESTIONAR ALIMENTOS</h1>
         </div>
         <div class="">
-            <form class="" action="?c=alimento&a=create" method="post">
+            <form class="" action="?c=food&a=create" method="post">
                 <div class="">
                     <label for="name">Nombre</label>
                     <input type="text" class="" name="data[]" id="name" required>
@@ -34,7 +34,7 @@
                     <input type="text" class="" name="data[]" id="vit" required>
                 </div>
                 <div class="">
-                    <a class="" href="?c=main&a=dashboard">ATRÁS</a>
+                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button class="">GUARDAR</button>
                 </div>
             </form>

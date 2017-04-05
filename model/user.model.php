@@ -53,7 +53,7 @@
 
         public function readUser(){
             try {
-                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user)";
+                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user) INNER JOIN city ON(user.code_city=city.code_city)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);

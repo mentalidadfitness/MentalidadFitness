@@ -12,7 +12,7 @@
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->Rmodel->readRole() as $row) {
+                    foreach ($this->RoleM->readRole() as $row) {
                         $item++;
                 ?>
                     <tr>
