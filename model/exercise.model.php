@@ -13,9 +13,9 @@
 
         public function createExercise($data){
             try {
-                $sql = "INSERT INTO ejercicio VALUES('',?,?)";
+                $sql = "INSERT INTO exercise VALUES(?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1]));
+                $query->execute(array($data[3],$data[0],$data[1],$data[2]));
 
                 $msn = "Ejercicio guardado correctamente";
             } catch (PDOException $e) {
@@ -26,7 +26,7 @@
 
         public function readExercise(){
             try {
-                $sql="SELECT * FROM ejercicio ORDER BY nomEjercicio";
+                $sql="SELECT * FROM exercise ORDER BY nameExercise";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -39,7 +39,7 @@
 
         public function readExerciseByCode($field){
             try {
-                $sql="SELECT * FROM ejercicio WHERE cod_ejer = ?";
+                $sql="SELECT * FROM exercise WHERE code_exercise = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -52,9 +52,10 @@
 
         public function updateExercise($data){
             try {
-                $sql="UPDATE ejercicio SET nomEjercicio = ?, ejercicio = ? WHERE cod_ejer = ?";
+                $sql="UPDATE exercise SET nameExercise = ?, dateExercise = ?, statusExercise
+                                        WHERE code_exercise = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2]));
+                $query->execute(array($data[0],$data[1],$data[2],$data[3]));
 
                 $msn = "Ejercicio Modifico con exito!";
             } catch (PDOException $e) {
@@ -65,7 +66,7 @@
 
         public function deleteExercise($field){
             try {
-                $sql = "DELETE FROM ejercicio WHERE cod_ejer = ?";
+                $sql = "DELETE FROM exercise WHERE code_exercise = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $msn = "Ejercicio Eliminado correctamente!";

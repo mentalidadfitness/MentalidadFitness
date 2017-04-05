@@ -13,9 +13,9 @@
 
         public function createDiet($data){
             try {
-                $sql = "INSERT INTO mi_dieta VALUES('',?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO mydiet VALUES(?,?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6]));
+                $query->execute(array($data[7],$data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6]));
                 $msn = "Dieta guardada correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -25,7 +25,7 @@
 
         public function readBreakfast(){
             try {
-                $sql="SELECT * FROM desayuno ORDER BY nombre";
+                $sql="SELECT * FROM breakfast ORDER BY nameBreakfast";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -37,7 +37,7 @@
         }
         public function readLunch(){
             try {
-                $sql="SELECT * FROM almuerzo ORDER BY nombre";
+                $sql="SELECT * FROM lunch ORDER BY nameLunch";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -49,7 +49,7 @@
         }
         public function readDinner(){
             try {
-                $sql="SELECT * FROM comida ORDER BY nombre";
+                $sql="SELECT * FROM dinner ORDER BY nameDinner";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -61,7 +61,7 @@
         }
         public function readSnack(){
             try {
-                $sql="SELECT * FROM snack ORDER BY nombre";
+                $sql="SELECT * FROM snack ORDER BY nameSnack";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -73,7 +73,7 @@
         }
         public function readUser(){
             try {
-                $sql="SELECT * FROM usuario ORDER BY nombre";
+                $sql="SELECT * FROM user ORDER BY nameUser";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -86,7 +86,7 @@
 
         public function readDiet(){
             try {
-                $sql="SELECT * FROM mi_dieta";
+                $sql="SELECT * FROM mydiet";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -99,7 +99,7 @@
 
         public function readDietByCode($field){
             try {
-                $sql="SELECT * FROM mi_dieta WHERE cod_miDieta = ?";
+                $sql="SELECT * FROM mi_dieta WHERE code_myDiet = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -112,9 +112,11 @@
 
         public function updateDiet($data){
             try {
-                $sql="UPDATE mi_dieta SET dias = ?, estado = ? WHERE cod_miDieta = ?";
+                $sql="UPDATE mydiet SET daysDiet = ?, statusDiet = ?, code_breakfast = ?, code_lunch = ?,
+                                        code_dinner = ?, code_snack = ?
+                                        WHERE cod_miDieta = ?";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2]));
+                $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5]));
                 $msn = "Dieta Modificada con exito!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -124,7 +126,7 @@
 
         public function deleteDiet($field){
             try {
-                $sql = "DELETE FROM mi_dieta WHERE cod_miDieta = ?";
+                $sql = "DELETE FROM mydiet WHERE code_myDiet = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $msn = "Dieta Eliminada correctamente!";

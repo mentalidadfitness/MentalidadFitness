@@ -13,11 +13,11 @@
 
         public function createBreakfast($data){
             try {
-                $sql = "INSERT INTO desayuno VALUES('',?,?)";
+                $sql = "INSERT INTO breakfast VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1]));
+                $query->execute(array($data[3],$data[0],$data[1]));
 
-                $msn = "Desayuno guardado correctamente";
+                $msn = "breakfast guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
@@ -26,7 +26,7 @@
 
         public function readBreakfast(){
             try {
-                $sql="SELECT * FROM desayuno ORDER BY nombre";
+                $sql="SELECT * FROM breakfast ORDER BY name_Breakfast";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -39,7 +39,7 @@
 
         public function readBreakfastByCode($field){
             try {
-                $sql="SELECT * FROM desayuno WHERE cod_desayuno = ?";
+                $sql="SELECT * FROM breakfast WHERE cod_breakfast = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -52,7 +52,7 @@
 
         public function updateBreakfast($data){
             try {
-                $sql="UPDATE desayuno SET nombre = ?, descripcion = ? WHERE cod_desayuno = ?";
+                $sql="UPDATE breakfast SET name_Breakfast = ?, descriptionBreakfast = ? WHERE cod_breakfast = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2]));
 
@@ -65,10 +65,10 @@
 
         public function deleteBreakfast($field){
             try {
-                $sql = "DELETE FROM desayuno WHERE cod_desayuno = ?";
+                $sql = "DELETE FROM breakfast WHERE cod_breakfast = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
-                $msn = "Desayuno Eliminado correctamente!";
+                $msn = "breakfast Eliminado correctamente!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
