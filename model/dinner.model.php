@@ -1,6 +1,6 @@
 <?php
 
-    class DinnerModel{
+    class DinnerModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {

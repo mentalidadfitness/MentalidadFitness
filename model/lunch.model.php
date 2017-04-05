@@ -1,6 +1,6 @@
 <?php
 
-    class LunchModel{
+    class LunchModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {

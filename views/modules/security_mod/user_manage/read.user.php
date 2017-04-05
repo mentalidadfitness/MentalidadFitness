@@ -6,7 +6,6 @@
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Email</th>
-                    <th>contraseña</th>
                     <th>cod_rol</th>
                     <th>cod_ciudad</th>
                     <th>Acción</th>
@@ -15,21 +14,20 @@
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->USmodel->readUsuario() as $row) {
+                    foreach ($this->UserM->readUser() as $row) {
                         $item++;
                 ?>
                     <tr>
                         <td><?php echo $item; ?></td>
-                        <td><?php echo $row["nombre"]; ?></td>
-                        <td><?php echo $row["email"]; ?></td>
-                        <td><?php echo $row["password"]; ?></td>
-                        <td><?php echo $row["cod_rol"]; ?></td>
-                        <td><?php echo $row["cod_ciudad"]; ?></td>
+                        <td><?php echo $row["nameUser"]; ?></td>
+                        <td><?php echo $row["emailAcc"]; ?></td>
+                        <td><?php echo $row["code_role"]; ?></td>
+                        <td><?php echo $row["code_city"]; ?></td>
                         <td>
-                            <a href="?c=usuario&a=update&uscode=<?php echo $row['cod_usu'];?>">
+                            <a href="?c=user&a=update&uscode=<?php echo $row['code_user'];?>">
                                 <i class="">border_color</i>
                             </a>
-                            <a href="?c=usuario&a=delete&uscode=<?php echo $row['cod_usu'];?>">
+                            <a href="?c=usuario&a=delete&uscode=<?php echo $row['code_user'];?>">
                                 <i class="">delete</i>
                             </a>
                         </td>
