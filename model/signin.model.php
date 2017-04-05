@@ -1,6 +1,6 @@
 <?php
 
-class LoginModel{
+class AccesoModel extends DataBase{
 private $pdo;
 
   public function __CONSTRUCT(){
@@ -12,9 +12,9 @@ private $pdo;
     }
  }
 
-   public function compruebaLogin($data){
+   public function checkLogin($data){
 	  try {
-  	$sql="SELECT * FROM acceso INNER JOIN usuario ON(acceso.cod_usu=usuario.cod_usu) WHERE email= ? ";
+  	$sql="SELECT * FROM access INNER JOIN user ON(access.code_user=user.code_user) WHERE emailAcc= ? ";
 		$query=$this->pdo->prepare($sql);
 		$query->execute(array($data[0]));
     $result = $query->fetch(PDO::FETCH_BOTH);

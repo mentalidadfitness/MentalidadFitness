@@ -1,6 +1,6 @@
 <?php
 
-    class RoleModel{
+    class RoleModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -13,9 +13,9 @@
 
         public function createRole($data){
             try {
-                $sql = "INSERT INTO rol VALUES('',?,?)";
+                $sql = "INSERT INTO role VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1]));
+                $query->execute(array($data[2],$data[0],$data[1]));
 
                 $msn = "Rol guardado correctamente";
             } catch (PDOException $e) {
@@ -26,7 +26,7 @@
 
         public function readRole(){
             try {
-                $sql="SELECT * FROM rol ORDER BY rolNom";
+                $sql="SELECT * FROM role ORDER BY nameRole";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -39,7 +39,7 @@
 
         public function readRoleByCode($field){
             try {
-                $sql="SELECT * FROM rol WHERE cod_rol = ?";
+                $sql="SELECT * FROM role WHERE code_role = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -52,7 +52,7 @@
 
         public function updateRole($data){
             try {
-                $sql="UPDATE rol SET rolNom = ?, estado = ? WHERE cod_rol = ?";
+                $sql="UPDATE role SET nameRole = ?, statusRole = ? WHERE code_role = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2]));
 
@@ -65,7 +65,7 @@
 
         public function deleteRole($field){
             try {
-                $sql = "DELETE FROM rol WHERE cod_rol = ?";
+                $sql = "DELETE FROM role WHERE code_role = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $msn = "Rol Eliminado correctamente!";

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once'model/db.model.php';
     if (isset($_REQUEST["c"])) {
         $controller = strtolower($_REQUEST["c"]);
         $action = isset($_REQUEST["a"]) ? $_REQUEST["a"] : "mainPage";

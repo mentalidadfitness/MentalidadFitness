@@ -1,6 +1,6 @@
 <?php
 
-    class SnackModel{
+    class SnackModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -13,9 +13,9 @@
 
         public function createSnack($data){
             try {
-                $sql = "INSERT INTO snack VALUES('',?,?)";
+                $sql = "INSERT INTO snack VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1]));
+                $query->execute(array($data[3],$data[0],$data[1]));
 
                 $msn = "Snack guardado correctamente";
             } catch (PDOException $e) {
@@ -26,7 +26,7 @@
 
         public function readSnack(){
             try {
-                $sql="SELECT * FROM snack ORDER BY nombre";
+                $sql="SELECT * FROM snack ORDER BY nameSnack";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -39,7 +39,7 @@
 
         public function readSnackByCode($field){
             try {
-                $sql="SELECT * FROM snack WHERE cod_snack = ?";
+                $sql="SELECT * FROM snack WHERE code_snack = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -52,7 +52,7 @@
 
         public function updateSnack($data){
             try {
-                $sql="UPDATE snack SET nombre = ?, descripcion = ? WHERE cod_snack = ?";
+                $sql="UPDATE snack SET nameSnack = ?, descriptionSnack = ? WHERE code_snack = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2]));
 
@@ -65,7 +65,7 @@
 
         public function deleteSnack($field){
             try {
-                $sql = "DELETE FROM snack WHERE cod_snack = ?";
+                $sql = "DELETE FROM snack WHERE code_snack = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $msn = "Snack Eliminado correctamente!";

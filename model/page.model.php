@@ -1,6 +1,6 @@
 <?php
 
-    class PageModel{
+    class PageModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -13,9 +13,9 @@
 
         public function createPage($data){
             try {
-                $sql = "INSERT INTO pagina VALUES('',?,?,?,?,?,?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO page VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7],$data[8],$data[9],$data[10],$data[11]));
+                $query->execute(array($data[12]$data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7],$data[8],$data[9],$data[10],$data[11]));
 
                 $msn = "Pagina guardada correctamente";
             } catch (PDOException $e) {
@@ -26,7 +26,7 @@
 
         public function readPage(){
             try {
-                $sql="SELECT * FROM pagina ORDER BY nombre";
+                $sql="SELECT * FROM page ORDER BY namePage";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -39,7 +39,7 @@
 
         public function readPageByCode($field){
             try {
-                $sql="SELECT * FROM pagina WHERE cod_pagina = ?";
+                $sql="SELECT * FROM page WHERE code_page = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -52,7 +52,7 @@
 
         public function updatePage($data){
             try {
-                $sql="UPDATE pagina SET nombre = ?, iconos = ?, menu = ?, colores = ?, URL = ?, foto = ?, descripcion = ?, botones = ?, propiedades = ?, secciones = ?, imagenes = ?, estado = ? WHERE cod_pagina = ?";
+                $sql="UPDATE pagina SET namePage = ?, iconsPage = ?, menuPage = ?, colorsPage = ?, URLPage = ?, photoPage = ?, descriptionPage = ?, buttonsPage = ?, propertiesPage = ?, sectionsPage = ?, imagesPage = ?, statusPage = ? WHERE code_page = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7],$data[8],$data[9],$data[10],$data[11],$data[12]));
 
@@ -65,7 +65,7 @@
 
         public function deletePage($field){
             try {
-                $sql = "DELETE FROM pagina WHERE cod_pagina = ?";
+                $sql = "DELETE FROM page WHERE code_page = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $msn = "Pagina Eliminada correctamente!";
