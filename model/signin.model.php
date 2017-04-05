@@ -1,6 +1,6 @@
 <?php
 
-class AccesoModel extends DataBase{
+class AccessModel extends DataBase{
 private $pdo;
 
   public function __CONSTRUCT(){
