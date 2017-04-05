@@ -12,13 +12,16 @@
 
         call_user_func(array($controller, $action));
     } else {
-        $controller = "main";
+        $controller = "access";
         require "controller/$controller.controller.php";
 
         $controller = ucwords($controller).'Controller';
         $controller = new $controller;
 
         $controller->mainPage();
+    }
+    if (isset($_GET["msn"])) {
+        echo "<script>alert('".$_GET["msn"]."')</script>";
     }
 
 ?>
