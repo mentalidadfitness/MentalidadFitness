@@ -27,7 +27,7 @@
                 </div>
                 <div class="">
                     <select name="data[]">
-                        <?php foreach ($this->UserM->readCiudad() as $row) { ?>
+                        <?php foreach ($this->UserM->readCity() as $row) { ?>
                             <option value="<?php echo $row['code_city']; ?>"><?php echo $row["nameCity"]; ?></option>
                         <?php } ?>
                     </select>
