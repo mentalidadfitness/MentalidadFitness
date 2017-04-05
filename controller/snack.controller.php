@@ -19,6 +19,7 @@
 
         public function create(){
             $data = $_POST["data"];
+            $data[2] = "SNA".randAlphanum('15').date();
             if(empty($data[0]) || empty($data[1])) {
               $msn="Campos Nulos";
               header("Location: index.php?c=snack&msn=$msn");
