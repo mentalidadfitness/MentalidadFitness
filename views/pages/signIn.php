@@ -26,7 +26,7 @@
                   <label id="MF_password"><i class="fa fa-lock" aria-hidden="true"></i> CONTRASEÑA</label>
                 </div>
                 <!-- BOTON DE ENTRADA -->
-                <button type="button" class="btn btn-default" id="MF_button">ENTRAR</button>
+                <button type="submit" class="btn btn-default" id="MF_button">ENTRAR</button>
                 <!-- REDES SOCIALES -->
                 <div class="row" style="padding-bottom:10%">
                   <div class="col-xs-2 col-xs-offset-2">
