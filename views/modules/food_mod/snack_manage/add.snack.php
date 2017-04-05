@@ -14,7 +14,7 @@
                     <textarea class="" name="data[]" id="desc" required></textarea>
                 </div>
                 <div class="">
-                    <a class="" href="?c=main&a=dashboard">ATRÁS</a>
+                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button class="">GUARDAR</button>
                 </div>
             </form>
