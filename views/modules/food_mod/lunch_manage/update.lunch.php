@@ -1,4 +1,4 @@
-<?php $lunch = $this->Lunch->readLunchByCode($field) ?>
+<?php $lunch = $this->LunchM->readLunchByCode($field) ?>
 <div class="">
     <div class="">
         <h1>MODIFICAR ALMUERZO</h1>

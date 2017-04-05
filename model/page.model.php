@@ -52,7 +52,8 @@
 
         public function updatePage($data){
             try {
-                $sql="UPDATE pagina SET namePage = ?, iconsPage = ?, menuPage = ?, colorsPage = ?, URLPage = ?, photoPage = ?, descriptionPage = ?, buttonsPage = ?, propertiesPage = ?, sectionsPage = ?, imagesPage = ?, statusPage = ? WHERE code_page = ?";
+                $sql="UPDATE page SET namePage = ?, iconsPage = ?, menuPage = ?, colorsPage = ?, URLPage = ?,
+                photoPage = ?, descriptionPage = ?, buttonsPage = ?, propertiesPage = ?, sectionsPage = ?, imagesPage = ?, statusPage = ? WHERE code_page = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7],$data[8],$data[9],$data[10],$data[11],$data[12]));
 
