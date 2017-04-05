@@ -27,7 +27,7 @@
                             <a href="?c=user&a=update&uscode=<?php echo $row['code_user'];?>">
                                 <i class="">border_color</i>
                             </a>
-                            <a href="?c=usuario&a=delete&uscode=<?php echo $row['code_user'];?>">
+                            <a href="?c=user&a=delete&uscode=<?php echo $row['code_user'];?>">
                                 <i class="">delete</i>
                             </a>
                         </td>
