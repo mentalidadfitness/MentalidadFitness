@@ -13,11 +13,11 @@
 
         public function createFood($data){
             try {
-                $sql = "INSERT INTO alimento VALUES('',?,?,?,?,?,?,?)";
+                $sql = "INSERT INTO food VALUES(?,?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6]));
+                $query->execute(array($data[7],$data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6]));
 
-                $msn = "Alimento guardado correctamente";
+                $msn = "food guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
@@ -26,7 +26,7 @@
 
         public function readFood(){
             try {
-                $sql="SELECT * FROM alimento ORDER BY alimento";
+                $sql="SELECT * FROM food ORDER BY nameFood";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -39,7 +39,7 @@
 
         public function readFoodByCode($field){
             try {
-                $sql="SELECT * FROM alimento WHERE cod_alimento = ?";
+                $sql="SELECT * FROM food WHERE code_food = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -52,11 +52,11 @@
 
         public function updateFood($data){
             try {
-                $sql="UPDATE alimento SET alimento = ?, proteinas = ?, calorias = ?, azucares = ?, carbohidratos = ?, fibras = ?, vitaminas = ? WHERE cod_alimento = ?";
+                $sql="UPDATE food SET code_food = ?, proteinsFood = ?, caloriesFood = ?, sugarsFood = ?, carbohydratesFood	 = ?, fibersFood = ?, 	vitaminsFood = ? WHERE code_food = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7]));
 
-                $msn = "Alimento Modificado con exito!";
+                $msn = "food Modificado con exito!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
@@ -65,10 +65,10 @@
 
         public function deleteFood($field){
             try {
-                $sql = "DELETE FROM alimento WHERE cod_alimento = ?";
+                $sql = "DELETE FROM food WHERE code_food = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
-                $msn = "Alimento Eliminado correctamente!";
+                $msn = "food Eliminado correctamente!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
