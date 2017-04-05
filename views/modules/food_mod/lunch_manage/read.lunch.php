@@ -12,18 +12,18 @@
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->ALmodel->readAlmuerzo() as $row) {
+                    foreach ($this->LunchM->readLunch() as $row) {
                         $item++;
                 ?>
                     <tr>
                         <td><?php echo $item; ?></td>
-                        <td><?php echo $row["nombre"]; ?></td>
-                        <td><?php echo $row["descripcion"]; ?></td>
+                        <td><?php echo $row["nameLunch"]; ?></td>
+                        <td><?php echo $row["descriptionLunch"]; ?></td>
                         <td>
-                            <a href="?c=almuerzo&a=update&alcode=<?php echo $row['cod_almuerzo'];?>">
+                            <a href="?c=lunch&a=update&alcode=<?php echo $row['code_lunch'];?>">
                                 <i class="">border_color</i>
                             </a>
-                            <a href="?c=almuerzo&a=delete&alcode=<?php echo $row['cod_almuerzo'];?>">
+                            <a href="?c=lunch&a=delete&alcode=<?php echo $row['code_lunch'];?>">
                                 <i class="">delete</i>
                             </a>
                         </td>

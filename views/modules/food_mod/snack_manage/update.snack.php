@@ -1,4 +1,4 @@
-<?php $snack = $this->Smodel->readSnackByCode($field) ?>
+<?php $snack = $this->SnackM->readSnackByCode($field) ?>
 <div class="">
     <div class="">
         <h1>MODIFICAR DESAYUNO</h1>
@@ -7,13 +7,13 @@
         <form class="" action="?c=snack&a=updateData" method="post">
         <div class="">
             <label for"name">Nombre</label>
-            <input  type="text" class="" name="data[]" value="<?php echo $snack['nombre']; ?>">
+            <input  type="text" class="" name="data[]" value="<?php echo $snack['nameSnack']; ?>">
         </div>
             <div class="">
                 <label for="desc">Descripcion</label>
-                <input type="text" class="" name="data[]" value="<?php echo $snack['descripcion']; ?>">
+                <input type="text" class="" name="data[]" value="<?php echo $snack['descriptionSnack']; ?>">
             </div>
-            <input type="hidden" readonly value="<?php echo $snack['cod_snack']; ?>" name="data[]">
+            <input type="hidden" readonly value="<?php echo $snack['code_snack']; ?>" name="data[]">
         <div class="">
             <a class="" href="?c=snack">Atras</a>
             <button class="">Actualizar

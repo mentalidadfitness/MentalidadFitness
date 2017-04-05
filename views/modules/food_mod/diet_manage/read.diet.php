@@ -17,23 +17,23 @@
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->DImodel->readDieta() as $row) {
+                    foreach ($this->DietM->readDiet() as $row) {
                         $item++;
                 ?>
                     <tr>
                         <td><?php echo $item; ?></td>
-                        <td><?php echo $row["dias"]; ?></td>
-                        <td><?php echo $row["estado"]; ?></td>
-                        <td><?php echo $row["cod_desayuno"]; ?></td>
-                        <td><?php echo $row["cod_almuerzo"]; ?></td>
-                        <td><?php echo $row["cod_comida"]; ?></td>
-                        <td><?php echo $row["cod_snack"]; ?></td>
-                        <td><?php echo $row["cod_usu"]; ?></td>
+                        <td><?php echo $row["daysDiet"]; ?></td>
+                        <td><?php echo $row["statusDiet"]; ?></td>
+                        <td><?php echo $row["code_breakfast"]; ?></td>
+                        <td><?php echo $row["code_lunch"]; ?></td>
+                        <td><?php echo $row["code_dinner"]; ?></td>
+                        <td><?php echo $row["code_snack"]; ?></td>
+                        <td><?php echo $row["code_user"]; ?></td>
                         <td>
-                            <a href="?c=dieta&a=update&dicode=<?php echo $row['cod_miDieta'];?>">
+                            <a href="?c=diet&a=update&dicode=<?php echo $row['code_myDiet'];?>">
                                 <i class="">border_color</i>
                             </a>
-                            <a href="?c=dieta&a=delete&dicode=<?php echo $row['cod_miDieta'];?>">
+                            <a href="?c=diet&a=delete&dicode=<?php echo $row['code_myDiet'];?>">
                                 <i class="">delete</i>
                             </a>
                         </td>

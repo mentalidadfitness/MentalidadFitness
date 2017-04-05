@@ -4,7 +4,7 @@
             <h1>GESTIONAR ALMUERZOS</h1>
         </div>
         <div class="">
-            <form class="" action="?c=almuerzo&a=create" method="post">
+            <form class="" action="?c=lunch&a=create" method="post">
                 <div class="">
                     <label for="name">Nombre</label>
                     <input type="text" class="" name="data[]" id="name" required>
@@ -14,7 +14,7 @@
                     <textarea class="" name="data[]" id="desc" required></textarea>
                 </div>
                 <div class="">
-                    <a class="" href="?c=main&a=dashboard">ATRÁS</a>
+                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button class="">GUARDAR</button>
                 </div>
             </form>

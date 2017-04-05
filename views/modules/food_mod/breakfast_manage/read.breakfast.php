@@ -12,18 +12,18 @@
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->DEmodel->readDesayuno() as $row) {
+                    foreach ($this->BreakfastM->readBreakfast() as $row) {
                         $item++;
                 ?>
                     <tr>
                         <td><?php echo $item; ?></td>
-                        <td><?php echo $row["nombre"]; ?></td>
-                        <td><?php echo $row["descripcion"]; ?></td>
+                        <td><?php echo $row["nameBreakfast"]; ?></td>
+                        <td><?php echo $row["descriptionBreakfast"]; ?></td>
                         <td>
-                            <a href="?c=desayuno&a=update&decode=<?php echo $row['cod_desayuno'];?>">
+                            <a href="?c=breakfast&a=update&decode=<?php echo $row['code_breakfast'];?>">
                                 <i class="">border_color</i>
                             </a>
-                            <a href="?c=desayuno&a=delete&decode=<?php echo $row['cod_desayuno'];?>">
+                            <a href="?c=breakfast&a=delete&decode=<?php echo $row['code_breakfast'];?>">
                                 <i class="">delete</i>
                             </a>
                         </td>
