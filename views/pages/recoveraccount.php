@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>MENU</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="views/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
   <body id="bodyMF1">
     <!-- RECUPERAR CUENTA -->
     <div class="container" style="position:absolute;z-index:0">
@@ -25,16 +15,10 @@
                 <div class="row">
                   <div class="col-xs-10 col-xs-offset-1">
                     <!-- DESCRIPCION -->
-                    <h4 class="text-center large" style="">Porfavor digite su email, allí le enviaremos un correo con una nueva contraseña.</h4>
+                    <h4 class="text-center large" style="">Porfavor digite su email, allí le enviaremos un correo para su nueva contraseña.</h4>
                   </div>
                 </div>
               </form>
         </div>
       </div>
     </div>
-
-    <script src="js/jquery.min.js"></script>
-    <!-- <script src="js/transitionInput.js"></script> -->
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>

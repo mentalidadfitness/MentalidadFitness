@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>MENU</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="views/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
   <body id="bodyMF2">
     <!-- LOGIN -->
     <div class="container" style="position:absolute;z-index:0">
@@ -42,11 +32,6 @@
       </div>
     </div>
 
-    <script src="views/assets/js/jquery.min.js"></script>
-    <!-- <script src="js/transitionInput.js"></script> -->
-    <script src="views/assets/js/bootstrap.min.js"></script>
-  </body>
-</html>
 
 
 

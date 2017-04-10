@@ -14,9 +14,24 @@ class AccessController{
           /*if (isset($_SESSION["usuario"])) {
             header("location:index.php?c=access&a=dashboard");
         }*/
+            require_once 'views/include/header.php';
             require_once 'views/pages/signIn.php';
+            require_once 'views/include/footer.php';
             //require_once 'views/include/footer.php';
         }
+
+        public function signUp(){
+            require_once 'views/include/header.php';
+            require_once 'views/pages/signUp.php';
+            require_once 'views/include/footer.php';
+        }
+
+        public function recoverAccount(){
+            require_once 'views/include/header.php';
+            require_once 'views/pages/recoverAccount.php';
+            require_once 'views/include/footer.php';
+        }
+
         public function dashboard(){
           /*if (!isset($_SESSION["usuario"])) {
           	header("location:index.php?c=access");
@@ -24,6 +39,7 @@ class AccessController{
       		require_once 'views/include/header.php';
       		require_once 'views/include/footer.php';
       	}
+
         public function signIn(){
           $data = $_POST["data"];
           $result = $this->AccessM->checkLogin($data);

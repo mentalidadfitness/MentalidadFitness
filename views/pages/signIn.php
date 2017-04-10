@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>MENU</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="views/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="views/assets/css/main.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
   <body id="bodyMF">
     <!-- LOGIN -->
     <div class="container" style="position:absolute;z-index:0">
@@ -42,22 +32,16 @@
                 <!-- BOTONES DE REGISTRO Y RECUPERAR CUENTA -->
                 <div class="row">
                   <div class="col-xs-6">
-                    <button type="button" class="btn btn-default" name="button" id="MF_btnreg">REGISTRATE</button>
+                    <a href="index.php?c=access&a=signUp" type="button" class="btn btn-default" name="button" id="MF_btnreg">REGISTRATE</a>
                   </div>
                   <div class="col-xs-6">
-                    <button type="button" class="btn btn-default" name="button" id="MF_btnrec">RECUPERAR CUENTA</button>
+                    <a href="index.php?c=access&a=recoverAccount" type="button" class="btn btn-default" name="button" id="MF_btnrec">RECUPERAR CUENTA</a>
                   </div>
                 </div>
               </form>
         </div>
       </div>
     </div>
-
-    <script src="views/assets/js/jquery.min.js"></script>
-    <!-- <script src="js/transitionInput.js"></script> -->
-    <script src="views/assets/js/bootstrap.min.js"></script>
-  </body>
-</html>
 
 
 
