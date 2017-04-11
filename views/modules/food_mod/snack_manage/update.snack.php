@@ -1,7 +1,7 @@
 <?php $snack = $this->SnackM->readSnackByCode($field) ?>
 <div class="">
     <div class="">
-        <h1>MODIFICAR DESAYUNO</h1>
+        <h1>MODIFICAR SNACK</h1>
     </div>
     <div class="">
         <form class="" action="?c=snack&a=updateData" method="post">

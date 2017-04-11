@@ -52,7 +52,7 @@
 
         public function updateExercise($data){
             try {
-                $sql="UPDATE exercise SET nameExercise = ?, dateExercise = ?, statusExercise
+                $sql="UPDATE exercise SET nameExercise = ?, dateExercise = ?, statusExercise = ?
                                         WHERE code_exercise = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2],$data[3]));
