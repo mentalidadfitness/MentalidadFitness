@@ -1,3 +1,4 @@
+<?php require_once 'views/include/main.php';?>
 <?php $lunch = $this->LunchM->readLunchByCode($field) ?>
 <div class="">
     <div class="">

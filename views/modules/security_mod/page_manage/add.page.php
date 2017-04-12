@@ -1,3 +1,4 @@
+<?php require_once 'views/include/main.php';?>
 <div class="">
     <div class="">
         <div class="">
@@ -61,4 +62,5 @@
         </div>
     </div>
     <?php require_once 'views/modules/security_mod/page_manage/read.page.php'; ?>
+</div>
 </div>

@@ -1,3 +1,4 @@
+<?php  require_once 'views/include/main.php';?>
 <div class="">
     <div class="">
         <div class="">
@@ -26,3 +27,4 @@
     </div>
     <?php require_once 'views/modules/exercise_mod/exercise_manage/read.exercise.php'; ?>
 </div>
+</div><!-- ESTE DIV CIERRA LA ETIQUETA DIV CLASS="MENU" QUE ESTA EN EL MAIN UBICADO EN LA CARPETA INCLUDE-->

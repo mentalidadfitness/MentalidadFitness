@@ -1,3 +1,4 @@
+<?php require_once 'views/include/main.php';?>
 <?php $food = $this->FoodM->readFoodByCode($field) ?>
 <div class="">
     <div class="">
