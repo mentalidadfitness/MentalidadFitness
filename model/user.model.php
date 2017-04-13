@@ -13,9 +13,17 @@
 
         public function createUser($userId,$data,$tokken,$n){
             try {
-                $sql = "INSERT INTO user VALUES(?,?,?,?)";
-                $query = $this->pdo->prepare($sql);
-                $query->execute(array($userId,$data[0],$data[3],$data[4]));
+                if (isset($data[3])) {
+                  $sql = "INSERT INTO user VALUES(?,?,?,?)";
+                  $query = $this->pdo->prepare($sql);
+                  $query->execute(array($userId,$data[0],$data[3],$data[4]));
+                }else{
+                  $rol="ROLOIGIg7RqU2STVjH";
+                  $ciudad="22269";
+                  $sql = "INSERT INTO user VALUES(?,?,?,?)";
+                  $query = $this->pdo->prepare($sql);
+                  $query->execute(array($userId,$data[0],$rol,$ciudad));
+                }
                 $sql2 = "INSERT INTO access VALUES(?,?,?,?,?,?)";
                 $query2 = $this->pdo->prepare($sql2);
                 $query2->execute(array($tokken,$data[2],$data[1],$n,$data[0],$userId));
