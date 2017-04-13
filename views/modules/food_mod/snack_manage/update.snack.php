@@ -1,3 +1,4 @@
+<?php require_once 'views/include/main.php';?>
 <?php $snack = $this->SnackM->readSnackByCode($field) ?>
 <div class="">
     <div class="">
