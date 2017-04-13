@@ -49,6 +49,4 @@
       </div>
   </div>
 </nav>
-<div class="main">
-
-</div>
+<div class="main"><!-- ESTE DIV ABRE LA ETIQUETA DIV CLASS="MENU" QUE ESTA EN EL MAIN UBICADO EN LA CARPETA INCLUDE Y CIERRA EN LA VISTA-->
