@@ -1,3 +1,4 @@
+<?php require_once 'views/include/main.php';?>
 <?php $role = $this->RoleM->readRoleByCode($field) ?>
 <div class="">
     <div class="">

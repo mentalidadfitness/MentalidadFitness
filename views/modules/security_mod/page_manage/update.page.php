@@ -1,3 +1,4 @@
+<?php require_once 'views/include/main.php';?>
 <?php $page = $this->PageM->readPageByCode($field) ?>
 <div class="">
     <div class="">

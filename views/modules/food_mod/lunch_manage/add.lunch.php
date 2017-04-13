@@ -1,3 +1,4 @@
+<?php require_once 'views/include/main.php';?>
 <div class="">
     <div class="">
         <div class="">
@@ -21,4 +22,5 @@
         </div>
     </div>
     <?php require_once 'views/modules/food_mod/lunch_manage/read.lunch.php'; ?>
+</div>
 </div>
