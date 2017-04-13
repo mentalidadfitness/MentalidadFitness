@@ -7,12 +7,12 @@
               <form class="" name="form" action="?c=access&a=signIn" method="post" id="MF_formulario">
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
-                  <input type="email" class="form-control" name="data[]" id="MF_inputemail3" required="">
+                  <input type="text" class="form-control" name="data[]" id="MF_inputemail3" required="">
                   <label id="MF_email"><i class="fa fa-user" aria-hidden="true"></i> NOMBRE</label>
                 </div>
                 <!-- INPUT EMAIL -->
                 <div class="form-group">
-                  <input type="password" class="form-control" name="data[]" id="MF_inputpass3" required="">
+                  <input type="email" class="form-control" name="data[]" id="MF_inputpass3" required="">
                   <label id="MF_password"><i class="fa fa-envelope" aria-hidden="true"></i> EMAIL</label>
                 </div>
                 <!-- INPUT CONTRASEÑA -->
