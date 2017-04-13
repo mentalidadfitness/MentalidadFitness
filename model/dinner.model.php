@@ -1,6 +1,6 @@
 <?php
 
-    class SnackModel extends DataBase{
+    class DinnerModel extends DataBase{
         private $pdo;
         function __CONSTRUCT(){
             try {
@@ -11,22 +11,22 @@
             }
         }
 
-        public function createSnack($data){
+        public function createDinner($data){
             try {
-                $sql = "INSERT INTO snack VALUES(?,?,?)";
+                $sql = "INSERT INTO dinner VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[2],$data[0],$data[1]));
 
-                $msn = "Snack guardado correctamente";
+                $msn = "Comida guardada correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
         }
 
-        public function readSnack(){
+        public function readDinner(){
             try {
-                $sql="SELECT * FROM snack ORDER BY nameSnack";
+                $sql="SELECT * FROM dinner ORDER BY nameDinner";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -37,9 +37,9 @@
             }
         }
 
-        public function readSnackByCode($field){
+        public function readDinnerByCode($field){
             try {
-                $sql="SELECT * FROM snack WHERE code_snack = ?";
+                $sql="SELECT * FROM dinner WHERE code_dinner = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -50,25 +50,25 @@
 
         }
 
-        public function updateSnack($data){
+        public function updateDinner($data){
             try {
-                $sql="UPDATE snack SET nameSnack = ?, descriptionSnack = ? WHERE code_snack = ?";
+                $sql="UPDATE dinner SET nameDinner = ?, descriptionDinner = ? WHERE code_dinner = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[1],$data[2]));
 
-                $msn = "Snack Modifico con exito!";
+                $msn = "Comida Modificada con exito!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
         }
 
-        public function deleteSnack($field){
+        public function deleteDinner($field){
             try {
-                $sql = "DELETE FROM snack WHERE code_snack = ?";
+                $sql = "DELETE FROM dinner WHERE code_dinner = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
-                $msn = "Snack Eliminado correctamente!";
+                $msn = "Comida Eliminada correctamente!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
