@@ -2,10 +2,10 @@
 <nav class=" navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">Mentalidad Fiteness</a>
+      <a class="navbar-brand">Mentalidad Fitness</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="?c=access&a=close"><span class="glyphicon glyphicon-log-in"></span> Log Out</a></li>
+      <li><a href="?c=access&a=close"><span class="glyphicon glyphicon-log-in"></span> Cerrar sesión</a></li>
     </ul>
   </div>
 </nav>
