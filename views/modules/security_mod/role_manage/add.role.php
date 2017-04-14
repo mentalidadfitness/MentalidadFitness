@@ -5,18 +5,18 @@
             <h1>GESTIONAR ROL</h1>
         </div>
         <div class="">
-            <form class="" action="?c=role&a=create" method="post">
+            <form id="frmrole" class="" action="" method="post" data-parsley-validate>
                 <div class="">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="" name="data[]" id="name" required>
+                    <label for="namer">Nombre</label>
+                    <input id="namer" type="text" class="validate" name="data[]" required="required">
                 </div>
                 <div class="">
-                    <label for="estatus">Estado</label>
-                    <input class="" name="data[]" id="estado" required>
+                    <label for="estador">Estado</label>
+                    <input id="estador" type="text" class="validate"  name="data[]" required="required">
                 </div>
                 <div class="">
                     <a class="" href="?c=access&a=dashboard">ATRÁS</a>
-                    <button class="">GUARDAR</button>
+                    <button type="submit" id="roleaddbut" class="">GUARDAR</button>
                 </div>
             </form>
         </div>

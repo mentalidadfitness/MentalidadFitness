@@ -17,11 +17,9 @@
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[2],$data[0],$data[1]));
 
-                $msn = "Rol guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $msn;
         }
 
         public function readRole(){
@@ -73,6 +71,18 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
+        }
+        public function readRoleByName($name){
+            try {
+                $sql="SELECT nameRole FROM role WHERE nameRole = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($name));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+              return $result;
         }
 
         public function __DESTRUCT(){
