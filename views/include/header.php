@@ -8,5 +8,6 @@
         <!--<link rel="stylesheet" href="views/assets/css/bootstrap.min.css">-->
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="views/assets/css/main.css">
+        <link rel="stylesheet" href="views/assets/css/pablo.css">
     </head>
     <body>
