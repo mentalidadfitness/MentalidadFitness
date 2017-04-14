@@ -1,19 +1,19 @@
-$("#estador").focus(function(){
-  $("#namer").siblings("span").remove();
-  var name = $("#namer").val();
+$("#estadoRol").focus(function(){
+  $("#nombreRol").siblings("span").remove();
+  var name = $("#nombreRol").val();
   $.post("index.php?c=role&a=validRole",{nombre:name},function(data){
           var data = JSON.parse(data);
 
           if(data[0] == false){
             $("#roleaddbut").attr("disabled",true);
-            $("#namer").siblings("label").after("<span class='error'>"+data[1]+"</span>");
+            $("#nombreRol").siblings("label").after("<span class='error'>"+data[1]+"</span>");
           }else{
             $("#roleaddbut").attr("disabled",false);
           }
   });
 })
 
-$("#namer").focus(function(){
+$("#nombreRol").focus(function(){
   $(this).siblings("span").remove();
 })
 
@@ -21,8 +21,8 @@ $("#namer").focus(function(){
 $("#frmrole").submit(function(e){
   e.preventDefault();
   if ($(this).parsley().isValid()) {
-    var name = $("#namer").val();
-    var status = $("#estador").val();
+    var name = $("#nombreRol").val();
+    var status = $("#estadoRol").val();
     $.post("index.php?c=role&a=create",{nombre:name, estado:status},function(data){
       var data = JSON.parse(data);
       if (data[0] === true) {

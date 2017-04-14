@@ -7,12 +7,12 @@
         <div class="">
             <form id="frmrole" class="" action="" method="post" data-parsley-validate>
                 <div class="">
-                    <label for="namer">Nombre</label>
-                    <input id="namer" type="text" class="validate" name="data[]" required="required">
+                    <label for="nombreRol">Nombre</label>
+                    <input id="nombreRol" type="text" class="validate" name="data[]" required="required">
                 </div>
                 <div class="">
-                    <label for="estador">Estado</label>
-                    <input id="estador" type="text" class="validate"  name="data[]" required="required">
+                    <label for="estadoRol">Estado</label>
+                    <input id="estadoRol" type="text" class="validate"  name="data[]" required="required">
                 </div>
                 <div class="">
                     <a class="" href="?c=access&a=dashboard">ATRÁS</a>
