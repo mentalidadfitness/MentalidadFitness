@@ -1,3 +1,4 @@
+<?php  require_once 'views/include/main.php';?>
 <?php $exercise = $this->ExerciseM->readExerciseByCode($field) ?>
 <div class="">
     <div class="">

@@ -1,3 +1,4 @@
+<?php require_once 'views/include/main.php';?>
 <?php $user = $this->UserM->readUserByCode($field) ?>
 <div class="">
     <div class="">

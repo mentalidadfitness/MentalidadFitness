@@ -13,12 +13,20 @@
 
         public function createUser($userId,$data,$tokken,$n){
             try {
-                $sql = "INSERT INTO user VALUES(?,?,?,?)";
+                if(isset($data[3])){
+                  $sql = "INSERT INTO user VALUES(?,?,?,?)";
+                  $query = $this->pdo->prepare($sql);
+                  $query->execute(array($userId,$data[0],$data[3],$data[4]));
+                }else{
+                  $role="ROLOIGIg7RqU2STVjH";
+                  $city=22269;
+                  $sql = "INSERT INTO user VALUES(?,?,?,?)";
+                  $query = $this->pdo->prepare($sql);
+                  $query->execute(array($userId,$data[0],$role,$city));
+                }
+                $sql = "INSERT INTO access VALUES(?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($userId,$data[0],$data[3],$data[4]));
-                $sql2 = "INSERT INTO access VALUES(?,?,?,?,?,?)";
-                $query2 = $this->pdo->prepare($sql2);
-                $query2->execute(array($tokken,$data[2],$data[1],$n,$data[0],$userId));
+                $query->execute(array($tokken,$data[2],$data[1],$n,$data[0],$userId));
                 $msn = "Usuario guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -74,6 +82,30 @@
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
+        }
+
+        public function readUserByToken($field){
+            try {
+                $sql="SELECT * FROM access WHERE token = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($field));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+                return $result;
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+        }
+
+        public function readUserByEmail($data){
+            try {
+                $sql = "SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user) WHERE emailAcc = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+                return $result;
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
 
         }
 
@@ -82,9 +114,9 @@
                 $sql="UPDATE user SET nameUser = ? WHERE code_user = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[0],$data[3]));
-                $sql2="UPDATE access SET  emailAcc = ?, passwordAcc = ? WHERE code_user = ?";
-                $query2 = $this->pdo->prepare($sql2);
-                $query2->execute(array($data[1],$data[2],$data[3]));
+                $sql="UPDATE access SET  emailAcc = ?, passwordAcc = ? WHERE code_user = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data[1],$data[2],$data[3]));
                 $msn = "Usuario Modifico con exito!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -97,15 +129,29 @@
                 $sql = "DELETE FROM user WHERE code_user = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
-                $sql2 = "DELETE FROM access WHERE code_user = ?";
-                $query2 = $this->pdo->prepare($sql2);
-                $query2->execute(array($field));
+                $sql = "DELETE FROM access WHERE code_user = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($field));
                 $msn = "Usuario Eliminado correctamente!";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
         }
+
+        public function updatePassword($data){
+            try {
+                $sql = "UPDATE access SET passwordAcc = ? WHERE token = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data[0],$data[1]));
+                $msn = "Modifico contraseña con exito";
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $msn;
+        }
+
+
 
         public function __DESTRUCT(){
             DataBase::disconnect();
