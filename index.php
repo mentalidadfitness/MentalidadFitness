@@ -13,7 +13,7 @@
 
         call_user_func(array($controller, $action));
     } else {
-        $controller = "access";
+        $controller = "views";
         require "controller/$controller.controller.php";
 
         $controller = ucwords($controller).'Controller';

@@ -55,7 +55,7 @@ class AccessController{
 
         public function close(){
           session_destroy();
-      		header("Location: index.php?c=access");
+      		header("Location: index.php?c=views");
         }
    }
 
