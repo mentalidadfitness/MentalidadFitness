@@ -17,11 +17,11 @@
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[12],$data[0],$data[1],$data[2],$data[3],$data[4],$data[5],$data[6],$data[7],$data[8],$data[9],$data[10],$data[11]));
 
-                $msn = "Pagina guardada correctamente";
+
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $msn;
+
         }
 
         public function readPage(){
@@ -74,6 +74,18 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
+        }
+        public function readPageByName($name){
+            try {
+                $sql="SELECT * FROM page WHERE namePage= ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($name));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+                return $result;
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+
         }
 
         public function __DESTRUCT(){

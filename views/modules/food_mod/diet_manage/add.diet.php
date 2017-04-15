@@ -5,10 +5,10 @@
             <h1>GESTIONAR DIETA</h1>
         </div>
         <div class="">
-            <form class="" action="?c=myDiet&a=create" method="post">
+            <form class="" action="?c=myDiet&a=create" method="post" data-parsley-validate>
                 <div class="">
                     <label for="dias">Dias</label>
-                    <input type="text" class="" name="data[]" id="dia" required>
+                    <input type="number" class="" name="data[]" id="dia" required data-parsley-type>
                 </div>
                 <div class="">
                     <label for="estado">Estado</label>

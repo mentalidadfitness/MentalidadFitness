@@ -98,14 +98,15 @@
 
         public function readUserByEmail($data){
             try {
-                $sql = "SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user) WHERE emailAcc = ?";
+                $sql = "SELECT emailAcc, passwordAcc, token, user.code_user, user.nameUser FROM access INNER JOIN user ON(access.code_user = user.code_user)
+                                WHERE emailAcc = ?";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data));
                 $result = $query->fetch(PDO::FETCH_BOTH);
-                return $result;
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
+            return $result;
 
         }
 

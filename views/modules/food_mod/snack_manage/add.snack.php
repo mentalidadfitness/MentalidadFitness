@@ -5,18 +5,18 @@
             <h1>GESTIONAR SNACKS</h1>
         </div>
         <div class="">
-            <form class="" action="?c=snack&a=create" method="post">
+            <form id="frmsna" class="" action="" method="post" data-parsley-validate>
                 <div class="">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="" name="data[]" id="name" required>
+                    <label for="nombreSna">Nombre</label>
+                    <input type="text" class="" name="data[]" id="nombreSna" required>
                 </div>
                 <div class="">
-                    <label for="desc">Descripción</label>
-                    <textarea class="" name="data[]" id="desc" required></textarea>
+                    <label for="descripcionSna">Descripción</label>
+                    <textarea class="" name="data[]" id="descripcionSna" required></textarea>
                 </div>
                 <div class="">
                     <a class="" href="?c=access&a=dashboard">ATRÁS</a>
-                    <button class="">GUARDAR</button>
+                    <button type="submit" id="snaaddbut" class="">GUARDAR</button>
                 </div>
             </form>
         </div>
