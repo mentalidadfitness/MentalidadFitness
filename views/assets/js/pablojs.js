@@ -121,3 +121,40 @@ $("#frmexe").submit(function(e){
     })
   }
 });
+//------------------------------------SNACK
+$("#descripcionSna").focus(function(){
+  $("#nombreSna").siblings("span").remove();
+  var name = $("#nombreSna").val();
+  $.post("index.php?c=snack&a=validSnack",{nombre:name},function(data){
+          var data = JSON.parse(data);
+
+          if(data[0] == false){
+            $("#snaaddbut").attr("disabled",true);
+            $("#nombreSna").siblings("label").after("<span class='error'>"+data[1]+"</span>");
+          }else{
+            $("#snaaddbut").attr("disabled",false);
+          }
+  });
+})
+
+$("#nombreSna").focus(function(){
+  $(this).siblings("span").remove();
+})
+
+
+$("#frmsna").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()) {
+    var name = $("#nombreSna").val();
+    var description = $("#descripcionSna").val();
+    $.post("index.php?c=snack&a=create",{nombre:name, descripcion:description},function(data){
+      var data = JSON.parse(data);
+      if (data[0] === true) {
+        alert(data[1]);
+        document.location.href="index.php?c=snack";
+      }else{
+        alert(data[1]);
+      }
+    })
+  }
+});
