@@ -5,18 +5,18 @@
             <h1>GESTIONAR COMIDAS</h1>
         </div>
         <div class="">
-            <form class="" action="?c=dinner&a=create" method="post">
+            <form class="" id="frmDinner" method="post" data-parsley-validate>
                 <div class="">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="" name="data[]" id="name" required>
+                    <label for="nameDin">Nombre</label>
+                    <input type="text" class="" name="data[]" id="nameDin" required>
                 </div>
                 <div class="">
-                    <label for="desc">Descripción</label>
-                    <textarea class="" name="data[]" id="desc" required></textarea>
+                    <label for="descDin">Descripción</label>
+                    <textarea class="" name="data[]" id="descDin" required></textarea>
                 </div>
                 <div class="">
                     <a class="" href="?c=access&a=dashboard">ATRÁS</a>
-                    <button class="">GUARDAR</button>
+                    <button type="submit" id="btnDinner" class="">GUARDAR</button>
                 </div>
             </form>
         </div>

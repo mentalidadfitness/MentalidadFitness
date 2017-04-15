@@ -50,6 +50,19 @@
 
         }
 
+        public function readFoodByName($data){
+            try {
+                $sql="SELECT nameFood FROM food WHERE nameFood = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
+        }
+
+
         public function updateFood($data){
             try {
                 $sql="UPDATE food SET nameFood = ?, proteinsFood = ?, caloriesFood = ?, sugarsFood = ?, carbohydratesFood	 = ?, fibersFood = ?, 	vitaminsFood = ? WHERE code_food = ?";

@@ -1,6 +1,6 @@
 <?php
     require_once "model/user.model.php";
-    require_once 'PHPMailer/PHPMailerAutoload.php';
+    require_once 'views/assets/others/libraries/PHPMailer/PHPMailerAutoload.php';
     class UserController{
         private $UserM;
 
@@ -14,6 +14,12 @@
           }*/
             require_once 'views/include/header.php';
             require_once 'views/modules/security_mod/user_manage/add.user.php';
+            require_once 'views/include/footer.php';
+        }
+
+        public function dashboard(){
+            require_once 'views/include/header.php';
+            require_once 'views/include/main.php';
             require_once 'views/include/footer.php';
         }
 
@@ -91,6 +97,18 @@
             $data = $_GET["uscode"];
             $result = $this->UserM->deleteUser($data);
             header("Location: index.php?c=user&msn=$result");
+        }
+
+        public function validEmail(){
+            $data = $_POST["email"];
+            $response = $this->UserM->readUserByEmail($data);
+
+            if (count($response[0]) <= 0) {
+                $return = array("El correo no existe", false);
+            } else {
+                $return = array("", true);
+            }
+            echo json_encode($return);
         }
 
 
