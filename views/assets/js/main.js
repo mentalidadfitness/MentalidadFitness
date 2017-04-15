@@ -37,11 +37,13 @@ $("#MF_formulario").submit(function(e){
 })
 
 //<--------------- END SIGN IN --------------------------------------------->
+//<--------------- CREATE BREAKFAST--------------------------------------------->
+
 
 $("#descBre").focus(function(){
     $("#nameBre").siblings("span").remove();
-    var name = $("#nameBre").val();
-    $.post("index.php?c=breakfast&a=validBreakfast",{name:name},function(data){
+    var nameBre = $("#nameBre").val();
+    $.post("index.php?c=breakfast&a=validBreakfast",{nameBre:nameBre},function(data){
         var data = JSON.parse(data);
         $("#nameBre").after("<span class='error'>"+data[1]+"</span>")
         if (data[0] == false) {
@@ -60,9 +62,47 @@ $("#nameBre").focus(function(){
 $("#frmBreakfast").submit(function(e){
   e.preventDefault();
   if ($(this).parsley().isValid()) {
-    var name = $("#nameBre").val();
-    var desc = $("#descBre").val();
-    $.post("index.php?c=breakfast&a=create",{name:name, desc:desc},function(data){
+    var nameBre = $("#nameBre").val();
+    var descBre = $("#descBre").val();
+    $.post("index.php?c=breakfast&a=create",{nameBre:nameBre, descBre:descBre},function(data){
+      var data = JSON.parse(data);
+      if (data[0] === true) {
+        alert(data[1]);
+        document.location.href=data[2];
+      }else{
+        alert(data[1]);
+      }
+    })
+  }
+});
+//<--------------- END CREATE BREAKFAST--------------------------------------------->
+//<--------------- CREATE DINNER--------------------------------------------->
+
+$("#descDin").focus(function(){
+    $("#nameDin").siblings("span").remove();
+    var nameDin = $("#nameDin").val();
+    $.post("index.php?c=dinner&a=validDinner",{nameDin:nameDin},function(data){
+        var data = JSON.parse(data);
+        $("#nameDin").after("<span class='error'>"+data[1]+"</span>")
+        if (data[0] == false) {
+            $("#btnDinner").attr("disabled",true);
+        } else {
+            $("#btnDinner").attr("disabled",false);
+        }
+    });
+})
+
+$("#nameDin").focus(function(){
+   $(this).siblings("span").remove();
+   $("#btnDinner").attr("disabled",false);
+})
+
+$("#frmDinner").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()) {
+    var nameDin = $("#nameDin").val();
+    var descDin = $("#descDin").val();
+    $.post("index.php?c=dinner&a=create",{nameDin:nameDin, descDin:descDin},function(data){
       var data = JSON.parse(data);
       if (data[0] === true) {
         alert(data[1]);

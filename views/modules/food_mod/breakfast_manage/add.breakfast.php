@@ -5,13 +5,13 @@
             <h1>GESTIONAR DESAYUNOS</h1>
         </div>
         <div class="">
-            <form class="" id="frmBreakfast" method="post">
+            <form class="" id="frmBreakfast" method="post" data-parsley-validate>
                 <div class="">
-                    <label for="name">Nombre</label>
+                    <label for="nameBre">Nombre</label>
                     <input type="text" class="" name="data[]" id="nameBre" required>
                 </div>
                 <div class="">
-                    <label for="desc">Descripción</label>
+                    <label for="descBre">Descripción</label>
                     <textarea class="" name="data[]" id="descBre" required></textarea>
                 </div>
                 <div class="">

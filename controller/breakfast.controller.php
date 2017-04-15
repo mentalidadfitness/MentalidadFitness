@@ -17,8 +17,8 @@
         }
 
         public function create(){
-            $data[0] = $_POST["name"];
-            $data[1] = $_POST["desc"];
+            $data[0] = $_POST["nameBre"];
+            $data[1] = $_POST["descBre"];
             $data[2] = "BRE".randAlphanum('15');
             if(empty($data[0]) || empty($data[1])) {
               $return = array(false,"Campos nulos","");
@@ -52,7 +52,7 @@
         }
 
         public function validBreakfast(){
-            $data = $_POST["name"];
+            $data = $_POST["nameBre"];
             $result = $this->BreakfastM->readBreakfastByName($data);
             if (count($result[0])==1) {
                 $return = array(false,"El desayuno ya existe");
