@@ -17,10 +17,16 @@
         }
 
         public function create(){
-            $data = $_POST["data"];
-            $data[2] = "BRE".randAlphanum('15').date();
-            $result = $this->BreakfastM->createBreakfast($data);
-            header("Location: index.php?c=breakfast&msn=$result");
+            $data[0] = $_POST["name"];
+            $data[1] = $_POST["desc"];
+            $data[2] = "BRE".randAlphanum('15');
+            if(empty($data[0]) || empty($data[1])) {
+              $return = array(false,"Campos nulos","");
+            }else{
+                $result = $this->BreakfastM->createBreakfast($data);
+                $return = array(true,"Guardo con Exito","index.php?c=breakfast");
+            }
+            echo json_encode($return);
         }
 
         public function update(){
@@ -43,6 +49,17 @@
             $data = $_GET["decode"];
             $result = $this->BreakfastM->deleteBreakfast($data);
             header("Location: index.php?c=breakfast&msn=$result");
+        }
+
+        public function validBreakfast(){
+            $data = $_POST["name"];
+            $result = $this->BreakfastM->readBreakfastByName($data);
+            if (count($result[0])==1) {
+                $return = array(false,"El desayuno ya existe");
+            }else{
+                $return = array(true,"");
+            }
+            echo json_encode($return);
         }
 
     }
