@@ -5,22 +5,22 @@
             <h1>GESTIONAR EJERCICIOS</h1>
         </div>
         <div class="">
-            <form class="" action="?c=exercise&a=create" method="post">
+            <form id="frmexe" class="" action="" method="post" data-parsley-validate>
                 <div class="">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="" name="data[]" id="name" required>
+                    <label for="nombreExe">Nombre</label>
+                    <input type="text" class="" name="data[]" id="nombreExe" required>
                 </div>
                 <div class="">
-                    <label for="ejercicio">Fecha</label>
-                    <input type="text" class="" name="data[]" id="ejer" required>
+                    <label for="fechaExe">Fecha</label>
+                    <input type="text" class="" name="data[]" id="fechaExe" required>
                 </div>
                 <div class="">
-                    <label for="ejercicio">Estado</label>
-                    <input type="text" class="" name="data[]" id="ejer" required>
+                    <label for="estadoExe">Estado</label>
+                    <input type="text" class="" name="data[]" id="estadoExe" required>
                 </div>
                 <div class="">
                     <a class="" href="?c=access&a=dashboard">ATRÁS</a>
-                    <button class="">GUARDAR</button>
+                    <button id="exeaddbut" type="submit" class="">GUARDAR</button>
                 </div>
             </form>
         </div>
