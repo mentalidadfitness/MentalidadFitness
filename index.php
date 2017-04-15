@@ -1,7 +1,7 @@
 <?php
     session_start();
-    require_once "views/assets/random/random.php";
-    require_once'model/db.model.php';
+    require_once 'model/db.model.php';
+    require_once 'views/assets/others/archives/random.php';
     if (isset($_REQUEST["c"])) {
         $controller = strtolower($_REQUEST["c"]);
         $action = isset($_REQUEST["a"]) ? $_REQUEST["a"] : "mainPage";

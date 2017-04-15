@@ -16,12 +16,29 @@
             require_once 'views/modules/exercise_mod/exercise_manage/add.exercise.php';
             require_once 'views/include/footer.php';
         }
+        public function validExercise(){
+          $name = $_POST["nombre"];
+          $result = $this->ExerciseM->readExerciseByName($name);
+          if (count($result[0])==1) {
+            $return = array(false,"El ejercicio ya existe");
+          }else{
+            $return = array(true,"");
+          }
+          echo json_encode($return);
+        }
 
         public function create(){
-            $data = $_POST["data"];
-            $data[3]="DIE".randAlphanum('15').date();
-            $result = $this->ExerciseM->createExercise($data);
-            header("Location: index.php?c=exercise&msn=$result");
+            $data[0] = $_POST["nombre"];
+            $data[1] = $_POST["fecha"];
+            $data[2] = $_POST["estado"];
+            $data[3]="DIE".randAlphanum('15');
+            if (empty($data[0]) || empty($data[1]) || empty($data[2])) {
+              $return = array(false,"Campos nulos");
+            }else{
+              $result = $this->ExerciseM->createExercise($data);
+              $return = array(true,"Guardo con Exito");
+            }
+            echo json_encode($return);
         }
 
         public function update(){

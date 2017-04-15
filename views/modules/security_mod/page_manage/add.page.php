@@ -5,58 +5,58 @@
             <h1>GESTIONAR PAGINA</h1>
         </div>
         <div class="">
-            <form class="" action="?c=page&a=create" method="post">
+            <form id="frmpag" class="" action="" method="post" data-parsley-validate>
                 <div class="">
                     <label for="name">Nombre</label>
-                    <input type="text" class="" name="data[]" id="name" required>
+                    <input type="text" class="" name="data[]" id="nombrePag" required>
                 </div>
                 <div class="">
                     <label for="iconos">Iconos</label>
-                    <input type="text" class="" name="data[]" id="ico" required></textarea>
+                    <input type="text" class="" name="data[]" id="iconoPag" required></textarea>
                 </div>
                 <div class="">
                     <label for="menu">Menu</label>
-                    <input type="text" class="" name="data[]" id="men" required>
+                    <input type="text" class="" name="data[]" id="menuPag" required>
                 </div>
                 <div class="">
                     <label for="colores">Colores</label>
-                    <input type="text" class="" name="data[]" id="col" required>
+                    <input type="text" class="" name="data[]" id="coloresPag" required>
                 </div>
                 <div class="">
                     <label for="url">URL</label>
-                    <input type="text" class="" name="data[]" id="url" required>
+                    <input type="text" class="" name="data[]" id="urlPag" required>
                 </div>
                 <div class="">
                     <label for="foto">Foto</label>
-                    <input type="text" class="" name="data[]" id="fot" required>
+                    <input type="text" class="" name="data[]" id="fotoPag" required>
                 </div>
                 <div class="">
                     <label for="des">Descripcion</label>
-                    <input type="text" class="" name="data[]" id="des" required>
+                    <input type="text" class="" name="data[]" id="descripcionPag" required>
                 </div>
                 <div class="">
                     <label for="botones">Botones</label>
-                    <input type="text" class="" name="data[]" id="bot" required>
+                    <input type="text" class="" name="data[]" id="botonesPag" required>
                 </div>
                 <div class="">
                     <label for="propiedades">Propiedades</label>
-                    <input type="text" class="" name="data[]" id="pro" required>
+                    <input type="text" class="" name="data[]" id="propiedadesPag" required>
                 </div>
                 <div class="">
                     <label for="secciones">Secciones</label>
-                    <input type="text" class="" name="data[]" id="sec" required>
+                    <input type="text" class="" name="data[]" id="seccionesPag" required>
                 </div>
                 <div class="">
                     <label for="imagenes">Imagenes</label>
-                    <input type="text" class="" name="data[]" id="img" required>
+                    <input type="text" class="" name="data[]" id="imagenesPag" required>
                 </div>
                 <div class="">
                     <label for="estatus">Estado</label>
-                    <input type="text" class="" name="data[]" id="est" required>
+                    <input type="text" class="" name="data[]" id="estadoPag" required>
                 </div>
                 <div class="">
                     <a class="" href="?c=access&a=dashboard">ATRÁS</a>
-                    <button class="">GUARDAR</button>
+                    <button type="submit" id="pagaddbut" class="">GUARDAR</button>
                 </div>
             </form>
         </div>

@@ -18,15 +18,15 @@
         }
 
         public function create(){
-            $data = $_POST["data"];
-            $data[7] = "FOO".randAlphanum('15').date();
-            if(empty($data[0]) || empty($data[1]) || empty($data[2]) || empty($data[3]) || empty($data[4]) || empty($data[5]) || empty($data[6])) {
-              $msn="Campos Nulos";
-              header("Location: index.php?c=food&msn=$msn");
+            $data = $_POST["dataF"];
+            $data[7] = "FOO".randAlphanum('15');
+            if(empty($data[0]) || empty($data[1]) || empty($data[2]) || empty($data[3])){
+                $return = array(false,"Campos nulos","");
             }else{
-              $result = $this->FoodM->createFood($data);
-              header("Location: index.php?c=food&msn=$result");
+                $result = $this->FoodM->createFood($data);
+                $return = array(true,"Guardo con Exito","index.php?c=food");
             }
+            echo json_encode($return);
         }
 
         public function update(){
@@ -49,6 +49,17 @@
             $data = $_GET["alicode"];
             $result = $this->FoodM->deleteFood($data);
             header("Location: index.php?c=food&msn=$result");
+        }
+
+        public function validFood(){
+            $data = $_POST["nameFoo"];
+            $result = $this->FoodM->readFoodByName($data);
+            if (count($result[0])==1) {
+                $return = array(false,"El alimento ya existe");
+            }else{
+                $return = array(true,"");
+            }
+            echo json_encode($return);
         }
 
     }

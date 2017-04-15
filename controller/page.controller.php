@@ -17,12 +17,38 @@
             require_once 'views/modules/security_mod/page_manage/add.page.php';
             require_once 'views/include/footer.php';
         }
+        public function validPage(){
+          $name = $_POST["nombre"];
+          $result = $this->PageM->readPageByName($name);
+          if (count($result[0])==1) {
+            $return = array(false,"La pagina ya existe");
+          }else{
+            $return = array(true,"");
+          }
+          echo json_encode($return);
+        }
 
         public function create(){
-            $data = $_POST["data"];
-            $data[12] = "PAG".randAlphanum('15').date();
-            $result = $this->PageM->createPage($data);
-            header("Location: index.php?c=page&msn=$result");
+            $data[0] = $_POST["nombre"];
+            $data[1] = $_POST["icono"];
+            $data[2] = $_POST["menu"];
+            $data[3] = $_POST["colores"];
+            $data[4] = $_POST["url"];
+            $data[5] = $_POST["foto"];
+            $data[6] = $_POST["descripcion"];
+            $data[7] = $_POST["boton"];
+            $data[8] = $_POST["propiedad"];
+            $data[9] = $_POST["seccion"];
+            $data[10] = $_POST["imagenes"];
+            $data[11] = $_POST["estado"];
+            $data[12] = "PAG".randAlphanum('15');
+            if(empty($data[0]) || empty($data[1])){
+              $return = array(false,"campos nulos");
+            }else{
+              $result = $this->PageM->createPage($data);
+              $return = array(true,"Guardo con exito");
+            }
+            echo json_encode($return);
         }
 
         public function update(){
