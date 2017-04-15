@@ -5,18 +5,18 @@
             <h1>GESTIONAR ALMUERZOS</h1>
         </div>
         <div class="">
-            <form class="" action="?c=lunch&a=create" method="post">
+            <form id="frmlun" class="" action="" method="post" data-parsley-validate>
                 <div class="">
-                    <label for="name">Nombre</label>
-                    <input type="text" class="" name="data[]" id="name" required>
+                    <label for="nombreLun">Nombre</label>
+                    <input type="text" class="" name="data[]" id="nombreLun" required>
                 </div>
                 <div class="">
-                    <label for="desc">Descripción</label>
-                    <textarea class="" name="data[]" id="desc" required></textarea>
+                    <label for="descripcionLun">Descripción</label>
+                    <textarea class="" name="data[]" id="descripcionLun" required></textarea>
                 </div>
                 <div class="">
                     <a class="" href="?c=access&a=dashboard">ATRÁS</a>
-                    <button class="">GUARDAR</button>
+                    <button type="submit" id="lunaddbut" class="">GUARDAR</button>
                 </div>
             </form>
         </div>

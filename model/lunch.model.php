@@ -16,12 +16,9 @@
                 $sql = "INSERT INTO lunch VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[2],$data[0],$data[1]));
-
-                $msn = "lunch guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
-            return $msn;
         }
 
         public function readLunch(){
@@ -73,6 +70,17 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
             return $msn;
+        }
+        public function readLunchByName($name){
+            try {
+                $sql="SELECT * FROM lunch WHERE nameLunch = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($name));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
         }
 
         public function __DESTRUCT(){
