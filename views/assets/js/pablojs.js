@@ -158,3 +158,40 @@ $("#frmsna").submit(function(e){
     })
   }
 });
+//---------------------------------------------------LUNCH
+$("#descripcionLun").focus(function(){
+  $("#nombreLun").siblings("span").remove();
+  var nombreLun = $("#nombreLun").val();
+  $.post("index.php?c=lunch&a=validLunch",{nombreLun:nombreLun},function(data){
+          var data = JSON.parse(data);
+
+          if(data[0] == false){
+            $("#lunaddbut").attr("disabled",true);
+            $("#nombreLun").siblings("label").after("<span class='error'>"+data[1]+"</span>");
+          }else{
+            $("#lunaddbut").attr("disabled",false);
+          }
+  });
+})
+
+$("#nombreLun").focus(function(){
+  $(this).siblings("span").remove();
+})
+
+
+$("#frmlun").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()) {
+    var nombreLun = $("#nombreLun").val();
+    var descripcionLun = $("#descripcionLun").val();
+    $.post("index.php?c=lunch&a=create",{nombreLun:nombreLun, descripcionLun:descripcionLun},function(data){
+      var data = JSON.parse(data);
+      if (data[0] === true) {
+        alert(data[1]);
+        document.location.href="index.php?c=lunch";
+      }else{
+        alert(data[1]);
+      }
+    })
+  }
+});
