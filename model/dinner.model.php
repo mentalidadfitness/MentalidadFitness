@@ -43,11 +43,22 @@
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
-                return $result;
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
+            return $result;
+        }
 
+        public function readDinnerByName($data){
+            try {
+                $sql="SELECT nameDinner FROM dinner WHERE nameDinner = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
         }
 
         public function updateDinner($data){
