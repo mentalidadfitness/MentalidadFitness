@@ -74,6 +74,18 @@
             }
             return $msn;
         }
+        public function readSnackByName($name){
+            try {
+                $sql="SELECT * FROM snack WHERE nameSnack = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($name));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+                return $result;
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+
+        }
 
         public function __DESTRUCT(){
             DataBase::disconnect();

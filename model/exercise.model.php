@@ -75,6 +75,18 @@
             }
             return $msn;
         }
+        public function readExerciseByName($name){
+            try {
+                $sql="SELECT nameExercise FROM exercise WHERE nameExercise = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($name));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+              return $result;
+        }
 
         public function __DESTRUCT(){
             DataBase::disconnect();

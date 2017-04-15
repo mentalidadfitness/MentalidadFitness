@@ -75,6 +75,18 @@
             return $msn;
         }
 
+        public function readBreakfastByName($data){
+            try {
+                $sql="SELECT nameBreakfast FROM breakfast WHERE nameBreakfast = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data));
+                $result = $query->fetch(PDO::FETCH_BOTH);
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $result;
+        }
+
         public function __DESTRUCT(){
             DataBase::disconnect();
         }
