@@ -80,7 +80,44 @@ $("#frmpag").submit(function(e){
       }else{
         alert(data[1]);
       }
-      //document.location.href="index.php?c=role";
+    })
+  }
+});
+//-------------------------------------------Exercise
+$("#fechaExe").focus(function(){
+  $("#nombreExe").siblings("span").remove();
+  var name = $("#nombreExe").val();
+  $.post("index.php?c=exercise&a=validExercise",{nombre:name},function(data){
+          var data = JSON.parse(data);
+
+          if(data[0] == false){
+            $("#exeaddbut").attr("disabled",true);
+            $("#nombreExe").siblings("label").after("<span class='error'>"+data[1]+"</span>");
+          }else{
+            $("#exeaddbut").attr("disabled",false);
+          }
+  });
+})
+
+$("#nombreExe").focus(function(){
+  $(this).siblings("span").remove();
+})
+
+
+$("#frmexe").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()) {
+    var name = $("#nombreExe").val();
+    var day = $("#fechaExe").val();
+    var status = $("#estadoExe").val();
+    $.post("index.php?c=exercise&a=create",{nombre:name,fecha:day,estado:status},function(data){
+      var data = JSON.parse(data);
+      if (data[0] === true) {
+        alert(data[1]);
+        document.location.href="index.php?c=exercise";
+      }else{
+        alert(data[1]);
+      }
     })
   }
 });
