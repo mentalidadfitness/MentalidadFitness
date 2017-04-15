@@ -7,8 +7,8 @@
               <form class="" name="form" action="?c=user&a=sendEmailRecoverPassword" method="post" id="MF_formulario">
                 <!-- INPUT EMAIL -->
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="MF_inputred" required="">
-                  <label id="MF_emailred"><i class="fa fa-envelope" aria-hidden="true"></i> EMAIL</label>
+                  <input type="email" class="form-control" name="email" id="MF_inputemailred" required="">
+                  <label id="MF_email"><i class="fa fa-envelope" aria-hidden="true"></i> EMAIL</label>
                 </div>
                 <!-- BOTON DE ENVIO -->
                 <button type="submit" class="btn btn-default" id="MF_button1">ENVIAR</button>

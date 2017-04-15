@@ -7,7 +7,7 @@
               <form class="" name="form" action="?c=access&a=signIn" method="post" id="MF_formulario">
                 <!-- INPUT EMAIL -->
                 <div class="form-group">
-                  <input type="text" class="form-control" name="data[]" id="MF_inputemail" required="">
+                  <input type="email" class="form-control" name="data[]" id="MF_inputemail" required="">
                   <label id="MF_email"><i class="fa fa-envelope" aria-hidden="true"></i> EMAIL</label>
                 </div>
                 <!-- INPUT CONTRASEÑA -->
