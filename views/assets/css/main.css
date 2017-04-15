@@ -199,22 +199,21 @@ section{
 }
 
 /* -------------------- MF  --------------------- */
-
 #bodyMF{
 margin: 0;
-background-image: url("../images/images_principal/fondo1.png");
+background-image: url("../img/fondo1.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
 #bodyMF1{
 margin: 0;
-background-image: url("../images/images_principal/fondorojo.png");
+background-image: url("../img/fondorojo.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
 #bodyMF2{
 margin: 0;
-background-image: url("../images/images_principal/fondoazul.png");
+background-image: url("../img/fondoazul.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -224,17 +223,12 @@ background-repeat: no-repeat;
 
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: grey;
+    background-color: #2E2E2E;
 }
 
 ::-webkit-scrollbar-thumb {
 
-    background-color: #045FB4;
-}
-
-.navbar-nav>li {
-    float: left;
-    font-size: 20px;
+    background-color: #BDBDBD;
 }
 
 #MF_logoMF{
@@ -252,13 +246,7 @@ background-repeat: no-repeat;
     color: #555;
     background-color: #fff;
     background-image: none;
-    /* border: 1px solid #ccc; */
     border-radius: 4px;
-    /* -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
-    /* box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
-    /*-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;*/
-    /* transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; */
 }
 .form-control:focus {
     border-color: yellow;
@@ -284,6 +272,15 @@ background-repeat: no-repeat;
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
+
+#MF_inputemail:focus,#MF_inputpass:focus{ outline:none; }
+
+#MF_inputemail:focus ~ #MF_email,#MF_inputemail:valid ~ #MF_email,
+#MF_inputpass:focus ~ #MF_password,#MF_inputpass:valid ~ #MF_password{
+  transform: translateY(-30px);
+  color: #FFD500;
+  transition: 0.2s;
+}
 #MF_inputpass{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
@@ -300,7 +297,7 @@ background-repeat: no-repeat;
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
 /*---------- input rojo ------------*/
-#MF_inputemailred{
+#MF_inputred{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -315,16 +312,26 @@ background-repeat: no-repeat;
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
-#MF_inputemailred:focus{
-  border-bottom-color: red;
-  transition: 0.1s;
-  border-bottom-width: 2px;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
-  box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
+#MF_inputred:focus{
+outline:none;
+border-bottom-color: red;
+}
+
+#MF_inputred:focus ~ #MF_emailred,#MF_inputred:valid ~ #MF_emailred{
+  transform: translateY(-30px);
+  color: red;
+  transition: 0.2s;
+}
+
+#MF_emailred{
+  color: grey;
+  margin-left:13%;
+  position:absolute;
+  margin-top:-7%;
+  transition: 0.2s;
 }
 /*----------- input azul ---------------*/
-#MF_inputemail3{
+#MF_inputblue{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -339,31 +346,15 @@ background-repeat: no-repeat;
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
-#MF_inputemail3:focus{
-  border-bottom-color: blue;
-  transition: 0.1s;
-  border-bottom-width: 2px;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
-  box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
-}
-#MF_inputpass3{
-  background-color: rgba(215, 44, 44, 0);
-  border-top-color: rgba(215, 44, 44, 0);
-  border-left-color: rgba(215, 44, 44, 0);
-  border-right-color: rgba(215, 44, 44, 0);
-  z-index: 100;
-  position: relative;
-  border-radius: 0;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 10%;
-  -webkit-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
-  -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
-  box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
+#MF_inputblue:focus,#MF_inputpass:focus{ outline:none; }
 
+#MF_inputblue:focus ~ #MF_email,#MF_inputblue:valid ~ #MF_email{
+  transform: translateY(-30px);
+  color: blue;
+  transition: 0.2s;
 }
-#MF_inputpass3:focus{
+
+#MF_inputblue:focus{
   border-bottom-color: blue;
   transition: 0.1s;
   border-bottom-width: 2px;
@@ -379,9 +370,6 @@ padding-left: 0;
 }
 
 #MF_formulario{
-  /*background-image: url("../img/fondo-form1.png");
-  background-size: cover;
-  background-repeat: no-repeat;*/
   background-color: white;
   width: 90%;
   margin-left: 5%;
@@ -520,11 +508,6 @@ padding-left: 0;
   padding-right: 0;
   padding-left: 15px;
 }
-
-#divrec{
-
-}
-
 .row{
 margin-left: 0;
 margin-right: 0;
