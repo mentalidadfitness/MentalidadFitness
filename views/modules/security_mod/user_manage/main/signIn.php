@@ -32,10 +32,10 @@
                 <!-- BOTONES DE REGISTRO Y RECUPERAR CUENTA -->
                 <div class="row">
                   <div class="col-xs-6">
-                    <a href="index.php?c=access&a=signUp" type="button" class="btn btn-default" name="button" id="MF_btnreg">REGISTRATE</a>
+                    <a href="index.php?c=views&a=signUp" type="button" class="btn btn-default" name="button" id="MF_btnreg">REGISTRATE</a>
                   </div>
                   <div class="col-xs-6">
-                    <a href="index.php?c=access&a=recoverAccount" type="button" class="btn btn-default" name="button" id="MF_btnrec">RECUPERAR CUENTA</a>
+                    <a href="index.php?c=views&a=forgetPass" type="button" class="btn btn-default" name="button" id="MF_btnrec">RECUPERAR CUENTA</a>
                   </div>
                 </div>
               </form>

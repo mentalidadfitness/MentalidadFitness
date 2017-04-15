@@ -44,7 +44,7 @@
             if (isset($data[3])) {
               $url="user";
             }else{
-              $url="access&a=signUp";
+              $url="views&a=signUp";
             }
             if(empty($data[0]) || empty($data[1]) || empty($data[2])) {
               $msn="Campos Nulos";
