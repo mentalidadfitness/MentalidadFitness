@@ -16,17 +16,28 @@
             require_once 'views/modules/food_mod/snack_manage/add.snack.php';
             require_once 'views/include/footer.php';
         }
+        public function validSnack(){
+          $name = $_POST["nombre"];
+          $result = $this->SnackM->readSnackByName($name);
+          if (count($result[0])==1) {
+            $return = array(false,"El snack ya existe");
+          }else{
+            $return = array(true,"");
+          }
+          echo json_encode($return);
+        }
 
         public function create(){
-            $data = $_POST["data"];
-            $data[2] = "SNA".randAlphanum('15').date();
+            $data[0] = $_POST["nombre"];
+            $data[1] = $_POST["descripcion"];
+            $data[2] = "SNA".randAlphanum('15');
             if(empty($data[0]) || empty($data[1])) {
-              $msn="Campos Nulos";
-              header("Location: index.php?c=snack&msn=$msn");
+              $return = array(false,"campos nulos");
             }else{
               $result = $this->SnackM->createSnack($data);
-              header("Location: index.php?c=snack&msn=$result");
+              $return = array(true,"Guardo con exito");
             }
+            echo json_encode($return);
         }
 
         public function update(){
