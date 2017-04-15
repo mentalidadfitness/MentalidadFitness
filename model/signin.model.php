@@ -20,10 +20,10 @@ private $pdo;
     $result = $query->fetch(PDO::FETCH_BOTH);
     if (password_verify($data[1],$result[1])) {
       $_SESSION["usuario"] = $result[4];
-      $result=true;
+      $result = true;
       return $result;
     }else{
-      $result=false;
+      $result = false;
       return $result;
     }
     /*foreach ($resultado as $row) {
