@@ -113,3 +113,43 @@ $("#frmDinner").submit(function(e){
     })
   }
 });
+
+//<--------------- END CREATE DINNER--------------------------------------------->
+//<--------------- CREATE FOOD--------------------------------------------->
+
+$("#proFoo").focus(function(){
+    $("#nameFoo").siblings("span").remove();
+    var nameFoo = $("#nameFoo").val();
+    $.post("index.php?c=food&a=validFood",{nameFoo:nameFoo},function(data){
+        var data = JSON.parse(data);
+        $("#nameFoo").after("<span class='error'>"+data[1]+"</span>")
+        if (data[0] == false) {
+            $("#btnFood").attr("disabled",true);
+        } else {
+            $("#btnFood").attr("disabled",false);
+        }
+    });
+})
+
+$("#nameFoo").focus(function(){
+   $(this).siblings("span").remove();
+   $("#btnFood").attr("disabled",false);
+})
+
+$("#frmFood").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()) {
+    var dataF = [$("#nameFoo").val(),$("#proFoo").val(),$("#calFoo").val(),
+                 $("#azuFoo").val(),$("#carFoo").val(),$("#fibFoo").val(),
+                 $("#vitFoo").val()];
+    $.post("index.php?c=food&a=create",{dataF:dataF},function(data){
+      var data = JSON.parse(data);
+      if (data[0] === true) {
+        alert(data[1]);
+        document.location.href=data[2];
+      }else{
+        alert(data[1]);
+      }
+    })
+  }
+});
