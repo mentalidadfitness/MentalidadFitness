@@ -39,7 +39,6 @@
                     <input type="password" class="" name="data[]" id="con" required>
                 </div>
                 <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button class="">GUARDAR</button>
                 </div>
             </form>

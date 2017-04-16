@@ -15,7 +15,6 @@
                     <textarea class="" name="data[]" id="descripcionSna" required></textarea>
                 </div>
                 <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button type="submit" id="snaaddbut" class="">GUARDAR</button>
                 </div>
             </form>

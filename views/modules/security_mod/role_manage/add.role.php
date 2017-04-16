@@ -15,7 +15,6 @@
                     <input id="estadoRol" type="text" class="validate"  name="data[]" required="required">
                 </div>
                 <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button type="submit" id="roleaddbut" class="">GUARDAR</button>
                 </div>
             </form>

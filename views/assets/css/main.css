@@ -1,5 +1,5 @@
 /*             Brayant Gamboa      */
-
+/*Todos los estilos de la dashboard*/
 body,html{
 	height: 100%;
 	overflow-x:hidden;
@@ -146,9 +146,11 @@ nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav
     color: white;
     background-color: #080808;
 }
+/* color letra al desplegarse el botón superior de la dashboaard*/
 li.BGB_btncerrar{
 	color: black;
 }
+/* Botón de la parte derecha superior de la dashboard*/
 .BGB_boton_cerrar{
 	position: relative;
 	display: inline-block;
@@ -157,15 +159,15 @@ li.BGB_btncerrar{
 	top: 1vh;
 	border: none;
 }
-
+/* alertas del parsley*/
 .parsley-required{
 	color: red;
 }
-
+/*puntos del parsley*/
 li {
  list-style: none;
 }
-
+/*letra que muestra al poner otro campo igual*/
 .error{
 	color: red;
 	display: block;
@@ -523,3 +525,5 @@ margin-right: 0;
   position:absolute;
   margin-top:-7%;
 }
+
+/*       Brayan García     */

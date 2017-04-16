@@ -1,3 +1,4 @@
+<!--Barra horizontal de las dashboard-->
 <nav class=" navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -32,6 +33,7 @@
           <a class="navbar-brand" href="#">MENTALIDAD FITNESS</a>
       </div>
   -->
+  <!--Toda la parte vertial de la dashboard-->
       <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
           <ul class="nav navbar-nav">
               <li class=""><a href="?c=user&a=dashboard">INICIO<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>

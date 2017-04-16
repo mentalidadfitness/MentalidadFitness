@@ -16,7 +16,6 @@
             </div>
             <input type="hidden" readonly value="<?php echo $role['code_role']; ?>" name="data[]">
         <div class="">
-            <a class="" href="?c=rol">Atras</a>
             <button class="">Actualizar
             </button>
         </div>

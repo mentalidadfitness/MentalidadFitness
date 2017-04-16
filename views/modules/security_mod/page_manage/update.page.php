@@ -56,7 +56,6 @@
         </div>
             <input type="hidden" readonly value="<?php echo $page['code_page']; ?>" name="data[]">
         <div class="">
-            <a class="" href="?c=page">Atras</a>
             <button class="">Actualizar
             </button>
         </div>
