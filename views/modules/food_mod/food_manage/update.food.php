@@ -1,44 +1,42 @@
 <?php require_once 'views/include/main.php';?>
 <?php $food = $this->FoodM->readFoodByCode($field) ?>
-<div class="">
-    <div class="">
+<div class="container-fluid">
+  <div class="text-center">
         <h1>MODIFICAR ALIMENTOS</h1>
     </div>
-    <div class="">
+    <div class="bga-row">
         <form class="" action="?c=food&a=updateData" method="post">
-        <div class="">
-            <label for"name">Nombre</label>
-            <input  type="text" class="" name="data[]" value="<?php echo $food['nameFood']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
+            <label for"name"></label>
+            <input  type="text" class="bga-input" name="data[]" value="<?php echo $food['nameFood']; ?>" placeholder="Nombre" required>
         </div>
-        <div class="">
-            <label for="proteinas">Proteinas</label>
-            <input type="text" class="" name="data[]" value="<?php echo $food['proteinsFood']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
+            <label for="proteinas"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $food['proteinsFood']; ?>" placeholder="Proteínas" required>
         </div>
-        <div class="">
-            <label for="calorias">Calorias</label>
-            <input type="text" class="" name="data[]" value="<?php echo $food['caloriesFood']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
+            <label for="calorias"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $food['caloriesFood']; ?>" placeholder="Calorías" required>
         </div>
-        <div class="">
-            <label for="azucares">Azucares</label>
-            <input type="text" class="" name="data[]" value="<?php echo $food['sugarsFood']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
+            <label for="azucares"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $food['sugarsFood']; ?>" plonchange="Azúcares" required>
         </div>
-        <div class="">
-            <label for="carbohidratos">Carbohidratos</label>
-            <input type="text" class="" name="data[]" value="<?php echo $food['carbohydratesFood']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
+            <label for="carbohidratos"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $food['carbohydratesFood']; ?>" placeholder="Carbohidratos" required>
         </div>
-        <div class="">
-            <label for="fibras">Fibras</label>
-            <input type="text" class="" name="data[]" value="<?php echo $food['fibersFood']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
+            <label for="fibras"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $food['fibersFood']; ?>" placeholder="Fibras" required>
         </div>
-        <div class="">
-            <label for="vitaminas">Vitaminas</label>
-            <input type="text" class="" name="data[]" value="<?php echo $food['vitaminsFood']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
+            <label for="vitaminas"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $food['vitaminsFood']; ?>" placeholder="Vitaminas" required>
         </div>
             <input type="hidden" readonly value="<?php echo $food['code_food']; ?>" name="data[]">
-        <div class="">
-            <a class="" href="?c=food">Atras</a>
-            <button class="">Actualizar
-            </button>
+            <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
+                <button class="bga-botton1">ACTUALIZAR</button>
         </div>
         </form>
     </div>
