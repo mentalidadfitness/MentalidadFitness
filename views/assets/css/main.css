@@ -1,7 +1,7 @@
 body,html{
 	height: 100%;
 	overflow-x:hidden;
-	overflow-y:hidden;
+	/*overflow-y:hidden;*/
 	font-family: Roboto;
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
@@ -212,7 +212,7 @@ background-repeat: no-repeat;
 position: absolute;
 width: 100%;
 height: 100%;
-background-image: url("../img/fondorojo.png");
+background-image: url("../images/images_principal/fondorojo.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -220,7 +220,7 @@ background-repeat: no-repeat;
 position: absolute;
 width: 100%;
 height: 110%;
-background-image: url("../img/fondoazul.png");
+background-image: url("../images/images_principal/fondoazul.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -228,7 +228,7 @@ background-repeat: no-repeat;
 position: absolute;
 width: 100%;
 height: 120%;
-background-image: url("../img/fondorange.png");
+background-image: url("../images/images_principal/fondorange.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -585,4 +585,18 @@ margin-right: 0;
   position:absolute;
   margin-top:-7%;
   transition: 0.2s;
+}
+
+/* DISEÑO PARSLEY*/
+
+.parsley-errors-list{
+	margin-top: 10px;
+	position: absolute;
+	list-style: none;
+}
+
+.parsley-required{
+	background-color: white;
+	border-color: black;
+	border-width: 2px;
 }
