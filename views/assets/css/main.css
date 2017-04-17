@@ -1,19 +1,66 @@
+/*             Brayant Gamboa      */
+/*Todos los estilos de la dashboard*/
 body,html{
 	height: 100%;
-	overflow-x:hidden;
-	overflow-y:hidden;
-	font-family: Roboto;
+	font-family: 'Roboto';
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
 }
 
-.main .row{
-	padding: 0px;
-	margin: 0px;
+button{
+	outline: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.bgb_menu {
+  background: black;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+}
+
+.bgb_menu2 {
+  float: left;
+}
+
+.bgb_menu2 ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+.bgb_menu2 ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.bgb_menu2 ul li a {
+  display: block;
+  padding: 13px;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.main .row {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    left: 28%;
+    top: 5vh;
 }
 
 nav.sidebar.navbar {
 	border-radius: 0px;
+	background-color: #FBC020;
+	border: #FBC020;
+	position: fixed;
+
+
 }
 
 nav.sidebar, .main{
@@ -79,7 +126,7 @@ nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-	color: #777;
+	color: black;
 }
 
 nav.sidebar{
@@ -134,68 +181,76 @@ section{
 	padding-left: 15px;
 }
 
-.btn-group-lg>.btn, .btn-lg {
-    padding: 15px 20px;
-    font-size: 18px;
-    line-height: 1.3333333;
-    border-radius: 6px;
-}
-.btn-primary {
-    color: #000;
-    background-color: #ffed00;
-    border-color: #ffed00;
-    border-radius: 0;
-    font-size: 3vh;
-    margin-top: 10%;
-}
-#btn1 {
-    position: absolute;
-    display: inline-block;
-    bottom: 0;
-    border-radius: 0;
-    border-color: rgba(0, 0, 0, 0);
+.navbar-inverse .navbar-nav>li>a {
     color: white;
-    background-color: grey;
-    font-size: 2.5vh;
 }
-#btn2 {
-    position: absolute;
-    font-size: 15px;
-    bottom: 0;
-    right: 0;
-    border-radius: 0;
-    border-color: rgba(0, 0, 0, 0);
-    color: #ffc800;
-    font-size: 2.8vh;
+
+nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: white;
+    background-color: #080808;
 }
-#logo {
-    width: 60%;
-    position: absolute;
-    z-index: 2;
-    margin-left: 20%;
-    margin-top: 4vh;
+/* color letra al desplegarse el botón superior de la dashboaard*/
+li.BGB_btncerrar{
+	color: black;
 }
-#campo1{
-	margin-top: 20%;
+/* Botón de la parte derecha superior de la dashboard*/
+.BGB_boton_cerrar{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	right: 20%;
+	top: 1vh;
+	border: none;
 }
-.form-control {
-    display: block;
-    width: 80%;
-    margin-left: 10%;
-    height: 5vh;
-    padding: 6px 6vh;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-    font-size: 3vh;
+/* alertas del parsley*/
+.parsley-required{
+	color: red;
 }
-#triangulo {
-    width: 100%;
-    margin-top: -22%;
+/*puntos del parsley*/
+li {
+ list-style: none;
+}
+/*letra que muestra al poner otro campo igual*/
+.error{
+	color: red;
+	display: block;
+	margin-left: 3.5%;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+    margin-top: 9.5vh;
+}
+
+.bgb_boton{
+		position: fixed;
+	  z-index: 20000;
+	  margin-left: 85%;
+		top: 2vh;
+	}
+
+.bgb-container-menu{
+	margin-top: -6px;
+}
+
+.text-center{
+	margin-top: 65px;
+}
+
+textarea .bga-input{
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+h1{
+	text-transform: uppercase;
+}
+
+.input001:focus{
+	outline: 0;
+	border: none;
 }
 
 /* -------------------- MF  --------------------- */
@@ -234,7 +289,7 @@ background-repeat: no-repeat;
 
 .navbar-nav>li {
     float: left;
-    font-size: 20px;
+
 }
 
 #MF_logoMF{
@@ -550,4 +605,192 @@ margin-right: 0;
   margin-left:13%;
   position:absolute;
   margin-top:-7%;
+}
+
+/*       Brayan García     */
+
+.bga-botton01 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+
+	.bga-group { position: relative; margin-bottom: 1.4em; }
+
+	.bga-label{
+		color: #d2d2d2;
+		font-size: 15px;
+		font-weight: normal;
+		font-family: sans-serif;
+		position: absolute;
+		pointer-events: none;
+		top: 10px;
+		transition: 0.2s ease all;
+	}
+
+
+	.bga-input{
+		color: #d2d2d2;
+		font-size: 15px;
+		padding: 10px 0px 10px 0px;
+		display: block;
+		outline: none;
+		border: none;
+		width: 100%;
+		border-bottom: 1px solid #d2d2d2;
+		background: none;
+	}
+
+	   .bga-textarea{
+		max-width: 100%;
+		min-height: 100px;
+		max-height: 100px;
+	}
+
+
+
+	.bar { position: relative; display: block; width: 300px; }
+
+	.bar:before, .bar:after{
+		content: "";
+		height: 2px;
+		width: 0;
+		bottom: -1px;
+		position: absolute;
+		background: #ffea01;
+		transition: 0.2s ease all;
+	}
+
+	.bga-input:valid{ border-bottom: 1px solid #4fc24f; }
+
+	.bga-input ~ .bar:before,
+	.bga-input ~ .bar:after{
+		background: #d32f2f !important;
+	}
+
+	.bga-input:focus ~ .bga-label,
+	.bga-input.used ~ .bga-label {
+		top: -10px;
+		font-size: 13px;
+		color: #ffea01;
+	}
+
+	.bga-input:valid ~ .bga-label,
+	.bga-input:valid.used ~ .bga-label {
+		color: #4fc24f;
+	}
+
+	.bga-input:focus ~ .bar:before,
+	.bga-input:focus ~ .bar:after {
+		width: 125%;
+	}
+
+	.bga-label .use{
+		top:-20px;
+	}
+
+
+
+.bga-botton1{
+	width: 100%;
+	background-color: #ffea01;
+	text-decoration: none;
+	color: black;
+	height: 7vh;
+	text-align: center;
+	padding-top:7px;
+	border: none;
+}
+
+
+.bga-row{
+	width: 100%;
+	max-width: 500px;
+	padding: 50px;
+	margin: auto;
+	background:  #fff;
+}
+
+table {
+font-family:'roboto';
+font-size: 15px;
+margin: 45px;
+ width:50%;
+text-align: center;
+border-collapse: collapse;
+color: black;
+text-align: center;
+margin-left:25%;
+}
+
+th {
+font-size: 13px;
+font-weight: normal;
+padding: 8px;
+background: #ffea01;
+border-top: 4px solid #ffea;
+border-bottom: 1px solid #fff;
+color: black;
+text-align: center;
+}
+
+td {
+padding: 8px;
+background: #e8edff;
+border-bottom: 1px solid #fff;
+color: #669;
+border-top: 1px solid transparent;
+text-align: center;
+}
+
+tr:hover td {
+background: #d0dafd;
+color: #339; }
+
+
+.contenedor{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top:2%;
+}
+
+.icon{
+	background: black;
+	width:4%;
+	height:7vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.input001{
+	border: none;
+	height: 7vh;
+	width:100%;
+	background:#eeeeee;
+	color:black;
+	padding-left: 10px;
+	font-size: 15px;
+}
+
+.buscar{
+	width:50%;
+}
+
+.delete,.edit{
+	width:10%;
+}
+
+.delete2,.edit2{
+	width:40%;
+}
+
+.edit001,.delete001{
+	width:5%;
 }
