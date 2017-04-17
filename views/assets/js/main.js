@@ -180,6 +180,7 @@ $("#frmrole").submit(function(e){
     var name = $("#nombreRol").val();
     var status = $("#estadoRol").val();
     $.post("index.php?c=role&a=create",{nombre:name, estado:status},function(data){
+
       var data = JSON.parse(data);
       if (data[0] === true) {
         alert(data[1]);
@@ -187,7 +188,7 @@ $("#frmrole").submit(function(e){
       }else{
         alert(data[1]);
       }
-      //document.location.href="index.php?c=role";
+      document.location.href="index.php?c=role";
     })
   }
 });
