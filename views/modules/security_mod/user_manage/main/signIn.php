@@ -4,19 +4,19 @@
     <div class="row">
       <div class="col-xs-12 col-md-4 col-md-offset-4">
           <img src="views/assets/images/images_principal/LogoMF.png" class="img-responsive MF_logoMF">
-              <form class="MF_formulario" name="form" method="post" data-parsley-validate>
+              <form class="MF_formulario" name="form" id="frmSignIn" method="post" data-parsley-validate>
                 <!-- INPUT EMAIL -->
                 <div class="form-group">
-                  <input type="text" class="form-control MF_inputemail" name="data[]" required="" data-parsley-type>
+                  <input type="text" class="form-control MF_inputemail" name="data[]" required="" data-parsley-type id="email">
                   <label class="MF_email"><i class="fa fa-envelope" aria-hidden="true"></i> EMAIL</label>
                 </div>
                 <!-- INPUT CONTRASEÑA -->
                 <div class="form-group">
-                  <input type="password" class="form-control MF_inputpass" name="data[]" required="">
+                  <input type="password" class="form-control MF_inputpass" name="data[]" required="" id="pass">
                   <label class="MF_password"><i class="fa fa-lock" aria-hidden="true"></i> CONTRASEÑA</label>
                 </div>
                 <!-- BOTON DE ENTRADA -->
-                <button type="submit" class="btn btn-default MF_button">ENTRAR</button>
+                <button type="submit" class="btn btn-default MF_button" id="btnSignIn">ENTRAR</button>
                 <!-- REDES SOCIALES -->
                 <div class="row" style="padding-bottom:10%">
                   <div class="col-xs-2 col-xs-offset-2">
