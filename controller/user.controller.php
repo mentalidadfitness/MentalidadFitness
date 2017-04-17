@@ -32,6 +32,7 @@
 
         public function updatePassword(){
             $data = $_POST["data"];
+            $data[5] = 12;
             $result = $this->UserM->updatePassword($data);
             header("Location: index.php?c=access&msn=$result");
         }
@@ -65,7 +66,7 @@
             /*elseif(!preg_match('`[/\*+-%&@¡!|]`',$data[2])) {
               $msn="La contraseña debe tener minimo un simbolo";
               header("Location: index.php?c=$url&msn=$msn");
-            }*/elseif($data[2]!==$data[5]){
+          }*/elseif($data[2]!==$data[3]){
               $msn="La contraseñas no coinciden";
               header("Location: index.php?c=$url&msn=$msn");
             }
