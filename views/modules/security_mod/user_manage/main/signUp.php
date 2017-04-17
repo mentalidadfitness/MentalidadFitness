@@ -1,10 +1,12 @@
 <div class="bodyMF2"></div>
+<!-- BOTON ATRAS -->
+<a href="index.php" class="btn btn-default MF_btnBack" name="button"><i class="fa fa-arrow-left fa-2x" aria-hidden="true" style="color: #1ba2da;"></i></a>
 <!-- SINGUP -->
 <div class="container" style="position:absolute;z-index:0">
   <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
         <img src="views/assets/images/images_principal/LogoMFazul.png" class="img-responsive MF_logoMF">
-          <form class="MF_formulario" name="form" method="post" data-parsley-validate>
+          <form class="MF_formulario" name="form" method="post" id="frmsignUp" data-parsley-validate>
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
                   <input type="text" class="form-control MF_inputblue" name="data[0]" required="" data-parsley-type>
