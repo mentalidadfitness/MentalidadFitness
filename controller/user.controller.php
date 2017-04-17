@@ -26,7 +26,7 @@
         public function recoverPassword(){
             $field = $_GET["token"];
             require_once 'views/include/header.php';
-            require_once 'views/pages/recoverPassword.php';
+            require_once 'views/modules/security_mod/user_manage/main/recoverPassword.php';
             require_once 'views/include/footer.php';
         }
 
