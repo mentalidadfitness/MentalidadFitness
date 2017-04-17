@@ -3,18 +3,18 @@
   <div class="text-center">
     <h1>Gestionar Almuerzo</h1>
   </div>
-  <div class="row">
+  <div class="bga-row">
             <form id="frmlun" class="" action="" method="post" data-parsley-validate>
-                <div class="group  col-xs-12 col-sm-12 col-md-12 ">
+                <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
                     <label for="nombreLun"></label>
-                    <input type="text" class="input" name="data[]" id="nombreLun" required placeholder="Nombre">
+                    <input type="text" class="bga-input" name="data[]" id="nombreLun" required placeholder="Nombre">
                 </div>
-                <div class="group  col-xs-12 col-sm-12 col-md-12 ">
+                <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
                     <label for="descripcionLun"></label>
-                    <textarea class="input" name="data[]" id="descripcionLun" required placeholder="Descripción"></textarea>
+                    <textarea class="bga-input" name="data[]" id="descripcionLun" required placeholder="Descripción"></textarea>
                 </div>
-                <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
-                    <button type="submit" id="lunaddbut" class="botton3">GUARDAR</button>
+                <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
+                    <button type="submit" id="lunaddbut" class="bga-botton1">GUARDAR</button>
                 </div>
             </form>
         </div>

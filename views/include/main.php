@@ -19,7 +19,7 @@
   </div>
   </div>
   <nav class="navbar navbar-inverse sidebar" role="navigation">
-    <div class="container-fluid">
+    <div class="container-fluid bgb-container-menu">
       <!-- Adadptar a movil
       <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
@@ -43,15 +43,15 @@
           <li><a href="?c=lunch">Gestionar Almuerzos</a></li>
           <li><a href="?c=snack">Gestionar Snacks</a></li>
           <li><a href="?c=dinner">Gestionar Cenas</a></li>
-          <li><a href="?c=diet">Dietas</a></li>
+          <li><a href="?c=diet">Gestionar Dietas</a></li>
         </ul>
       </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">SEGURIDAD <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-lock"></span></a>
         <ul class="dropdown-menu forAnimate" role="menu">
-          <li><a href="?c=role">Rol</a></li>
-          <li><a href="?c=user">Usuario</a></li>
-          <li><a href="?c=page">Pagina</a></li>
+          <li><a href="?c=role">Gestionar Rol</a></li>
+          <li><a href="?c=user">Gestionar Usuario</a></li>
+          <li><a href="?c=page">Gestionar Página</a></li>
         </ul>
       </li>
       <li ><a href="?c=exercise">EJERCICIO<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-scale"></span></a></li>

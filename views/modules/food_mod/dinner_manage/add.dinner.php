@@ -3,20 +3,20 @@
   <div class="text-center">
     <h1>Gestionar cena</h1>
   </div>
-        <div class="row">
+        <div class="bga-row">
             <form class="" id="frmDinner" method="post" data-parsley-validate>
-                <div class="group  col-xs-12 col-sm-12 col-md-12 ">
+                <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
                     <label for="nameDin"></label>
-                    <input type="text" class="input" name="data[]" id="nameDin" required
+                    <input type="text" class="bga-input" name="data[]" id="nameDin" required
                     placeholder="Nombre">
                 </div>
-                <div class="group  col-xs-12 col-sm-12 col-md-12 ">
+                <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
                     <label for="descDin"></label>
-                    <textarea class="input" name="data[]" id="descDin" required
+                    <textarea class="bga-input" name="data[]" id="descDin" required
                     placeholder="Descripción"></textarea>
                 </div>
-                <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
-                    <button type="submit" id="btnDinner" class="botton3">GUARDAR</button>
+                <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
+                    <button type="submit" id="btnDinner" class="bga-botton1">GUARDAR</button>
                 </div>
             </form>
         </div>

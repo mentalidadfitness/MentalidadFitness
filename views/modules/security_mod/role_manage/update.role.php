@@ -4,19 +4,19 @@
   <div class="text-center">
         <h1>MODIFICAR ROL</h1>
     </div>
-    <div class="row">
+    <div class="bga-row">
         <form class="" action="?c=role&a=updateData" method="post">
-        <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
             <label for"name"></label>
-            <input  type="text" class="input" name="data[]" value="<?php echo $role['nameRole']; ?>" placeholder="Nombre">
+            <input  type="text" class="bga-input" name="data[]" value="<?php echo $role['nameRole']; ?>" placeholder="Nombre">
         </div>
-            <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+            <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
                 <label for="rol"></label>
-                <input type="text" class="input" name="data[]" value="<?php echo $role['statusRole']; ?>" placeholder="Estado">
+                <input type="text" class="bga-input" name="data[]" value="<?php echo $role['statusRole']; ?>" placeholder="Estado">
             </div>
             <input type="hidden" readonly value="<?php echo $role['code_role']; ?>" name="data[]">
-        <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
-            <button class="botton3">Actualizar
+        <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
+            <button class="bga-botton1">Actualizar
             </button>
         </div>
         </form>

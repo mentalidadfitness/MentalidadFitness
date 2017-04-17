@@ -7,6 +7,10 @@ body,html{
 	margin: 0;
 }
 
+button{
+	outline: 0;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -226,7 +230,28 @@ li {
 		top: 2vh;
 	}
 
+.bgb-container-menu{
+	margin-top: -6px;
+}
 
+.text-center{
+	margin-top: 65px;
+}
+
+textarea .bga-input{
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+h1{
+	text-transform: uppercase;
+}
+
+.input001:focus{
+	outline: 0;
+	border: none;
+}
 
 /* -------------------- MF  --------------------- */
 
@@ -584,7 +609,7 @@ margin-right: 0;
 
 /*       Brayan García     */
 
-.botton1,.boton2{
+.bga-botton01 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -593,11 +618,10 @@ margin-right: 0;
 
 
 
-form {}
 
-	.group { position: relative; margin-bottom: 1.4em; }
+	.bga-group { position: relative; margin-bottom: 1.4em; }
 
-	label{
+	.bga-label{
 		color: #d2d2d2;
 		font-size: 15px;
 		font-weight: normal;
@@ -608,16 +632,8 @@ form {}
 		transition: 0.2s ease all;
 	}
 
-	option{
-	color: #212121;
-	font-size: 15px;
-	font-weight: normal;
-	font-family: sans-serif;
-	padding: 10px 5px;
-	transition: 0.2s ease all;
-	}
 
-	.input,select{
+	.bga-input{
 		color: #d2d2d2;
 		font-size: 15px;
 		padding: 10px 0px 10px 0px;
@@ -629,13 +645,13 @@ form {}
 		background: none;
 	}
 
-	textarea{
+	   .bga-textarea{
 		max-width: 100%;
 		min-height: 100px;
 		max-height: 100px;
 	}
 
-	/* BARS - ANIMAÇÃO */
+
 
 	.bar { position: relative; display: block; width: 300px; }
 
@@ -649,42 +665,37 @@ form {}
 		transition: 0.2s ease all;
 	}
 
-	/*.bar:before { left: 50%; }
-	.bar:after { right: 50%; }*/
+	.bga-input:valid{ border-bottom: 1px solid #4fc24f; }
 
-	/* INPUTS - VALIDAÇÃO */
-
-	.input:valid{ border-bottom: 1px solid #4fc24f; }
-
-	.input:valid ~ .bar:before,
-	.input:valid ~ .bar:after{
+	.bga-input ~ .bar:before,
+	.bga-input ~ .bar:after{
 		background: #d32f2f !important;
 	}
 
-	.input:focus ~ label,
-	.input.used ~ label {
+	.bga-input:focus ~ .bga-label,
+	.bga-input.used ~ .bga-label {
 		top: -10px;
 		font-size: 13px;
 		color: #ffea01;
 	}
 
-	.input:valid ~ label,
-	.input:valid.used ~ label {
+	.bga-input:valid ~ .bga-label,
+	.bga-input:valid.used ~ .bga-label {
 		color: #4fc24f;
 	}
 
-	.input:focus ~ .bar:before,
-	.input:focus ~ .bar:after {
+	.bga-input:focus ~ .bar:before,
+	.bga-input:focus ~ .bar:after {
 		width: 125%;
 	}
 
-	label.use{
+	.bga-label .use{
 		top:-20px;
 	}
 
 
 
-.botton3,.botton4{
+.bga-botton1{
 	width: 100%;
 	background-color: #ffea01;
 	text-decoration: none;
@@ -696,13 +707,12 @@ form {}
 }
 
 
-.row{
+.bga-row{
 	width: 100%;
 	max-width: 500px;
 	padding: 50px;
 	margin: auto;
 	background:  #fff;
-	/*box-shadow: 0px 0px 3px grey;*/
 }
 
 table {

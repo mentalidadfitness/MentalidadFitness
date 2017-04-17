@@ -3,18 +3,18 @@
   <div class="text-center">
             <h1>GESTIONAR SNACKS</h1>
         </div>
-        <div class="row">
+        <div class="bga-row">
             <form id="frmsna" class="" action="" method="post" data-parsley-validate>
-                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+                <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
                     <label for="nombreSna"></label>
-                    <input type="text" class="input" name="data[]" id="nombreSna" required placeholder="Nombre">
+                    <input type="text" class="bga-input" name="data[]" id="nombreSna" required placeholder="Nombre">
                 </div>
-                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+                <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
                     <label for="descripcionSna"></label>
-                    <textarea class="input" name="data[]" id="descripcionSna" required placeholder="Descripción"></textarea>
+                    <textarea class="bga-input" name="data[]" id="descripcionSna" required placeholder="Descripción"></textarea>
                 </div>
-                <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
-                    <button type="submit" id="snaaddbut" class="botton3">GUARDAR</button>
+                <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
+                    <button type="submit" id="snaaddbut" class="bga-botton1">GUARDAR</button>
                 </div>
             </form>
         </div>

@@ -4,21 +4,21 @@
   <div class="text-center">
         <h1>MODIFICAR COMIDA</h1>
     </div>
-    <div class="row">
+    <div class="bga-row">
         <form class="" action="?c=dinner&a=updateData" method="post">
-        <div class="group  col-xs-12 col-sm-12 col-md-12 ">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
             <label for"name"></label>
-            <input  type="text" class="input" name="data[]" value="<?php echo $dinner['nameDinner']; ?>"
+            <input  type="text" class="bga-input" name="data[]" value="<?php echo $dinner['nameDinner']; ?>"
             placeholder="Nombre" required>
         </div>
-            <div class="group  col-xs-12 col-sm-12 col-md-12 ">
+            <div class="bga-group  col-xs-12 col-sm-12 col-md-12 ">
                 <label for="desc"></label>
-                <input type="text" class="input" name="data[]" value="<?php echo $dinner['descriptionDinner']; ?>"
+                <input type="text" class="bga-input" name="data[]" value="<?php echo $dinner['descriptionDinner']; ?>"
                 placeholder="Descripción" required>
             </div>
             <input type="hidden" readonly value="<?php echo $dinner['code_dinner']; ?>" name="data[]">
-            <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
-                <button class="botton3">ACTUALIZAR</button>
+            <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
+                <button class="bga-botton1">ACTUALIZAR</button>
             </div>
         </div>
         </form>
