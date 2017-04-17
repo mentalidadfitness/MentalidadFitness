@@ -66,10 +66,10 @@
             /*elseif(!preg_match('`[/\*+-%&@¡!|]`',$data[2])) {
               $msn="La contraseña debe tener minimo un simbolo";
               header("Location: index.php?c=$url&msn=$msn");
-          }*/elseif($data[2]!==$data[3]){
-              $msn="La contraseñas no coinciden";
-              header("Location: index.php?c=$url&msn=$msn");
-            }
+          }elseif($data[2]!==$data[3]){*/
+        //       $msn="La contraseñas no coinciden";
+        //       header("Location: index.php?c=$url&msn=$msn");
+        //     }
             else{
               $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
               $result = $this->UserM->createUser($userId,$data,$tokken,$n);
