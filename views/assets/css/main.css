@@ -7,6 +7,41 @@ body,html{
 	margin: 0;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.bgb_menu {
+  background: black;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+}
+
+.bgb_menu2 {
+  float: left;
+}
+
+.bgb_menu2 ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+.bgb_menu2 ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.bgb_menu2 ul li a {
+  display: block;
+  padding: 13px;
+  color: #fff;
+  text-decoration: none;
+}
+
+
 .main .row {
     padding: 0px;
     margin: 0px;
@@ -20,6 +55,8 @@ nav.sidebar.navbar {
 	background-color: #FBC020;
 	border: #FBC020;
 	position: fixed;
+
+
 }
 
 nav.sidebar, .main{
@@ -176,9 +213,21 @@ li {
 	margin-left: 3.5%;
 }
 
-.BGB_barraHorizontal{
-
+.navbar-nav {
+    float: left;
+    margin: 0;
+    margin-top: 9.5vh;
 }
+
+.bgb_boton{
+		position: fixed;
+	  z-index: 20000;
+	  margin-left: 85%;
+		top: 2vh;
+	}
+
+
+
 /* -------------------- MF  --------------------- */
 
 #bodyMF{
@@ -215,6 +264,7 @@ background-repeat: no-repeat;
 
 .navbar-nav>li {
     float: left;
+
 }
 
 #MF_logoMF{
