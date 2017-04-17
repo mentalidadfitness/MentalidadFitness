@@ -10,8 +10,8 @@
                     <input id="nombreRol" type="text" class="input" name="data[]" required="required" placeholder="Nombre">
                 </div>
                 <div class="group  col-xs-12 col-sm-12 col-md-12 " >
-                    <label for="estadoRol"></label>
-                    <input id="estadoRol" type="text" class="input"  name="data[]" required="required" placeholder="Nombre">
+                    <label for="estadoRol">Estado</label>
+                    <input id="estadoRol" type="text" class="input"  name="data[]" required="required" placeholder="Estado">
                 </div>
                 <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
                     <button type="submit" id="roleaddbut" class="botton3">GUARDAR</button>
