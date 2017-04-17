@@ -26,12 +26,13 @@
         public function recoverPassword(){
             $field = $_GET["token"];
             require_once 'views/include/header.php';
-            require_once 'views/pages/recoverPassword.php';
+            require_once 'views/modules/security_mod/user_manage/main/recoverPassword.php';
             require_once 'views/include/footer.php';
         }
 
         public function updatePassword(){
             $data = $_POST["data"];
+            $data[5] = 12;
             $result = $this->UserM->updatePassword($data);
             header("Location: index.php?c=access&msn=$result");
         }
@@ -65,10 +66,10 @@
             /*elseif(!preg_match('`[/\*+-%&@¡!|]`',$data[2])) {
               $msn="La contraseña debe tener minimo un simbolo";
               header("Location: index.php?c=$url&msn=$msn");
-            }*/elseif($data[2]!==$data[5]){
-              $msn="La contraseñas no coinciden";
-              header("Location: index.php?c=$url&msn=$msn");
-            }
+          }elseif($data[2]!==$data[3]){*/
+        //       $msn="La contraseñas no coinciden";
+        //       header("Location: index.php?c=$url&msn=$msn");
+        //     }
             else{
               $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
               $result = $this->UserM->createUser($userId,$data,$tokken,$n);

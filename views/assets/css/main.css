@@ -2,6 +2,10 @@
 /*Todos los estilos de la dashboard*/
 body,html{
 	height: 100%;
+	overflow-x:hidden;
+	/*overflow-y:hidden;*/
+	font-family: Roboto;
+
 	font-family: 'Roboto';
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
@@ -255,21 +259,35 @@ h1{
 
 /* -------------------- MF  --------------------- */
 
-#bodyMF{
-margin: 0;
+.bodyMF{
+position: absolute;
+width: 100%;
+height: 110%;
 background-image: url("../images/images_principal/fondo1.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
-#bodyMF1{
-margin: 0;
+.bodyMF1{
+position: absolute;
+width: 100%;
+height: 100%;
 background-image: url("../images/images_principal/fondorojo.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
-#bodyMF2{
-margin: 0;
+.bodyMF2{
+position: absolute;
+width: 100%;
+height: 115%;
 background-image: url("../images/images_principal/fondoazul.png");
+background-size: cover;
+background-repeat: no-repeat;
+}
+.bodyMF3{
+position: absolute;
+width: 100%;
+height: 120%;
+background-image: url("../images/images_principal/fondorange.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -279,12 +297,12 @@ background-repeat: no-repeat;
 
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: grey;
+    background-color: #585858;
 }
 
 ::-webkit-scrollbar-thumb {
 
-    background-color: #045FB4;
+    background-color: #BDBDBD;
 }
 
 .navbar-nav>li {
@@ -292,8 +310,8 @@ background-repeat: no-repeat;
 
 }
 
-#MF_logoMF{
-  margin-top: 10%;
+.MF_logoMF{
+  margin-top: 5%;
   width: 70%;
   margin-left: 15%;
 }
@@ -324,7 +342,7 @@ background-repeat: no-repeat;
     box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
 }
 /* ------------ input amarillo -----------*/
-#MF_inputemail{
+.MF_inputemail{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -339,7 +357,22 @@ background-repeat: no-repeat;
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
-#MF_inputpass{
+
+.MF_inputemail:focus,.MF_inputpass:focus{
+  outline:none;
+  border-top-color: rgba(215, 44, 44, 0);
+  border-left-color: rgba(215, 44, 44, 0);
+  border-right-color: rgba(215, 44, 44, 0);
+	border-bottom-color: yellow;
+}
+
+.MF_inputemail:focus ~ .MF_email,.MF_inputemail:valid ~ .MF_email,
+.MF_inputpass:focus ~ .MF_password,.MF_inputpass:valid ~ .MF_password{
+  transform: translateY(-30px);
+  color: #FFD500;
+  transition: 0.2s;
+}
+.MF_inputpass{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -349,13 +382,13 @@ background-repeat: no-repeat;
   border-radius: 0;
   width: 80%;
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 16%;
   -webkit-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
 /*---------- input rojo ------------*/
-#MF_inputemailred{
+.MF_inputred{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -370,16 +403,29 @@ background-repeat: no-repeat;
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
-#MF_inputemailred:focus{
-  border-bottom-color: red;
-  transition: 0.1s;
-  border-bottom-width: 2px;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
-  box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
+.MF_inputred:focus{
+outline:none;
+border-top-color: rgba(215, 44, 44, 0);
+border-left-color: rgba(215, 44, 44, 0);
+border-right-color: rgba(215, 44, 44, 0);
+border-bottom-color: red;
+}
+
+.MF_inputred:focus ~ .MF_emailred,.MF_inputred:valid ~ .MF_emailred{
+  transform: translateY(-30px);
+  color: red;
+  transition: 0.2s;
+}
+
+.MF_emailred{
+  color: grey;
+  margin-left:13%;
+  position:absolute;
+  margin-top:-7%;
+  transition: 0.2s;
 }
 /*----------- input azul ---------------*/
-#MF_inputemail3{
+.MF_inputblue{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -389,36 +435,26 @@ background-repeat: no-repeat;
   border-radius: 0;
   width: 80%;
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 16%;
   -webkit-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
-#MF_inputemail3:focus{
-  border-bottom-color: blue;
-  transition: 0.1s;
-  border-bottom-width: 2px;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
-  box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
+.MF_inputblue:focus{
+outline:none;
+border-top-color: rgba(215, 44, 44, 0);
+border-left-color: rgba(215, 44, 44, 0);
+border-right-color: rgba(215, 44, 44, 0);
+border-bottom-color: blue;
 }
-#MF_inputpass3{
-  background-color: rgba(215, 44, 44, 0);
-  border-top-color: rgba(215, 44, 44, 0);
-  border-left-color: rgba(215, 44, 44, 0);
-  border-right-color: rgba(215, 44, 44, 0);
-  z-index: 100;
-  position: relative;
-  border-radius: 0;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 10%;
-  -webkit-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
-  -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
-  box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 
+.MF_inputblue:focus ~ .MF_email,.MF_inputblue:valid ~ .MF_email{
+  transform: translateY(-30px);
+  color: blue;
+  transition: 0.2s;
 }
-#MF_inputpass3:focus{
+
+.MF_inputblue:focus{
   border-bottom-color: blue;
   transition: 0.1s;
   border-bottom-width: 2px;
@@ -433,10 +469,7 @@ padding-right: 0;
 padding-left: 0;
 }
 
-#MF_formulario{
-  /*background-image: url("../img/fondo-form1.png");
-  background-size: cover;
-  background-repeat: no-repeat;*/
+.MF_formulario{
   background-color: white;
   width: 90%;
   margin-left: 5%;
@@ -449,7 +482,7 @@ padding-left: 0;
   box-shadow: 0px 7px 5px 3px rgba(0,0,0,0.19);
 }
 /*------------- BOTON AMARILLO -----------------*/
-#MF_button{
+.MF_button{
   background-color: #fe0;
   color: black;
   border-color: rgba(215, 44, 44, 0);
@@ -458,14 +491,14 @@ padding-left: 0;
   width: 60%;
   padding-top: 4%;
   padding-bottom: 4%;
-  margin-bottom: 15%;
+  margin-bottom: 13%;
   margin-top: 5%;
   -webkit-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
   -moz-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
 }
 
-#MF_button:focus{
+.MF_button:hover,.MF_button:focus,.MF_button:active{
   transition: 0.1s;
   background-color: #fe0;
   border-color: rgba(215, 44, 44, 0);
@@ -474,7 +507,7 @@ padding-left: 0;
   width: 60%;
   padding-top: 4%;
   padding-bottom: 4%;
-  margin-bottom: 15%;
+  margin-bottom: 13%;
   margin-top: 5%;
   -webkit-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
   -moz-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
@@ -482,7 +515,7 @@ padding-left: 0;
 }
 
 /*--------------- BOTON ROJO ---------------------*/
-#MF_button1{
+.MF_button1{
   background-color: #2E2E2E;
   color: white;
   border-color: rgba(215, 44, 44, 0);
@@ -498,9 +531,9 @@ padding-left: 0;
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
 }
 
-#MF_button1:focus{
+.MF_button1:focus,.MF_button1:hover{
   transition: 0.1s;
-  background-color: #2E2E2E;
+  background-color: grey;
   border-color: rgba(215, 44, 44, 0);
   border-radius: 6px;
   margin-left: 20%;
@@ -512,9 +545,10 @@ padding-left: 0;
   -webkit-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
   -moz-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
+  color: black;
 }
-/*------- boton azul -----------------*/
-#MF_buttonazul{
+/*------- BOTON AZUL -----------------*/
+.MF_buttonazul{
   background-color: #009ada;;
   color: white;
   border-color: rgba(215, 44, 44, 0);
@@ -530,7 +564,7 @@ padding-left: 0;
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
 
 }
-#MF_buttonazul:focus{
+.MF_buttonazul:focus,.MF_buttonazul:hover{
   transition: 0.1s;
   background-color: #009ada;;
   border-color: rgba(215, 44, 44, 0);
@@ -545,7 +579,20 @@ padding-left: 0;
   -moz-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
 }
-#MF_btnreg{
+
+/*------ BOTON ATRAS --------*/
+.MF_btnBack{
+	position: absolute;
+	z-index: 250;
+	background-color: #6E6E6E;
+	border-color: rgba(215, 44, 44, 0);
+	border-radius: 100%;
+	margin-top: 3%;
+	margin-left: 3%;
+}
+
+
+.MF_btnreg{
     margin-right: 0;
     border-radius: 0px 0px 0px 8px;
     /*padding-left: 10%;
@@ -556,10 +603,17 @@ padding-left: 0;
     padding-left: 15%;
     padding-right: 10%;
 }
-#MF_btnrec:focus{
+
+.MF_btnreg:hover{
+      background-color: #2E2E2E;
+      color: white;
+      border-color: rgba(215, 44, 44, 0);
+}
+
+.MF_btnrec:focus{
   border-color: rgba(215, 44, 44, 0);
 }
-#MF_btnrec{
+.MF_btnrec{
     margin-left: -5px;
     border-radius: 0px 0px 8px 0px;
     padding-right: 19px;
@@ -568,16 +622,12 @@ padding-left: 0;
     margin-left: -24%;
 }
 
-#MF_btnrec:hover{
+.MF_btnrec:hover{
   background-color: rgba(215, 44, 44, 0);
 }
-#divreg{
+.divreg{
   padding-right: 0;
   padding-left: 15px;
-}
-
-#divrec{
-
 }
 
 .row{
@@ -593,18 +643,41 @@ margin-right: 0;
   padding-left: 0;
 }
 
-#MF_email{
+.MF_email{
   color: grey;
   margin-left:13%;
   position:absolute;
   margin-top:-7%;
+  transition: 0.2s;
 }
 
-#MF_password{
+.MF_password{
   color: grey;
   margin-left:13%;
   position:absolute;
   margin-top:-7%;
+  transition: 0.2s;
+}
+
+/* DISEÑO PARSLEY*/
+
+.parsley-errors-list{
+	margin-top: 10px;
+	position: absolute;
+	list-style: none;
+}
+
+.parsley-required{
+	background-color: white;
+	border-color: black;
+	border-width: 2px;
+}
+
+/*ERROR EMAIL NO EXISTE*/
+.error{
+	position: absolute;
+	margin-left: 40px;
+	margin-top: 10px;
 }
 
 /*       Brayan García     */
