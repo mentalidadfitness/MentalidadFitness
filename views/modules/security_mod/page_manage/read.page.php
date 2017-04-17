@@ -1,3 +1,13 @@
+<div class="buscador">
+  <div class="contenedor">
+    <div class="icon">
+      <img src="views/assets/images/images_principal/buscar.png" alt="" class="buscar">
+    </div>
+    <div class="in">
+      <input type="search" name="" value="" class="input001" placeholder="Buscar">
+    </div>
+  </div>
+</div>
 <div class="">
 <div class="">
     <div class="">
@@ -6,16 +16,10 @@
                 <tr>
                     <th>#</th>
                     <th>Nombre</th>
-                    <th>Iconos</th>
                     <th>Menu</th>
-                    <th>Colores</th>
-                    <th>URL</th>
-                    <th>Foto</th>
                     <th>Descripcion</th>
-                    <th>Botones</th>
                     <th>Propiedades</th>
                     <th>Secciones</th>
-                    <th>Imagenes</th>
                     <th>Estado</th>
                 </tr>
             </thead>
@@ -28,23 +32,17 @@
                     <tr>
                         <td><?php echo $item; ?></td>
                         <td><?php echo $row["namePage"]; ?></td>
-                        <td><?php echo $row["iconsPage"]; ?></td>
                         <td><?php echo $row["menuPage"]; ?></td>
-                        <td><?php echo $row["colorsPage"]; ?></td>
-                        <td><?php echo $row["URLPage"]; ?></td>
-                        <td><?php echo $row["photoPage"]; ?></td>
                         <td><?php echo $row["descriptionPage"]; ?></td>
-                        <td><?php echo $row["buttonsPage"]; ?></td>
                         <td><?php echo $row["propertiesPage"]; ?></td>
                         <td><?php echo $row["sectionsPage"]; ?></td>
-                        <td><?php echo $row["imagesPage"]; ?></td>
                         <td><?php echo $row["statusPage"]; ?></td>
                         <td>
                             <a href="?c=page&a=update&pcode=<?php echo $row['code_page'];?>">
-                                <i class="">border_color</i>
+                                <img src="views/assets/images/images_principal/Edit.png" alt="" class="edit001">
                             </a>
                             <a href="?c=page&a=delete&pcode=<?php echo $row['code_page'];?>">
-                                <i class="">delete</i>
+                                <img src="views/assets/images/images_principal/delete.png" alt="" class="delete001">
                             </a>
                         </td>
                     </tr>

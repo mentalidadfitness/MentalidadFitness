@@ -1,19 +1,70 @@
+/*             Brayant Gamboa      */
+/*Todos los estilos de la dashboard*/
 body,html{
 	height: 100%;
 	overflow-x:hidden;
-	overflow-y:hidden;
+	/*overflow-y:hidden;*/
 	font-family: Roboto;
+
+	font-family: 'Roboto';
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
 }
 
-.main .row{
-	padding: 0px;
-	margin: 0px;
+button{
+	outline: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.bgb_menu {
+  background: black;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+}
+
+.bgb_menu2 {
+  float: left;
+}
+
+.bgb_menu2 ul {
+  list-style: none;
+  overflow: hidden;
+}
+
+.bgb_menu2 ul li {
+  float: left;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.bgb_menu2 ul li a {
+  display: block;
+  padding: 13px;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.main .row {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    left: 28%;
+    top: 5vh;
 }
 
 nav.sidebar.navbar {
 	border-radius: 0px;
+	background-color: #FBC020;
+	border: #FBC020;
+	position: fixed;
+
+
 }
 
 nav.sidebar, .main{
@@ -79,7 +130,7 @@ nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-	color: #777;
+	color: black;
 }
 
 nav.sidebar{
@@ -134,87 +185,109 @@ section{
 	padding-left: 15px;
 }
 
-.btn-group-lg>.btn, .btn-lg {
-    padding: 15px 20px;
-    font-size: 18px;
-    line-height: 1.3333333;
-    border-radius: 6px;
-}
-.btn-primary {
-    color: #000;
-    background-color: #ffed00;
-    border-color: #ffed00;
-    border-radius: 0;
-    font-size: 3vh;
-    margin-top: 10%;
-}
-#btn1 {
-    position: absolute;
-    display: inline-block;
-    bottom: 0;
-    border-radius: 0;
-    border-color: rgba(0, 0, 0, 0);
+.navbar-inverse .navbar-nav>li>a {
     color: white;
-    background-color: grey;
-    font-size: 2.5vh;
 }
-#btn2 {
-    position: absolute;
-    font-size: 15px;
-    bottom: 0;
-    right: 0;
-    border-radius: 0;
-    border-color: rgba(0, 0, 0, 0);
-    color: #ffc800;
-    font-size: 2.8vh;
+
+nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: white;
+    background-color: #080808;
 }
-#logo {
-    width: 60%;
-    position: absolute;
-    z-index: 2;
-    margin-left: 20%;
-    margin-top: 4vh;
+/* color letra al desplegarse el botón superior de la dashboaard*/
+li.BGB_btncerrar{
+	color: black;
 }
-#campo1{
-	margin-top: 20%;
+/* Botón de la parte derecha superior de la dashboard*/
+.BGB_boton_cerrar{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	right: 20%;
+	top: 1vh;
+	border: none;
 }
-.form-control {
-    display: block;
-    width: 80%;
-    margin-left: 10%;
-    height: 5vh;
-    padding: 6px 6vh;
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    border-radius: 0px;
-    font-size: 3vh;
+/* alertas del parsley*/
+.parsley-required{
+	color: red;
 }
-#triangulo {
-    width: 100%;
-    margin-top: -22%;
+/*puntos del parsley*/
+li {
+ list-style: none;
+}
+/*letra que muestra al poner otro campo igual*/
+.error{
+	color: red;
+	display: block;
+	margin-left: 3.5%;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+    margin-top: 9.5vh;
+}
+
+.bgb_boton{
+		position: fixed;
+	  z-index: 20000;
+	  margin-left: 85%;
+		top: 2vh;
+	}
+
+.bgb-container-menu{
+	margin-top: -6px;
+}
+
+.text-center{
+	margin-top: 65px;
+}
+
+textarea .bga-input{
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+h1{
+	text-transform: uppercase;
+}
+
+.input001:focus{
+	outline: 0;
+	border: none;
 }
 
 /* -------------------- MF  --------------------- */
 
-#bodyMF{
-margin: 0;
+.bodyMF{
+position: absolute;
+width: 100%;
+height: 110%;
 background-image: url("../images/images_principal/fondo1.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
-#bodyMF1{
-margin: 0;
+.bodyMF1{
+position: absolute;
+width: 100%;
+height: 100%;
 background-image: url("../images/images_principal/fondorojo.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
-#bodyMF2{
-margin: 0;
+.bodyMF2{
+position: absolute;
+width: 100%;
+height: 115%;
 background-image: url("../images/images_principal/fondoazul.png");
+background-size: cover;
+background-repeat: no-repeat;
+}
+.bodyMF3{
+position: absolute;
+width: 100%;
+height: 120%;
+background-image: url("../images/images_principal/fondorange.png");
 background-size: cover;
 background-repeat: no-repeat;
 }
@@ -224,21 +297,21 @@ background-repeat: no-repeat;
 
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: grey;
+    background-color: #585858;
 }
 
 ::-webkit-scrollbar-thumb {
 
-    background-color: #045FB4;
+    background-color: #BDBDBD;
 }
 
 .navbar-nav>li {
     float: left;
-    font-size: 20px;
+
 }
 
-#MF_logoMF{
-  margin-top: 10%;
+.MF_logoMF{
+  margin-top: 5%;
   width: 70%;
   margin-left: 15%;
 }
@@ -269,7 +342,7 @@ background-repeat: no-repeat;
     box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
 }
 /* ------------ input amarillo -----------*/
-#MF_inputemail{
+.MF_inputemail{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -284,7 +357,22 @@ background-repeat: no-repeat;
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
-#MF_inputpass{
+
+.MF_inputemail:focus,.MF_inputpass:focus{
+  outline:none;
+  border-top-color: rgba(215, 44, 44, 0);
+  border-left-color: rgba(215, 44, 44, 0);
+  border-right-color: rgba(215, 44, 44, 0);
+	border-bottom-color: yellow;
+}
+
+.MF_inputemail:focus ~ .MF_email,.MF_inputemail:valid ~ .MF_email,
+.MF_inputpass:focus ~ .MF_password,.MF_inputpass:valid ~ .MF_password{
+  transform: translateY(-30px);
+  color: #FFD500;
+  transition: 0.2s;
+}
+.MF_inputpass{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -294,13 +382,13 @@ background-repeat: no-repeat;
   border-radius: 0;
   width: 80%;
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 16%;
   -webkit-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
 /*---------- input rojo ------------*/
-#MF_inputemailred{
+.MF_inputred{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -315,16 +403,29 @@ background-repeat: no-repeat;
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
-#MF_inputemailred:focus{
-  border-bottom-color: red;
-  transition: 0.1s;
-  border-bottom-width: 2px;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
-  box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
+.MF_inputred:focus{
+outline:none;
+border-top-color: rgba(215, 44, 44, 0);
+border-left-color: rgba(215, 44, 44, 0);
+border-right-color: rgba(215, 44, 44, 0);
+border-bottom-color: red;
+}
+
+.MF_inputred:focus ~ .MF_emailred,.MF_inputred:valid ~ .MF_emailred{
+  transform: translateY(-30px);
+  color: red;
+  transition: 0.2s;
+}
+
+.MF_emailred{
+  color: grey;
+  margin-left:13%;
+  position:absolute;
+  margin-top:-7%;
+  transition: 0.2s;
 }
 /*----------- input azul ---------------*/
-#MF_inputemail3{
+.MF_inputblue{
   background-color: rgba(215, 44, 44, 0);
   border-top-color: rgba(215, 44, 44, 0);
   border-left-color: rgba(215, 44, 44, 0);
@@ -334,36 +435,26 @@ background-repeat: no-repeat;
   border-radius: 0;
   width: 80%;
   margin-left: 10%;
-  margin-top: 10%;
+  margin-top: 16%;
   -webkit-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
   box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 }
-#MF_inputemail3:focus{
-  border-bottom-color: blue;
-  transition: 0.1s;
-  border-bottom-width: 2px;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
-  box-shadow: inset 0 1px 1px rgba(215, 44, 44, 0);, 0 0 8px rgba(102,175,233,.6);
+.MF_inputblue:focus{
+outline:none;
+border-top-color: rgba(215, 44, 44, 0);
+border-left-color: rgba(215, 44, 44, 0);
+border-right-color: rgba(215, 44, 44, 0);
+border-bottom-color: blue;
 }
-#MF_inputpass3{
-  background-color: rgba(215, 44, 44, 0);
-  border-top-color: rgba(215, 44, 44, 0);
-  border-left-color: rgba(215, 44, 44, 0);
-  border-right-color: rgba(215, 44, 44, 0);
-  z-index: 100;
-  position: relative;
-  border-radius: 0;
-  width: 80%;
-  margin-left: 10%;
-  margin-top: 10%;
-  -webkit-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
-  -moz-box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
-  box-shadow: 24px 10px 5px 0px rgba(255,255,255,1);
 
+.MF_inputblue:focus ~ .MF_email,.MF_inputblue:valid ~ .MF_email{
+  transform: translateY(-30px);
+  color: blue;
+  transition: 0.2s;
 }
-#MF_inputpass3:focus{
+
+.MF_inputblue:focus{
   border-bottom-color: blue;
   transition: 0.1s;
   border-bottom-width: 2px;
@@ -378,10 +469,7 @@ padding-right: 0;
 padding-left: 0;
 }
 
-#MF_formulario{
-  /*background-image: url("../img/fondo-form1.png");
-  background-size: cover;
-  background-repeat: no-repeat;*/
+.MF_formulario{
   background-color: white;
   width: 90%;
   margin-left: 5%;
@@ -394,7 +482,7 @@ padding-left: 0;
   box-shadow: 0px 7px 5px 3px rgba(0,0,0,0.19);
 }
 /*------------- BOTON AMARILLO -----------------*/
-#MF_button{
+.MF_button{
   background-color: #fe0;
   color: black;
   border-color: rgba(215, 44, 44, 0);
@@ -403,14 +491,14 @@ padding-left: 0;
   width: 60%;
   padding-top: 4%;
   padding-bottom: 4%;
-  margin-bottom: 15%;
+  margin-bottom: 13%;
   margin-top: 5%;
   -webkit-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
   -moz-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
 }
 
-#MF_button:focus{
+.MF_button:hover,.MF_button:focus,.MF_button:active{
   transition: 0.1s;
   background-color: #fe0;
   border-color: rgba(215, 44, 44, 0);
@@ -419,7 +507,7 @@ padding-left: 0;
   width: 60%;
   padding-top: 4%;
   padding-bottom: 4%;
-  margin-bottom: 15%;
+  margin-bottom: 13%;
   margin-top: 5%;
   -webkit-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
   -moz-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
@@ -427,7 +515,7 @@ padding-left: 0;
 }
 
 /*--------------- BOTON ROJO ---------------------*/
-#MF_button1{
+.MF_button1{
   background-color: #2E2E2E;
   color: white;
   border-color: rgba(215, 44, 44, 0);
@@ -443,9 +531,9 @@ padding-left: 0;
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
 }
 
-#MF_button1:focus{
+.MF_button1:focus,.MF_button1:hover{
   transition: 0.1s;
-  background-color: #2E2E2E;
+  background-color: grey;
   border-color: rgba(215, 44, 44, 0);
   border-radius: 6px;
   margin-left: 20%;
@@ -457,9 +545,10 @@ padding-left: 0;
   -webkit-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
   -moz-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
+  color: black;
 }
-/*------- boton azul -----------------*/
-#MF_buttonazul{
+/*------- BOTON AZUL -----------------*/
+.MF_buttonazul{
   background-color: #009ada;;
   color: white;
   border-color: rgba(215, 44, 44, 0);
@@ -475,7 +564,7 @@ padding-left: 0;
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.23);
 
 }
-#MF_buttonazul:focus{
+.MF_buttonazul:focus,.MF_buttonazul:hover{
   transition: 0.1s;
   background-color: #009ada;;
   border-color: rgba(215, 44, 44, 0);
@@ -490,7 +579,20 @@ padding-left: 0;
   -moz-box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
   box-shadow: 0px 6px 12px 1px rgba(0,0,0,0.09);
 }
-#MF_btnreg{
+
+/*------ BOTON ATRAS --------*/
+.MF_btnBack{
+	position: absolute;
+	z-index: 250;
+	background-color: #6E6E6E;
+	border-color: rgba(215, 44, 44, 0);
+	border-radius: 100%;
+	margin-top: 3%;
+	margin-left: 3%;
+}
+
+
+.MF_btnreg{
     margin-right: 0;
     border-radius: 0px 0px 0px 8px;
     /*padding-left: 10%;
@@ -501,10 +603,17 @@ padding-left: 0;
     padding-left: 15%;
     padding-right: 10%;
 }
-#MF_btnrec:focus{
+
+.MF_btnreg:hover{
+      background-color: #2E2E2E;
+      color: white;
+      border-color: rgba(215, 44, 44, 0);
+}
+
+.MF_btnrec:focus{
   border-color: rgba(215, 44, 44, 0);
 }
-#MF_btnrec{
+.MF_btnrec{
     margin-left: -5px;
     border-radius: 0px 0px 8px 0px;
     padding-right: 19px;
@@ -513,16 +622,12 @@ padding-left: 0;
     margin-left: -24%;
 }
 
-#MF_btnrec:hover{
+.MF_btnrec:hover{
   background-color: rgba(215, 44, 44, 0);
 }
-#divreg{
+.divreg{
   padding-right: 0;
   padding-left: 15px;
-}
-
-#divrec{
-
 }
 
 .row{
@@ -538,16 +643,227 @@ margin-right: 0;
   padding-left: 0;
 }
 
-#MF_email{
+.MF_email{
   color: grey;
   margin-left:13%;
   position:absolute;
   margin-top:-7%;
+  transition: 0.2s;
 }
 
-#MF_password{
+.MF_password{
   color: grey;
   margin-left:13%;
   position:absolute;
   margin-top:-7%;
+  transition: 0.2s;
+}
+
+/* DISEÑO PARSLEY*/
+
+.parsley-errors-list{
+	margin-top: 10px;
+	position: absolute;
+	list-style: none;
+}
+
+.parsley-required{
+	background-color: white;
+	border-color: black;
+	border-width: 2px;
+}
+
+/*ERROR EMAIL NO EXISTE*/
+.error{
+	position: absolute;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+
+/*       Brayan García     */
+
+.bga-botton01 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+
+	.bga-group { position: relative; margin-bottom: 1.4em; }
+
+	.bga-label{
+		color: #d2d2d2;
+		font-size: 15px;
+		font-weight: normal;
+		font-family: sans-serif;
+		position: absolute;
+		pointer-events: none;
+		top: 10px;
+		transition: 0.2s ease all;
+	}
+
+
+	.bga-input{
+		color: #d2d2d2;
+		font-size: 15px;
+		padding: 10px 0px 10px 0px;
+		display: block;
+		outline: none;
+		border: none;
+		width: 100%;
+		border-bottom: 1px solid #d2d2d2;
+		background: none;
+	}
+
+	   .bga-textarea{
+		max-width: 100%;
+		min-height: 100px;
+		max-height: 100px;
+	}
+
+
+
+	.bar { position: relative; display: block; width: 300px; }
+
+	.bar:before, .bar:after{
+		content: "";
+		height: 2px;
+		width: 0;
+		bottom: -1px;
+		position: absolute;
+		background: #ffea01;
+		transition: 0.2s ease all;
+	}
+
+	.bga-input:valid{ border-bottom: 1px solid #4fc24f; }
+
+	.bga-input ~ .bar:before,
+	.bga-input ~ .bar:after{
+		background: #d32f2f !important;
+	}
+
+	.bga-input:focus ~ .bga-label,
+	.bga-input.used ~ .bga-label {
+		top: -10px;
+		font-size: 13px;
+		color: #ffea01;
+	}
+
+	.bga-input:valid ~ .bga-label,
+	.bga-input:valid.used ~ .bga-label {
+		color: #4fc24f;
+	}
+
+	.bga-input:focus ~ .bar:before,
+	.bga-input:focus ~ .bar:after {
+		width: 125%;
+	}
+
+	.bga-label .use{
+		top:-20px;
+	}
+
+
+
+.bga-botton1{
+	width: 100%;
+	background-color: #ffea01;
+	text-decoration: none;
+	color: black;
+	height: 7vh;
+	text-align: center;
+	padding-top:7px;
+	border: none;
+}
+
+
+.bga-row{
+	width: 100%;
+	max-width: 500px;
+	padding: 50px;
+	margin: auto;
+	background:  #fff;
+}
+
+table {
+font-family:'roboto';
+font-size: 15px;
+margin: 45px;
+ width:50%;
+text-align: center;
+border-collapse: collapse;
+color: black;
+text-align: center;
+margin-left:25%;
+}
+
+th {
+font-size: 13px;
+font-weight: normal;
+padding: 8px;
+background: #ffea01;
+border-top: 4px solid #ffea;
+border-bottom: 1px solid #fff;
+color: black;
+text-align: center;
+}
+
+td {
+padding: 8px;
+background: #e8edff;
+border-bottom: 1px solid #fff;
+color: #669;
+border-top: 1px solid transparent;
+text-align: center;
+}
+
+tr:hover td {
+background: #d0dafd;
+color: #339; }
+
+
+.contenedor{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top:2%;
+}
+
+.icon{
+	background: black;
+	width:4%;
+	height:7vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.input001{
+	border: none;
+	height: 7vh;
+	width:100%;
+	background:#eeeeee;
+	color:black;
+	padding-left: 10px;
+	font-size: 15px;
+}
+
+.buscar{
+	width:50%;
+}
+
+.delete,.edit{
+	width:10%;
+}
+
+.delete2,.edit2{
+	width:40%;
+}
+
+.edit001,.delete001{
+	width:5%;
 }

@@ -16,9 +16,9 @@
                 if(isset($data[3])){
                   $sql = "INSERT INTO user VALUES(?,?,?,?)";
                   $query = $this->pdo->prepare($sql);
-                  $query->execute(array($userId,$data[0],$data[3],$data[4]));
+                  $query->execute(array($userId,$data[0],$data[4],22269));
                 }else{
-                  $role="ROLOIGIg7RqU2STVjH";
+                  $role="ROLKZlLkUBsAyRdZ1i";
                   $city=22269;
                   $sql = "INSERT INTO user VALUES(?,?,?,?)";
                   $query = $this->pdo->prepare($sql);
