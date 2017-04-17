@@ -1,4 +1,5 @@
 <!--Barra horizontal de las dashboard-->
+<div class="BGB_barraHorizontal">
 <nav class=" navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -20,6 +21,7 @@
     </ul>
   </div>
 </nav>
+</div>
 <nav class="navbar navbar-inverse sidebar" role="navigation">
     <div class="container-fluid">
       <!-- Adadptar a movil

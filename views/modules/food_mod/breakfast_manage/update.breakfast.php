@@ -1,23 +1,25 @@
 <?php require_once 'views/include/main.php';?>
 <?php $breakfast = $this->BreakfastM->readBreakfastByCode($field) ?>
-<div class="">
-    <div class="">
-        <h1>MODIFICAR DESAYUNO</h1>
-    </div>
-    <div class="">
+<div class="container-fluid">
+  <div class="text-center">
+    <h1>Modificar desayuno</h1>
+  </div>
+  <div class="row">
         <form class="" action="?c=breakfast&a=updateData" method="post">
-        <div class="">
-            <label for"name">Nombre</label>
-            <input  type="text" class="" name="data[]" value="<?php echo $breakfast['nameBreakfast']; ?>">
+        <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+            <label for"name"></label>
+            <input  type="text" class="input" name="data[]" value="<?php echo $breakfast['nameBreakfast']; ?>"
+            placeholder="Nombre" required>
         </div>
             <div class="">
-                <label for="desc">Descripcion</label>
-                <input type="text" class="" name="data[]" value="<?php echo $breakfast['descriptionBreakfast']; ?>">
+                <label for="desc"></label>
+                <input type="text" class="input" name="data[]" value="<?php echo $breakfast['descriptionBreakfast']; ?>"
+                placeholder="Descripción" required>
             </div>
             <input type="hidden" readonly value="<?php echo $breakfast['code_breakfast']; ?>" name="data[]">
-        <div class="">
-            <button class="">Actualizar
-            </button>
+            <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
+              <button class="botton3">Guardar</button>
+            </div>
         </div>
         </form>
     </div>

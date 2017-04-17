@@ -2,22 +2,24 @@
 /*Todos los estilos de la dashboard*/
 body,html{
 	height: 100%;
-	overflow-x:hidden;
-	overflow-y:hidden;
 	font-family: Roboto;
 	-webkit-font-smoothing: antialiased;
 	margin: 0;
 }
 
-.main .row{
-	padding: 0px;
-	margin: 0px;
+.main .row {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    left: 28%;
+    top: 5vh;
 }
 
 nav.sidebar.navbar {
 	border-radius: 0px;
 	background-color: #FBC020;
 	border: #FBC020;
+	position: fixed;
 }
 
 nav.sidebar, .main{
@@ -172,6 +174,10 @@ li {
 	color: red;
 	display: block;
 	margin-left: 3.5%;
+}
+
+.BGB_barraHorizontal{
+
 }
 /* -------------------- MF  --------------------- */
 
@@ -527,3 +533,198 @@ margin-right: 0;
 }
 
 /*       Brayan García     */
+
+.botton1,.boton2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+form {}
+
+	.group { position: relative; margin-bottom: 1.4em; }
+
+	label{
+		color: #d2d2d2;
+		font-size: 15px;
+		font-weight: normal;
+		font-family: sans-serif;
+		position: absolute;
+		pointer-events: none;
+		top: 10px;
+		transition: 0.2s ease all;
+	}
+
+	option{
+	color: #212121;
+	font-size: 15px;
+	font-weight: normal;
+	font-family: sans-serif;
+	padding: 10px 5px;
+	transition: 0.2s ease all;
+	}
+
+	.input,select{
+		color: #d2d2d2;
+		font-size: 15px;
+		padding: 10px 0px 10px 0px;
+		display: block;
+		outline: none;
+		border: none;
+		width: 100%;
+		border-bottom: 1px solid #d2d2d2;
+		background: none;
+	}
+
+	/* BARS - ANIMAÇÃO */
+
+	.bar { position: relative; display: block; width: 300px; }
+
+	.bar:before, .bar:after{
+		content: "";
+		height: 2px;
+		width: 0;
+		bottom: -1px;
+		position: absolute;
+		background: #ffea01;
+		transition: 0.2s ease all;
+	}
+
+	/*.bar:before { left: 50%; }
+	.bar:after { right: 50%; }*/
+
+	/* INPUTS - VALIDAÇÃO */
+
+	.input:valid{ border-bottom: 1px solid #4fc24f; }
+
+	.input:valid ~ .bar:before,
+	.input:valid ~ .bar:after{
+		background: #d32f2f !important;
+	}
+
+	.input:focus ~ label,
+	.input.used ~ label {
+		top: -10px;
+		font-size: 13px;
+		color: #ffea01;
+	}
+
+	.input:valid ~ label,
+	.input:valid.used ~ label {
+		color: #4fc24f;
+	}
+
+	.input:focus ~ .bar:before,
+	.input:focus ~ .bar:after {
+		width: 125%;
+	}
+
+	label.use{
+		top:-20px;
+	}
+
+
+
+.botton3,.botton4{
+	width: 100%;
+	background-color: #ffea01;
+	text-decoration: none;
+	color: black;
+	height: 7vh;
+	text-align: center;
+	padding-top:7px;
+	border: none;
+}
+
+
+.row{
+	width: 100%;
+	max-width: 500px;
+	padding: 50px;
+	margin: auto;
+	background:  #fff;
+	/*box-shadow: 0px 0px 3px grey;*/
+}
+
+table {
+font-family:'roboto';
+font-size: 15px;
+margin: 45px;
+ width:50%;
+text-align: center;
+border-collapse: collapse;
+color: black;
+text-align: center;
+margin-left:25%;
+}
+
+th {
+font-size: 13px;
+font-weight: normal;
+padding: 8px;
+background: #ffea01;
+border-top: 4px solid #ffea;
+border-bottom: 1px solid #fff;
+color: black;
+text-align: center;
+}
+
+td {
+padding: 8px;
+background: #e8edff;
+border-bottom: 1px solid #fff;
+color: #669;
+border-top: 1px solid transparent;
+text-align: center;
+}
+
+tr:hover td {
+background: #d0dafd;
+color: #339; }
+
+
+.contenedor{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top:2%;
+}
+
+.icon{
+	background: black;
+	width:4%;
+	height:7vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.input001{
+	border: none;
+	height: 7vh;
+	width:100%;
+	background:#eeeeee;
+	color:black;
+	padding-left: 10px;
+	font-size: 15px;
+}
+
+.buscar{
+	width:50%;
+}
+
+.delete,.edit{
+	width:10%;
+}
+
+.delete2,.edit2{
+	width:40%;
+}
+
+.edit001,.delete001{
+	width:5%;
+}

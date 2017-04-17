@@ -1,3 +1,13 @@
+<div class="buscador">
+  <div class="contenedor">
+    <div class="icon">
+      <img src="views/assets/images/images_principal/buscar.png" alt="" class="buscar">
+    </div>
+    <div class="in">
+      <input type="search" name="" value="" class="input001" placeholder="Buscar">
+    </div>
+  </div>
+</div>
 <div class="">
 <div class="">
     <div class="">
@@ -41,10 +51,10 @@
                         <td><?php echo $row["statusPage"]; ?></td>
                         <td>
                             <a href="?c=page&a=update&pcode=<?php echo $row['code_page'];?>">
-                                <i class="">border_color</i>
+                                <img src="views/assets/images/images_principal/Edit.png" alt="" class="edit001">
                             </a>
                             <a href="?c=page&a=delete&pcode=<?php echo $row['code_page'];?>">
-                                <i class="">delete</i>
+                                <img src="views/assets/images/images_principal/delete.png" alt="" class="delete001">
                             </a>
                         </td>
                     </tr>

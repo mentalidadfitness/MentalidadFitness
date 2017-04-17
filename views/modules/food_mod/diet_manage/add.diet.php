@@ -1,20 +1,21 @@
 <?php require_once 'views/include/main.php';?>
-<div class="">
-    <div class="">
-        <div class="">
+<div class="container-fluid">
+  <div class="text-center">
             <h1>GESTIONAR DIETA</h1>
         </div>
-        <div class="">
+        <div class="row">
             <form class="" action="?c=myDiet&a=create" method="post" data-parsley-validate>
-                <div class="">
-                    <label for="dias">Dias</label>
-                    <input type="number" class="" name="data[]" id="dia" required data-parsley-type>
+                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+                    <label for="dias"></label>
+                    <input type="number" class="input" name="data[]" id="dia" required data-parsley-type
+                    placeholder="Días">
                 </div>
-                <div class="">
-                    <label for="estado">Estado</label>
-                    <input type="text" class="" name="data[]" id="est" required>
+                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+                    <label for="estado"></label>
+                    <input type="text" class="input" name="data[]" id="est" required
+                    placeholder="Estado">
                 </div>
-                <div class="">
+                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
                     <select name="data[]">
                         <?php foreach ($this->DietM->readBreakfast() as $row) { ?>
                             <option value="<?php echo $row['code_breakfast']; ?>"><?php echo $row["nameBreakfast"]; ?></option>
@@ -22,7 +23,7 @@
                     </select>
                     <label>Desayuno</label>
                 </div>
-                <div class="">
+                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
                     <select name="data[]">
                         <?php foreach ($this->DietM->readLunch() as $row) { ?>
                             <option value="<?php echo $row['code_lunch']; ?>"><?php echo $row["nameLunch"]; ?></option>
@@ -30,7 +31,7 @@
                     </select>
                     <label>Almuerzo</label>
                 </div>
-                <div class="">
+                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
                     <select name="data[]">
                         <?php foreach ($this->DietM->readDinner() as $row) { ?>
                             <option value="<?php echo $row['code_dinner']; ?>"><?php echo $row["nameDinner"]; ?></option>
@@ -38,7 +39,7 @@
                     </select>
                     <label>Comida</label>
                 </div>
-                <div class="">
+                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
                     <select name="data[]">
                         <?php foreach ($this->DietM->readSnack() as $row) { ?>
                             <option value="<?php echo $row['code_snack']; ?>"><?php echo $row["nameSnack"]; ?></option>
@@ -46,7 +47,7 @@
                     </select>
                     <label>Snack</label>
                 </div>
-                <div class="">
+                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
                     <select name="data[]">
                         <?php foreach ($this->DietM->readUser() as $row) { ?>
                             <option value="<?php echo $row['code_user']; ?>"><?php echo $row["nameUser"]; ?></option>
@@ -54,12 +55,11 @@
                     </select>
                     <label>Usuario</label>
                 </div>
-                <div class="">
-                    <button class="">GUARDAR</button>
-                </div>
+                <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
+                      <button class="botton3">GUARDAR</button>
+                  </div>
             </form>
         </div>
     </div>
     <?php require_once 'views/modules/food_mod/diet_manage/read.diet.php'; ?>
-</div>
 </div>

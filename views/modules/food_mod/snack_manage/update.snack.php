@@ -1,24 +1,23 @@
 <?php require_once 'views/include/main.php';?>
 <?php $snack = $this->SnackM->readSnackByCode($field) ?>
-<div class="">
-    <div class="">
+<div class="container-fluid">
+  <div class="text-center">
         <h1>MODIFICAR SNACK</h1>
     </div>
-    <div class="">
+    <div class="row">
         <form class="" action="?c=snack&a=updateData" method="post">
-        <div class="">
-            <label for"name">Nombre</label>
-            <input  type="text" class="" name="data[]" value="<?php echo $snack['nameSnack']; ?>">
+        <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+            <label for"name"></label>
+            <input  type="text" class="input" name="data[]" value="<?php echo $snack['nameSnack']; ?>" placeholder="Nombre" required>
         </div>
-            <div class="">
-                <label for="desc">Descripcion</label>
-                <input type="text" class="" name="data[]" value="<?php echo $snack['descriptionSnack']; ?>">
+            <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+                <label for="desc"></label>
+                <input type="text" class="input" name="data[]" value="<?php echo $snack['descriptionSnack']; ?>" placeholder="Descripción" required>
             </div>
             <input type="hidden" readonly value="<?php echo $snack['code_snack']; ?>" name="data[]">
-        <div class="">
-            <button class="">Actualizar
-            </button>
-        </div>
+            <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
+                <button class="botton3">ACTUALIZAR</button>
+            </div>
         </form>
     </div>
 </div>
