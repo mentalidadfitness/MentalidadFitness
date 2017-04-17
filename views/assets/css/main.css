@@ -1,5 +1,5 @@
 /*             Brayant Gamboa      */
-
+/*Todos los estilos de la dashboard*/
 body,html{
 	height: 100%;
 	overflow-x:hidden;
@@ -16,6 +16,8 @@ body,html{
 
 nav.sidebar.navbar {
 	border-radius: 0px;
+	background-color: #FBC020;
+	border: #FBC020;
 }
 
 nav.sidebar, .main{
@@ -81,7 +83,7 @@ nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
 }
 
 .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-	color: #777;
+	color: black;
 }
 
 nav.sidebar{
@@ -136,6 +138,41 @@ section{
 	padding-left: 15px;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+    color: white;
+    background-color: #080808;
+}
+/* color letra al desplegarse el botón superior de la dashboaard*/
+li.BGB_btncerrar{
+	color: black;
+}
+/* Botón de la parte derecha superior de la dashboard*/
+.BGB_boton_cerrar{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	right: 20%;
+	top: 1vh;
+	border: none;
+}
+/* alertas del parsley*/
+.parsley-required{
+	color: red;
+}
+/*puntos del parsley*/
+li {
+ list-style: none;
+}
+/*letra que muestra al poner otro campo igual*/
+.error{
+	color: red;
+	display: block;
+	margin-left: 3.5%;
+}
 /* -------------------- MF  --------------------- */
 
 #bodyMF{
@@ -172,7 +209,6 @@ background-repeat: no-repeat;
 
 .navbar-nav>li {
     float: left;
-    font-size: 20px;
 }
 
 #MF_logoMF{
@@ -489,3 +525,5 @@ margin-right: 0;
   position:absolute;
   margin-top:-7%;
 }
+
+/*       Brayan García     */

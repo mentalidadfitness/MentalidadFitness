@@ -20,7 +20,6 @@
             </div>
             <input type="hidden" readonly value="<?php echo $user['code_user']; ?>" name="data[]">
         <div class="">
-            <a class="" href="?c=user">Atras</a>
             <button class="">Actualizar
             </button>
         </div>

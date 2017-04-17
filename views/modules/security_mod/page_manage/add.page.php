@@ -55,7 +55,6 @@
                     <input type="text" class="" name="data[]" id="estadoPag" required>
                 </div>
                 <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button type="submit" id="pagaddbut" class="">GUARDAR</button>
                 </div>
             </form>

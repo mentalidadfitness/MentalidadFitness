@@ -15,7 +15,6 @@
                     <textarea class="" name="data[]" id="descripcionLun" required></textarea>
                 </div>
                 <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button type="submit" id="lunaddbut" class="">GUARDAR</button>
                 </div>
             </form>

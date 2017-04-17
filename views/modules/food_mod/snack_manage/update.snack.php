@@ -16,7 +16,6 @@
             </div>
             <input type="hidden" readonly value="<?php echo $snack['code_snack']; ?>" name="data[]">
         <div class="">
-            <a class="" href="?c=snack">Atras</a>
             <button class="">Actualizar
             </button>
         </div>

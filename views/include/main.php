@@ -1,11 +1,22 @@
-<h1>BIENVENIDO <?php echo $_SESSION["user"]["name"]; ?></h1>
+<!--Barra horizontal de las dashboard-->
 <nav class=" navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand">Mentalidad Fitness</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="?c=access&a=close"><span class="glyphicon glyphicon-log-in"></span> Cerrar sesión</a></li>
+      <div class="BGB_boton_cerrar">
+      <div class="btn-group">
+        <button type="button" class="btn btn-warning"><?php echo $_SESSION["user"]["name"]; ?></button>
+        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="caret"></span>
+          <span class="sr-only">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="?c=access&a=close"><span class="glyphicon glyphicon-log-in"></span> Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
     </ul>
   </div>
 </nav>
@@ -22,6 +33,7 @@
           <a class="navbar-brand" href="#">MENTALIDAD FITNESS</a>
       </div>
   -->
+  <!--Toda la parte vertial de la dashboard-->
       <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
           <ul class="nav navbar-nav">
               <li class=""><a href="?c=user&a=dashboard">INICIO<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>

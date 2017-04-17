@@ -16,7 +16,6 @@
             </div>
             <input type="hidden" readonly value="<?php echo $diet['code_myDiet']; ?>" name="data[]">
         <div class="">
-            <a class="" href="?c=diet">Atras</a>
             <button class="">Actualizar
             </button>
         </div>

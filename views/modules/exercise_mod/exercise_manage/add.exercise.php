@@ -19,7 +19,6 @@
                     <input type="text" class="" name="data[]" id="estadoExe" required>
                 </div>
                 <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button id="exeaddbut" type="submit" class="">GUARDAR</button>
                 </div>
             </form>

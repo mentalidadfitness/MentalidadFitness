@@ -55,7 +55,6 @@
                     <label>Usuario</label>
                 </div>
                 <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button class="">GUARDAR</button>
                 </div>
             </form>

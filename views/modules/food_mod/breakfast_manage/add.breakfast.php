@@ -14,8 +14,7 @@
                     <label for="descBre">Descripción</label>
                     <textarea class="" name="data[]" id="descBre" required></textarea>
                 </div>
-                <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
+                <div class="">                
                     <button type="submit" class="" id="btnBreakfast">GUARDAR</button>
                 </div>
             </form>

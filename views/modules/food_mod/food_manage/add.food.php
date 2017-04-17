@@ -35,7 +35,6 @@
                     <input type="text" class="" name="data[]" id="vitFoo" required>
                 </div>
                 <div class="">
-                    <a class="" href="?c=access&a=dashboard">ATRÁS</a>
                     <button type="submit" class="" id="btnFood">GUARDAR</button>
                 </div>
             </form>

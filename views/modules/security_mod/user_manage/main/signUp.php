@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xs-12 col-md-4 col-md-offset-4">
               <img src="views/assets/images/images_principal/LogoMFazul.png" class="img-responsive" id="MF_logoMF">
-              <form class="" name="form" method="post" id="MF_formulario" data-parsley-validate>
+              <form class=""  name="form" method="post" id="MF_formulario" data-parsley-validate>
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
                   <input type="text" class="form-control" name="data[0]" id="MF_inputemail3" required="" data-parsley-type placeholder="NOMBRE">
