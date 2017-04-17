@@ -17,8 +17,7 @@
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Email</th>
-                    <th>cod_rol</th>
-                    <th>cod_ciudad</th>
+                    <th>Rol</th>
                     <th>Acción</th>
                 </tr>
             </thead>
@@ -33,7 +32,6 @@
                         <td><?php echo $row["nameUser"]; ?></td>
                         <td><?php echo $row["emailAcc"]; ?></td>
                         <td><?php echo $row["code_role"]; ?></td>
-                        <td><?php echo $row["code_city"]; ?></td>
                         <td>
                             <a href="?c=user&a=update&uscode=<?php echo $row['code_user'];?>">
                               <img src="views/assets/images/images_principal/Edit.png" alt="" class="edit001">

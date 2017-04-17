@@ -18,24 +18,16 @@
                     <input type="password" class="input" name="data[]" id="con" required placeholder="Contraseña">
                 </div>
                 <div class="group  col-xs-12 col-sm-12 col-md-12 " >
+                    <label for="password"></label>
+                    <input type="password" class="input" name="data[]" id="con" required placeholder="Repetir contraseña">
+                </div>
+                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
                     <select name="data[]">
                         <?php foreach ($this->UserM->readRole() as $row) { ?>
                             <option value="<?php echo $row['code_role']; ?>"><?php echo $row["nameRole"]; ?></option>
                         <?php } ?>
                     </select>
-                    <label>Cod_rol</label>
-                </div>
-                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
-                    <select name="data[]">
-                        <?php foreach ($this->UserM->readCity() as $row) { ?>
-                            <option value="<?php echo $row['code_city']; ?>"><?php echo $row["nameCity"]; ?></option>
-                        <?php } ?>
-                    </select>
                     <label>Rol</label>
-                </div>
-                <div class="group  col-xs-12 col-sm-12 col-md-12 " >
-                    <label for="password"></label>
-                    <input type="password" class="input" name="data[]" id="con" required placeholder="Repetir contraseña">
                 </div>
                 <div class="group botton1 col-xs-12 col-sm-12 col-md-12">
                     <button class="botton3">GUARDAR</button>
