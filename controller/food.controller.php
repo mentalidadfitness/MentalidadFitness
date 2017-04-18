@@ -20,11 +20,19 @@
         public function create(){
             $data = $_POST["dataF"];
             $data[7] = "FOO".randAlphanum('15');
-            if(empty($data[0]) || empty($data[1]) || empty($data[2]) || empty($data[3])){
+            for($i=0; $i <count($data); $i++){
+              if(strlen($data[$i])==0){
+                $p=1;
+                break;
+              }else{
+                $p=0;
+              }
+            }
+            if ($p==1) {
                 $return = array(false,"Campos nulos","");
             }else{
-                $result = $this->FoodM->createFood($data);
-                $return = array(true,"Guardo con Exito","index.php?c=food");
+              $result = $this->FoodM->createFood($data);
+              $return = array(true,"Guardo con Exito","index.php?c=food");
             }
             echo json_encode($return);
         }
