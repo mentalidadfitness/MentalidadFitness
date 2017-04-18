@@ -29,17 +29,20 @@
         public function create(){
             $data[0] = $_POST["nombre"];
             $data[1] = $_POST["estado"];
-
-            for($i=0; $i < count($data); $i++){
-                if(strlen($data[$i])==0){
-                   $return = array(false,"Campos Nulos");
-                   break;
-                }else{
-                   $data[2] = "ROL".randAlphanum('15');
-                   $result = $this->RoleM->createRole($data);
-                   $return = array(true,"Guardo con Exito");
-                   break;
-                }
+            $data[2] = "ROL".randAlphanum('15');
+            for($i=0; $i <count($data); $i++){
+              if(strlen($data[$i])==0){
+                $p=1;
+                break;
+              }else{
+                $p=0;
+              }
+            }
+            if ($p==1) {
+              $return = array(false,"Campos Nulos");
+            }else{
+              $result = $this->RoleM->createRole($data);
+              $return = array(true,"Guardo con Exito");
             }
 
             echo json_encode($return);

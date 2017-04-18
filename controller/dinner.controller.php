@@ -21,11 +21,19 @@
             $data[0] = $_POST["nameDin"];
             $data[1] = $_POST["descDin"];
             $data[2] = "DIN".randAlphanum('15');
-            if(empty($data[0]) || empty($data[1])) {
-              $return = array(false,"Campos nulos","");
+            for($i=0; $i <count($data); $i++){
+              if(strlen($data[$i])==0){
+                $p=1;
+                break;
+              }else{
+                $p=0;
+              }
+            }
+            if ($p==1) {
+              $return = array(false,"Campos Nulos","");
             }else{
-                $result = $this->DinnerM->createDinner($data);
-                $return = array(true,"Guardo con Exito","index.php?c=dinner");
+              $result = $this->DinnerM->createDinner($data);
+              $return = array(true,"Guardo con Exito","index.php?c=dinner");
             }
             echo json_encode($return);
         }

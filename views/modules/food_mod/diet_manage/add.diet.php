@@ -4,7 +4,7 @@
             <h1>GESTIONAR DIETA</h1>
         </div>
         <div class="bga-row">
-            <form class="" action="?c=myDiet&a=create" method="post" data-parsley-validate>
+            <form class="" action="?c=diet&a=create" method="post" data-parsley-validate>
                 <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
                     <label for="dias"></label>
                     <input type="number" class="bga-input" name="data[]" id="dia" required data-parsley-type
