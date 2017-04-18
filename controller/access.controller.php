@@ -39,16 +39,24 @@ class AccessController{
             $data[1] = $_POST["pass"];
 
             $userData = $this->UserM->readUserByEmail($data[0]);
-            if (password_verify($data[1],$userData["passwordAcc"])) {
-                $return = array(true, "index.php?c=user&a=dashboard");
-
-                $_SESSION["user"]["token"] = $userData["token"];
-                $_SESSION["user"]["code"] = $userData["code_user"];
-                $_SESSION["user"]["name"] = $userData["nameUser"];
-                // $_SESSION["user"]["lastname"] = $userData["user_ape"];
-                $_SESSION["user"]["email"] = $_POST["email"];
+            if ($userData["statusAcc"] == "Activo") {
+                if (password_verify($data[1],$userData["passwordAcc"])) {
+                    $data[4] = isset($data[4]) ? $data[4] : "ROL3XIn4mITezUlwc1";
+                    $_SESSION["user"]["token"] = $userData["token"];
+                    $_SESSION["user"]["code"] = $userData["code_user"];
+                    $_SESSION["user"]["name"] = $userData["nameUser"];
+                    $_SESSION["user"]["role"] = $userData["code_role"];
+                    $_SESSION["user"]["email"] = $_POST["email"];
+                    if ($_SESSION["user"]["role"] == "ROLKK2MrmsRueKNRXF") {
+                        $return = array(true, "index.php?c=views&a=dashboard");
+                    } else {
+                        $return = array(true, "index.php?c=views&a=completeProfile");
+                    }
+                } else {
+                    $return = array(false, "Contraseña incorrecta");
+                }
             } else {
-                $return = array(false, "Contraseña incorrecta");
+                $return = array(false, "Por favor active su cuenta");
             }
             echo json_encode($return);
         }

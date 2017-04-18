@@ -19,9 +19,23 @@
 
         public function create(){
             $data = $_POST["data"];
-            $data[7] = "DIE".randAlphanum('15').date();
-            $result = $this->DietM->createDiet($data);
-            header("Location: index.php?c=diet&msn=$result");
+            $data[7] = "DIE".randAlphanum('15');
+            for($i=0; $i <count($data); $i++){
+              if(strlen($data[$i])==0){
+                $p=1;
+                break;
+              }else{
+                $p=0;
+              }
+            }
+            if ($p==1) {
+              $msn="Campos Nulos";
+              header("Location: index.php?c=diet&msn=$msn");
+            }else{
+              $result = $this->DietM->createDiet($data);
+              header("Location: index.php?c=diet&msn=$result");
+            }
+
         }
 
         public function update(){

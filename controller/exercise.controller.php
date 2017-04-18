@@ -32,8 +32,16 @@
             $data[1] = $_POST["fecha"];
             $data[2] = $_POST["estado"];
             $data[3]="DIE".randAlphanum('15');
-            if (empty($data[0]) || empty($data[1]) || empty($data[2])) {
-              $return = array(false,"Campos nulos");
+            for($i=0; $i <count($data); $i++){
+              if(strlen($data[$i])==0){
+                $p=1;
+                break;
+              }else{
+                $p=0;
+              }
+            }
+            if ($p==1) {
+              $return = array(false,"Campos Nulos");
             }else{
               $result = $this->ExerciseM->createExercise($data);
               $return = array(true,"Guardo con Exito");
