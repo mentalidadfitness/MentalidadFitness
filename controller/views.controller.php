@@ -35,8 +35,16 @@
         }
 
         public function dashboard(){
+            if ($_SESSION["user"]["role"] == "ROLKK2MrmsRueKNRXF") {
+                require_once 'views/include/header.php';
+                require_once 'views/include/main.php';
+                require_once 'views/include/footer.php';
+            }
+        }
+
+        public function completeProfile(){
             require_once 'views/include/header.php';
-            require_once 'views/include/main.php';
+            require_once 'views/modules/security_mod/user_manage/app/completeProfile.php';
             require_once 'views/include/footer.php';
         }
     }

@@ -65,6 +65,7 @@
             $data[5]=randAlphanum('30');
             $data[6]="USU".randAlphanum('30');
             $data[7]=3;
+            $data[8]="Inactivo";
             $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
             $result = $this->UserM->createUser($data);
             $user = $this->UserM->readUserByEmail($data[1]);
@@ -80,6 +81,27 @@
           require_once 'views/include/header.php';
           require_once 'views/modules/security_mod/user_manage/update.user.php';
           require_once 'views/include/footer.php';
+        }
+
+        public function updateStatus(){
+            $status = $_GET["status"];
+            if ($status == true) {
+                $token = $_GET["token"];
+                $result = $this->UserM->updateStatusByToken($token);
+                $user = $this->UserM->readUserByToken($token);
+                $_SESSION["user"]["token"] = $user["token"];
+                $_SESSION["user"]["code"] = $user["code_user"];
+                $_SESSION["user"]["name"] = $user["nameUser"];
+                $_SESSION["user"]["email"] = $user["emailAcc"];
+                $msn = "Soy el puto amo";
+                header("Location: index.php?c=views&a=completeProfile&msn=$msn");
+            }
+        }
+
+        public function prueba(){
+            require_once 'views/include/header.php';
+            require_once 'views/modules/pag_prueba.php';
+            require_once 'views/include/footer.php';
         }
 
         public function updateData(){

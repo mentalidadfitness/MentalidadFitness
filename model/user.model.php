@@ -17,9 +17,9 @@
                 $sql = "INSERT INTO user VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[6],$data[0],$data[4]));
-                $sql = "INSERT INTO access VALUES(?,?,?,?,?,?)";
+                $sql = "INSERT INTO access VALUES(?,?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($data[5],$data[2],$data[1],$data[7],$data[0],$data[6]));
+                $query->execute(array($data[5],$data[2],$data[1],$data[7],$data[0],$data[6],$data[8]));
                 $msn = "Usuario guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -67,7 +67,8 @@
 
         public function readUserByToken($field){
             try {
-                $sql="SELECT * FROM access WHERE token = ?";
+                $sql="SELECT * FROM access INNER JOIN user ON(access.code_user = user.code_user)
+                                WHERE token = ? ";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($field));
                 $result = $query->fetch(PDO::FETCH_BOTH);
@@ -92,6 +93,18 @@
             return $msn;
         }
 
+        public function updateStatusByToken($data){
+            try {
+                $sql="UPDATE access SET statusAcc = 'Activo' WHERE token = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data));
+                $msn = "Estado modificado con exito!";
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $msn;
+        }
+
         public function deleteUser($field){
             try {
                 $sql = "DELETE FROM user WHERE code_user = ?";
@@ -109,7 +122,7 @@
 
         public function readUserByEmail($data){
             try {
-                $sql = "SELECT emailAcc, passwordAcc, token, user.code_user, user.nameUser
+                $sql = "SELECT emailAcc, passwordAcc, token, statusAcc, user.code_user, user.nameUser, user.code_role
                 FROM access INNER JOIN user ON(access.code_user = user.code_user)
                                 WHERE emailAcc = ?";
                 $query = $this->pdo->prepare($sql);
@@ -240,13 +253,13 @@
                           </p>
                           <p style="font-size:17px;line-height:24px;margin:0 0 16px">
                             <strong>Nombre: </strong>'.$data[0].'<br><strong>Correo electronico: </strong> <a  target="_blank">'.$data[1].'</a><br></p>
-                            <a href="http://www.google.com" style="text-decoration:none;margin:0 0 16px;cursor: pointer;color:black;border-radius:8px;border:2px solid #f8e71c;height:20%;background-color:#f8e71c;width:42%;height:8vh;font-size:3vh;margin-top:1%;font-family:sans-serif; display:block; text-align:center;line-height:2.5">ACTIVAR</a>
+                            <a href="http://localhost:80/MentalidadFitness/index.php?c=user&a=updateStatus&status=true&token='.$data[5].'" style="text-decoration:none;margin:0 0 16px;cursor: pointer;color:black;border-radius:8px;border:2px solid #f8e71c;height:20%;background-color:#f8e71c;width:42%;height:8vh;font-size:3vh;margin-top:1%;font-family:sans-serif; display:block; text-align:center;line-height:2.5">ACTIVAR</a>
                             <p style="font-size:17px;line-height:24px;margin:0 0 16px">
                               Si tienes alguna pregunta, envianos un correo a <a  style="color:#439fe0;font-weight:bold;text-decoration:none;word-break:break-word" target="_blank">mentalidadfitnessapp@<span class="il">gmail</span>.com</a>. Nos encantaría ayudarte
                             </p>
                             <p style="font-size:17px;line-height:24px;margin:0 0 16px">
                               Gracias,<br>
-                              Tus amigos de <span style="color:#42a5f5;font-weight:bold;>Mentalidad Fitness.</span>
+                              Tus amigos de <span style="color:#42a5f5;font-weight:bold;">Mentalidad Fitness.</span>
                             </p>
                           </div>
                         </div>

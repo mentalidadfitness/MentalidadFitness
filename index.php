@@ -14,10 +14,10 @@
         require_once "controller/$controller.controller.php";
         $controller = ucwords($controller).'Controller';
         $controller = new $controller;
-        if(!isset($_SESSION["user"])){
+        // if(!isset($_SESSION["user"])){
             $controller->mainPage();
-        }else{
-            $controller->dashboard();
-        }
+        // }else{
+        //     $controller->dashboard();
+        // }
     }
 ?>
