@@ -13,7 +13,7 @@
 
         public function createUser($data){
             try {
-                $data[4] = isset($data[4]) ? $data[4]: "ROLSLRzL4bPnN7Zoi9";
+                $data[4] = isset($data[4]) ? $data[4]: "ROL3XIn4mITezUlwc1";
                 $sql = "INSERT INTO user VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[6],$data[0],$data[4]));

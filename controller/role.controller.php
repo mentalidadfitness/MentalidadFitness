@@ -38,6 +38,7 @@
                    $data[2] = "ROL".randAlphanum('15');
                    $result = $this->RoleM->createRole($data);
                    $return = array(true,"Guardo con Exito");
+                   break;
                 }
             }
 
