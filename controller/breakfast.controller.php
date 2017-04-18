@@ -20,11 +20,19 @@
             $data[0] = $_POST["nameBre"];
             $data[1] = $_POST["descBre"];
             $data[2] = "BRE".randAlphanum('15');
-            if(empty($data[0]) || empty($data[1])) {
-              $return = array(false,"Campos nulos","");
+            for($i=0; $i <count($data); $i++){
+              if(strlen($data[$i])==0){
+                $p=1;
+                break;
+              }else{
+                $p=0;
+              }
+            }
+            if ($p==1) {
+              $return = array(false,"Campos Nulos","");
             }else{
-                $result = $this->BreakfastM->createBreakfast($data);
-                $return = array(true,"Guardo con Exito","index.php?c=breakfast");
+              $result = $this->BreakfastM->createBreakfast($data);
+              $return = array(true,"Guardo con Exito","index.php?c=breakfast");
             }
             echo json_encode($return);
         }

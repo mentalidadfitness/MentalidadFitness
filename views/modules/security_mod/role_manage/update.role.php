@@ -16,7 +16,7 @@
             </div>
             <input type="hidden" readonly value="<?php echo $role['code_role']; ?>" name="data[]">
         <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
-            <button class="bga-botton1">Actualizar
+            <button class="bga-botton1">ACTUALIZAR
             </button>
         </div>
         </form>

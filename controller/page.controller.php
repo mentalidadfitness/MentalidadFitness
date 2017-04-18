@@ -42,11 +42,19 @@
             $data[10] = $_POST["imagenes"];
             $data[11] = $_POST["estado"];
             $data[12] = "PAG".randAlphanum('15');
-            if(empty($data[0]) || empty($data[1])){
-              $return = array(false,"campos nulos");
+            for($i=0; $i <count($data); $i++){
+              if(strlen($data[$i])==0){
+                $p=1;
+                break;
+              }else{
+                $p=0;
+              }
+            }
+            if ($p==1) {
+              $return = array(false,"Campos Nulos");
             }else{
               $result = $this->PageM->createPage($data);
-              $return = array(true,"Guardo con exito");
+              $return = array(true,"Guardo con Exito");
             }
             echo json_encode($return);
         }

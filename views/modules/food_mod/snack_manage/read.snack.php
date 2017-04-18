@@ -32,10 +32,11 @@
                         <td><?php echo $row["descriptionSnack"]; ?></td>
                         <td>
                             <a href="?c=snack&a=update&scode=<?php echo $row['code_snack'];?>">
-                                <img src="views/assets/images/images_principal/Edit.png" alt="" class="edit001">
+                                <i class="fa fa-pencil fa-2x" aria-hidden="true" style="color:black"></i>
                             </a>
+                            -
                             <a href="?c=snack&a=delete&scode=<?php echo $row['code_snack'];?>">
-                                <img src="views/assets/images/images_principal/delete.png" alt="" class="delete001">
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
                             </a>
                         </td>
                     </tr>

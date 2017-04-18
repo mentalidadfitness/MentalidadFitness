@@ -2,7 +2,7 @@
 <?php $diet = $this->DietM->readDietByCode($field) ?>
 <div class="container-fluid">
   <div class="text-center">
-    <h1>Modificar dieta</h1>
+    <h1>MODIFICAR DIETA</h1>
   </div>
     <div class="bga-ow">
         <form class="" action="?c=diet&a=updateData" method="post">

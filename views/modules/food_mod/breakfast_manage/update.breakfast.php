@@ -2,7 +2,7 @@
 <?php $breakfast = $this->BreakfastM->readBreakfastByCode($field) ?>
 <div class="container-fluid">
   <div class="text-center">
-    <h1>Modificar desayuno</h1>
+    <h1>MODIFICAR DESAYUNO</h1>
   </div>
   <div class="bga-row">
         <form class="" action="?c=breakfast&a=updateData" method="post">
@@ -17,7 +17,7 @@
             </div>
             <input type="hidden" readonly value="<?php echo $breakfast['code_breakfast']; ?>" name="data[]">
             <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
-              <button class="bga-botton1">Guardar</button>
+              <button class="bga-botton1">ACTUALIZAR</button>
             </div>
         </div>
         </form>
