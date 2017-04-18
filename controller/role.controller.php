@@ -41,7 +41,7 @@
             if ($p==1) {
               $return = array(false,"Campos Nulos");
             }else{
-              $result = $this->RoleM>createRole($data);
+              $result = $this->RoleM->createRole($data);
               $return = array(true,"Guardo con Exito");
             }
 
