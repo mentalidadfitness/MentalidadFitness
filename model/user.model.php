@@ -104,6 +104,17 @@
             }
             return $msn;
         }
+        public function updateStatusBlocking($data){
+            try {
+                $sql="UPDATE access SET statusAcc = 'Bloqueado' WHERE emailAcc = ?";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data));
+                $msn = "Estado modificado con exito!";
+            } catch (PDOException $e) {
+                die($e->getMessage()."".$e->getLine()."".$e->getFile());
+            }
+            return $msn;
+        }
 
         public function deleteUser($field){
             try {
@@ -278,6 +289,21 @@
                 header("Location: index.php?c=views&a=signUp&msn=$msn");
             }
         }
+        public function updateAccFail($data){
+      		try{
+        			$sql = "UPDATE access SET tryAcc = (tryAcc - 1) WHERE emailAcc = ?";
+      				$query = $this->pdo->prepare($sql);
+      				$query->execute(array($data));
+        			$sql = "SELECT tryAcc FROM access WHERE emailAcc = ?";
+      				$query = $this->pdo->prepare($sql);
+      				$query->execute(array($data));
+      				$result = $query->fetch(PDO::FETCH_BOTH);
+
+      			}catch (PDOException $e) {
+      			die($e->getMessage());
+      		}
+      		return $result;
+      	}
 
         public function __DESTRUCT(){
             DataBase::disconnect();

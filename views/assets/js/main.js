@@ -30,7 +30,7 @@ $("#frmSignIn").submit(function(e){
             if (data[0] == true) {
                 document.location.href = data[1];
             } else {
-                $("#pass").after("<span class='error'>"+data[1]+"</span>")
+                $("#pass").after("<span class='error'>"+data[1]+"</span>");
             }
         })
     }
