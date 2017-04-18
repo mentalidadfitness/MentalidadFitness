@@ -31,10 +31,11 @@
                         <td><?php echo $row["descriptionLunch"]; ?></td>
                         <td>
                             <a href="?c=lunch&a=update&alcode=<?php echo $row['code_lunch'];?>">
-                                <img src="views/assets/images/images_principal/Edit.png" alt="" class="edit001">
+                              <i class="fa fa-pencil fa-2x" aria-hidden="true" style="color:black"></i>
                             </a>
+                            -
                             <a href="?c=lunch&a=delete&alcode=<?php echo $row['code_lunch'];?>">
-                                <img src="views/assets/images/images_principal/delete.png" alt="" class="delete001">
+                              <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
                             </a>
                         </td>
                     </tr>

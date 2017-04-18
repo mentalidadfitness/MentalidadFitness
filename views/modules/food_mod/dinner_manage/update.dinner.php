@@ -2,7 +2,7 @@
 <?php $dinner = $this->DinnerM->readDinnerByCode($field) ?>
 <div class="container-fluid">
   <div class="text-center">
-        <h1>MODIFICAR COMIDA</h1>
+        <h1>MODIFICAR CENA</h1>
     </div>
     <div class="bga-row">
         <form class="" action="?c=dinner&a=updateData" method="post">

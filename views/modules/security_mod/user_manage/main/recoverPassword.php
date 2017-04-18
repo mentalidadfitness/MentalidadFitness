@@ -5,21 +5,16 @@
   <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
       <img src="views/assets/images/images_principal/LogoMF.png" class="img-responsive MF_logoMF">
-        <form class="MF_formulario" action="index.php?c=user&a=updatePassword" method="post">
-          <!-- VIEJA CONTRASEÑA -->
-        <div class="form-group">
-          <input type="password" class="form-control MF_inputemail" name="email" required="" data-parsley-type>
-          <label class="MF_email"><i class="fa fa-lock" aria-hidden="true"></i> contraseña vieja</label>
-        </div>
+        <form class="MF_formulario" action="index.php?c=user&a=resetPassword" method="post" data-parsley-validate>
           <!-- NUEVA CONTRASEÑA -->
         <div class="form-group">
-          <input type="password" class="form-control MF_inputemail" name="email" required="">
-          <label class="MF_email"><i class="fa fa-lock" aria-hidden="true"></i> nueva contraseña</label>
+          <input type="password" class="form-control MF_inputemail" name="data[]" required="">
+          <label class="MF_email"><i class="fa fa-lock" aria-hidden="true"></i> Nueva Contraseña</label>
         </div>
           <!-- CONFIRMAR NUEVA CONTRASEÑA -->
         <div class="form-group">
-          <input type="password" class="form-control MF_inputemail" name="email" required="">
-          <label class="MF_email"><i class="fa fa-lock" aria-hidden="true"></i> confirmar nueva contraseña</label>
+          <input type="password" class="form-control MF_inputemail" name="data[]" required="">
+          <label class="MF_email"><i class="fa fa-lock" aria-hidden="true"></i> Confirmar Nueva Contraseña</label>
         </div>
         <div class="form-group">
             <input type="hidden" readonly value="<?php echo $user['token'];?>" name="data[]">
