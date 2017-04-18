@@ -2,7 +2,7 @@
 <?php $page = $this->PageM->readPageByCode($field) ?>
 <div class="container-fluid">
   <div class="text-center">
-        <h1>MODIFICAR PAGINA</h1>
+        <h1>MODIFICAR PÁGINA</h1>
     </div>
     <div class="bga-row">
         <form class="" action="?c=page&a=updateData" method="post">
@@ -56,7 +56,7 @@
         </div>
             <input type="hidden" readonly value="<?php echo $page['code_page']; ?>" name="data[]">
         <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
-            <button class="bga-botton1">Actualizar
+            <button class="bga-botton1">ACTUALIZAR
             </button>
         </div>
         </form>

@@ -10,7 +10,7 @@
                     <input id="nombreRol" type="text" class="bga-input" name="data[]" required="required" placeholder="Nombre">
                 </div>
                 <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
-                    <label for="estadoRol">Estado</label>
+                    <label for="estadoRol"></label>
                     <input id="estadoRol" type="text" class="bga-input"  name="data[]" required="required" placeholder="Estado">
                 </div>
                 <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">

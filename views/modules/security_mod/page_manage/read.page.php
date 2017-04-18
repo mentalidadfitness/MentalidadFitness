@@ -21,6 +21,7 @@
                     <th>Propiedades</th>
                     <th>Secciones</th>
                     <th>Estado</th>
+                    <th>Acción</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,10 +40,11 @@
                         <td><?php echo $row["statusPage"]; ?></td>
                         <td>
                             <a href="?c=page&a=update&pcode=<?php echo $row['code_page'];?>">
-                                <img src="views/assets/images/images_principal/Edit.png" alt="" class="edit001">
+                                <i class="fa fa-pencil fa-2x" aria-hidden="true" style="color:black"></i>
                             </a>
+                            -
                             <a href="?c=page&a=delete&pcode=<?php echo $row['code_page'];?>">
-                                <img src="views/assets/images/images_principal/delete.png" alt="" class="delete001">
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
                             </a>
                         </td>
                     </tr>

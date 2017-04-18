@@ -34,10 +34,11 @@
                         <td><?php echo $row["code_role"]; ?></td>
                         <td>
                             <a href="?c=user&a=update&uscode=<?php echo $row['code_user'];?>">
-                              <img src="views/assets/images/images_principal/Edit.png" alt="" class="edit001">
+                              <i class="fa fa-pencil fa-2x" aria-hidden="true" style="color:black"></i>
                             </a>
+                            -
                             <a href="?c=user&a=delete&uscode=<?php echo $row['code_user'];?>">
-                                <img src="views/assets/images/images_principal/delete.png" alt="" class="delete001">
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
                             </a>
                         </td>
                     </tr>
