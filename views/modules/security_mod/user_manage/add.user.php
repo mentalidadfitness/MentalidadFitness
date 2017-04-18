@@ -22,12 +22,12 @@
                     <input type="password" class="bga-input" name="data[]" id="con" required placeholder="Repetir contraseña">
                 </div>
                 <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
-                    <select name="data[]">
+                    <select name="data[]" class="bga-input">
                         <?php foreach ($this->UserM->readRole() as $row) { ?>
                             <option value="<?php echo $row['code_role']; ?>"><?php echo $row["nameRole"]; ?></option>
                         <?php } ?>
                     </select>
-                    <label>Rol</label>
+                    <!--<label>Rol</label>-->
                 </div>
                 <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
                     <button class="bga-botton1">GUARDAR</button>
