@@ -1,25 +1,21 @@
 <?php require_once 'views/include/main.php';?>
 <?php $snack = $this->SnackM->readSnackByCode($field) ?>
-<div class="">
-    <div class="">
+<div class="container-fluid">
+  <div class="text-center">
         <h1>MODIFICAR SNACK</h1>
     </div>
-    <div class="">
+    <div class="bga-row">
         <form class="" action="?c=snack&a=updateData" method="post">
-        <div class="">
-            <label for"name">Nombre</label>
-            <input  type="text" class="" name="data[]" value="<?php echo $snack['nameSnack']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
+            <input  type="text" class="bga-input" name="data[]" value="<?php echo $snack['nameSnack']; ?>" placeholder="Nombre" required>
         </div>
-            <div class="">
-                <label for="desc">Descripcion</label>
-                <input type="text" class="" name="data[]" value="<?php echo $snack['descriptionSnack']; ?>">
+            <div class="bga-group  col-xs-12 col-sm-12 col-md-12 " >
+                <input type="text" class="bga-input" name="data[]" value="<?php echo $snack['descriptionSnack']; ?>" placeholder="Descripción" required>
             </div>
             <input type="hidden" readonly value="<?php echo $snack['code_snack']; ?>" name="data[]">
-        <div class="">
-            <a class="" href="?c=snack">Atras</a>
-            <button class="">Actualizar
-            </button>
-        </div>
+            <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
+                <button class="bga-botton1">ACTUALIZAR</button>
+            </div>
         </form>
     </div>
 </div>

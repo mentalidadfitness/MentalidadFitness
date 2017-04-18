@@ -1,63 +1,62 @@
 <?php require_once 'views/include/main.php';?>
 <?php $page = $this->PageM->readPageByCode($field) ?>
-<div class="">
-    <div class="">
+<div class="container-fluid">
+  <div class="text-center">
         <h1>MODIFICAR PAGINA</h1>
     </div>
-    <div class="">
+    <div class="bga-row">
         <form class="" action="?c=page&a=updateData" method="post">
-        <div class="">
-            <label for="nombre">Nombre</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['namePage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="nombre"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['namePage']; ?>" placeholder="Nombre" required>
         </div>
-        <div class="">
-            <label for="iconos">Iconos</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['iconsPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="iconos"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['iconsPage']; ?>" placeholder="Iconos" required>
         </div>
-        <div class="">
-            <label for="menu">Menu</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['menuPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="menu"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['menuPage']; ?>" placeholder="Menu" required>
         </div>
-        <div class="">
-            <label for="colores">Colores</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['colorsPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="colores"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['colorsPage']; ?>"placeholder="Colores" required>
         </div>
-        <div class="">
-            <label for="url">URL</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['URLPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="url"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['URLPage']; ?>" placeholder="URL" required>
         </div>
-        <div class="">
-            <label for="foto">Foto</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['photoPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="foto"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['photoPage']; ?>" placeholder="Foto" required>
         </div>
-        <div class="">
-            <label for="des">Descripcion</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['descriptionPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="des"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['descriptionPage']; ?>" placeholder="Descripción" required>
         </div>
-        <div class="">
-            <label for="botones">Botones</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['buttonsPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="botones"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['buttonsPage']; ?>" placeholder="Botones" required>
         </div>
-        <div class="">
-            <label for="propiedades">Propiedades</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['propertiesPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="propiedades"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['propertiesPage']; ?>" placeholder="Propiedades" required>
         </div>
-        <div class="">
-            <label for="seccion">Seccion</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['sectionsPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="seccion"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['sectionsPage']; ?>" placeholder="Sección" required>
         </div>
-        <div class="">
-            <label for="imagenes">Imagenes</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['imagesPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="imagenes"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['imagesPage']; ?>" placeholder="Imagenes" required>
         </div>
-        <div class="">
-            <label for="estado">Estado</label>
-            <input type="text" class="" name="data[]" value="<?php echo $page['statusPage']; ?>">
+        <div class="bga-group  col-xs-12 col-sm-12 col-md-12">
+            <label for="estado"></label>
+            <input type="text" class="bga-input" name="data[]" value="<?php echo $page['statusPage']; ?>" placeholder="Estado" required>
         </div>
             <input type="hidden" readonly value="<?php echo $page['code_page']; ?>" name="data[]">
-        <div class="">
-            <a class="" href="?c=page">Atras</a>
-            <button class="">Actualizar
+        <div class="bga-botton01 col-xs-12 col-sm-12 col-md-12">
+            <button class="bga-botton1">Actualizar
             </button>
         </div>
         </form>

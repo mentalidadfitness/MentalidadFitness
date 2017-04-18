@@ -26,7 +26,7 @@
         public function recoverPassword(){
             $field = $_GET["token"];
             require_once 'views/include/header.php';
-            require_once 'views/pages/recoverPassword.php';
+            require_once 'views/modules/security_mod/user_manage/main/recoverPassword.php';
             require_once 'views/include/footer.php';
         }
 
@@ -37,45 +37,43 @@
         }
 
         public function create(){
-            $tokken=randAlphanum('30');
-            $userId="USU".randAlphanum('30');
-            $n=3;
-            $data = $_POST["data"];
-            if (isset($data[3])) {
-              $url="user";
-            }else{
-              $url="views&a=signUp";
-            }
-            if(empty($data[0]) || empty($data[1]) || empty($data[2])) {
-              $msn="Campos Nulos";
-              header("Location: index.php?c=$url&msn=$msn");
-            }
-            elseif(strlen($data[2])<=8){
-              $msn="La contraseña debe tener mas de 8 caracteres";
-              header("Location: index.php?c=$url&msn=$msn");
-            }
-            elseif(!preg_match('`[a-z]`',$data[2])) {
-              $msn="La contraseña debe tener minimo una miniscula";
-              header("Location: index.php?c=$url&msn=$msn");
-            }
-            elseif(!preg_match('`[0-9]`',$data[2])) {
-              $msn="La contraseña debe tener minimo un numero";
-              header("Location: index.php?c=$url&msn=$msn");
-            }
-            /*elseif(!preg_match('`[/\*+-%&@¡!|]`',$data[2])) {
-              $msn="La contraseña debe tener minimo un simbolo";
-              header("Location: index.php?c=$url&msn=$msn");
-            }*/elseif($data[2]!==$data[5]){
-              $msn="La contraseñas no coinciden";
-              header("Location: index.php?c=$url&msn=$msn");
-            }
-            else{
-              $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
-              $result = $this->UserM->createUser($userId,$data,$tokken,$n);
-              header("Location: index.php?c=$url&msn=$result");
-            }
+          $data = $_POST["data"];
+          if (isset($data[4])) {
+            $url="user";
+          }else{
+            $url="views&a=signUp";
+          }
+          if(empty($data[0]) || empty($data[1]) || empty($data[2])) {
+            $msn="Campos Nulos";
+            header("Location: index.php?c=$url&msn=$msn");
+          }
+          elseif(strlen($data[2])<=8){
+            $msn="La contraseña debe tener mas de 8 caracteres";
+            header("Location: index.php?c=$url&msn=$msn");
+          }
+          elseif(!preg_match('`[a-z]`',$data[2])) {
+            $msn="La contraseña debe tener minimo una miniscula";
+            header("Location: index.php?c=$url&msn=$msn");
+          }
+          elseif(!preg_match('`[0-9]`',$data[2])) {
+            $msn="La contraseña debe tener minimo un numero";
+            header("Location: index.php?c=$url&msn=$msn");
+          }/*elseif(!preg_match('`[/\*+-%&@¡!|]`',$data[2])) {
+                      $msn="La contraseña debe tener minimo un simbolo";
+                      header("Location: index.php?c=$url&msn=$msn");
+          }*/
+          elseif($data[2]!==$data[3]){
+            $msn="La contraseñas no coinciden";
+            header("Location: index.php?c=$url&msn=$msn");
+          }else{
+            $data[5]=randAlphanum('30');
+            $data[6]="USU".randAlphanum('30');
+            $data[7]=3;
+            $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
+            $result = $this->UserM->createUser($data);
+            header("Location: index.php?c=$url&msn=$result");
+          }
         }
-
         public function update(){
           /*if (!isset($_SESSION["user"])) {
             header("location:index.php?c=main");
