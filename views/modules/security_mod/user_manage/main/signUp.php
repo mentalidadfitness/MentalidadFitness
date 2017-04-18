@@ -6,25 +6,25 @@
   <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
         <img src="views/assets/images/images_principal/LogoMFazul.png" class="img-responsive MF_logoMF">
-          <form class="MF_formulario" name="form" method="post" id="frmsignUp" data-parsley-validate>
+          <form class="MF_formulario" name="form" method="post" action="index.php?c=user&a=create" id="frmsignUp" data-parsley-validate>
                 <!-- INPUT NOMBRE -->
                 <div class="form-group">
-                  <input type="text" class="form-control MF_inputblue" name="data[0]" required="" data-parsley-type>
+                  <input type="text" class="form-control MF_inputblue" name="data[]" required="" data-parsley-type>
                   <label class="MF_email"><i class="fa fa-user" aria-hidden="true"></i> NOMBRE</label>
                 </div>
                 <!-- INPUT EMAIL -->
                 <div class="form-group">
-                  <input type="text" class="form-control MF_inputblue" name="data[1]" required="" data-parsley-type>
+                  <input type="text" class="form-control MF_inputblue" name="data[]" required="" data-parsley-type>
                   <label class="MF_email"><i class="fa fa-envelope" aria-hidden="true"></i> EMAIL</label>
                 </div>
                 <!-- INPUT CONTRASEÑA -->
                 <div class="form-group">
-                  <input type="password" class="form-control MF_inputblue" name="data[2]" required="">
+                  <input type="password" class="form-control MF_inputblue" name="data[]" required="">
                   <label class="MF_email"><i class="fa fa-lock" aria-hidden="true"></i> CONTRASEÑA</label>
                 </div>
                 <!-- INPUT REPETIR CONTRASEÑA -->
                 <div class="form-group">
-                  <input type="password" class="form-control MF_inputblue" name="data[5]" required="">
+                  <input type="password" class="form-control MF_inputblue" name="data[]" required="">
                   <label class="MF_email"><i class="fa fa-lock" aria-hidden="true"></i> REPETIR CONTRASEÑA</label>
                 </div>
                 <!-- BOTON DE ENTRADA -->

@@ -11,22 +11,15 @@
             }
         }
 
-        public function createUser($userId,$data,$tokken,$n){
+        public function createUser($data){
             try {
-                if(isset($data[3])){
-                  $sql = "INSERT INTO user VALUES(?,?,?,?)";
-                  $query = $this->pdo->prepare($sql);
-                  $query->execute(array($userId,$data[0],$data[3],$data[4]));
-                }else{
-                  $role="ROLOIGIg7RqU2STVjH";
-                  $city=22269;
-                  $sql = "INSERT INTO user VALUES(?,?,?,?)";
-                  $query = $this->pdo->prepare($sql);
-                  $query->execute(array($userId,$data[0],$role,$city));
-                }
+                $data[4] = isset($data[4]) ? $data[4]: "ROL3XIn4mITezUlwc1";
+                $sql = "INSERT INTO user VALUES(?,?,?)";
+                $query = $this->pdo->prepare($sql);
+                $query->execute(array($data[6],$data[0],$data[4]));
                 $sql = "INSERT INTO access VALUES(?,?,?,?,?,?)";
                 $query = $this->pdo->prepare($sql);
-                $query->execute(array($tokken,$data[2],$data[1],$n,$data[0],$userId));
+                $query->execute(array($data[5],$data[2],$data[1],$data[7],$data[0],$data[6]));
                 $msn = "Usuario guardado correctamente";
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
@@ -46,22 +39,9 @@
             }
         }
 
-        public function readCity(){
-            try {
-                $sql="SELECT * FROM city ORDER BY nameCity";
-                $query = $this->pdo->prepare($sql);
-                $query->execute();
-                $result = $query->fetchALL(PDO::FETCH_BOTH);
-
-                return $result;
-            } catch (PDOException $e) {
-                die($e->getMessage()."".$e->getLine()."".$e->getFile());
-            }
-        }
-
         public function readUser(){
             try {
-                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user) INNER JOIN city ON(user.code_city=city.code_city)";
+                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
