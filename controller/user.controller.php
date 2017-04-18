@@ -1,6 +1,7 @@
 <?php
     require_once "model/user.model.php";
     require_once 'views/assets/others/libraries/PHPMailer/PHPMailerAutoload.php';
+    require_once 'views/assets/others/archives/constants.php';
     class UserController{
         private $UserM;
 
@@ -17,12 +18,6 @@
             require_once 'views/include/footer.php';
         }
 
-        public function dashboard(){
-            require_once 'views/include/header.php';
-            require_once 'views/include/main.php';
-            require_once 'views/include/footer.php';
-        }
-
         public function recoverPassword(){
             $field = $_GET["token"];
             require_once 'views/include/header.php';
@@ -30,10 +25,11 @@
             require_once 'views/include/footer.php';
         }
 
-        public function updatePassword(){
+        public function resetPassword(){
             $data = $_POST["data"];
+            $data[0] = password_hash($data[0],PASSWORD_DEFAULT);
             $result = $this->UserM->updatePassword($data);
-            header("Location: index.php?c=access&msn=$result");
+            header("Location: index.php?c=views&msn=$result");
         }
 
         public function create(){
@@ -71,6 +67,8 @@
             $data[7]=3;
             $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
             $result = $this->UserM->createUser($data);
+            $user = $this->UserM->readUserByEmail($data[1]);
+            $user = $this->UserM->sendEmailActiveAccount($data);
             header("Location: index.php?c=$url&msn=$result");
           }
         }
@@ -110,32 +108,12 @@
         }
 
 
-        public function sendEmailRecoverPassword(){
+        public function sendEmailForgetPass(){
             $user = $this->UserM->readUserByEmail($_POST["email"]);
-            $mail = new PHPMailer();
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'mentalidadfitnessapp@gmail.com';
-            $mail->Password = 'McL0v1njs{.+159+.}';
-
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
-
-            $mail->setFrom('mentalidadfitnessapp@gmail.com'); // el mismo del username
-            $mail->addAddress($_POST["email"]);
-            $mail->isHTML(true);
-            $mail->Subject = 'Recuperar Contraseña';
-            $mail->Body = 'Recuperación de contraseña';
-            $mail->MsgHTML('
-                <a href="http://localhost:80/mentalidadfitness/index.php?c=user&a=recoverPassword&token='. $user["token"] .'">Recuperar contraseña</a>
-            ');
-            $mail->CharSet = 'UTF-8';
-            if ($mail->send()) {
-                $msn = "Envio correctamente";
-            } else {
-                $msn = "Correo no invalido";
-            }
+            $data[0] = $_POST["email"];
+            $data[1] = $user["nameUser"];
+            $data[2] = $user["token"];
+            $user = $this->UserM->sendEmailForgetPass($data);
         }
 
     }

@@ -40,12 +40,11 @@ class AccessController{
 
             $userData = $this->UserM->readUserByEmail($data[0]);
             if (password_verify($data[1],$userData["passwordAcc"])) {
-                $return = array(true, "index.php?c=user&a=dashboard");
+                $return = array(true, "index.php?c=views&a=dashboard");
 
                 $_SESSION["user"]["token"] = $userData["token"];
                 $_SESSION["user"]["code"] = $userData["code_user"];
                 $_SESSION["user"]["name"] = $userData["nameUser"];
-                // $_SESSION["user"]["lastname"] = $userData["user_ape"];
                 $_SESSION["user"]["email"] = $_POST["email"];
             } else {
                 $return = array(false, "Contraseña incorrecta");
