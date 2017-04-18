@@ -5,6 +5,7 @@
         <script src="views/assets/js/bootstrap.min.js"></script>
         <script src="views/assets/js/parsley/parsley.min.js"></script>
         <script src="views/assets/js/parsley/es.js"></script>
+        <script src="views/assets/js/dataTable/jquery.dataTables.min.js"></script>
         <script src="views/assets/js/main.js"></script>
       </body>
     </html>

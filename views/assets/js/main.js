@@ -1,4 +1,5 @@
 // ?c=access&a=signIn
+$("#dataTable").DataTable();
 //<--------------- SIGN IN --------------------------------------------->
 $("#pass").focus(function(){
     $("#email").siblings("span").remove();
