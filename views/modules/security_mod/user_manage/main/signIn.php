@@ -32,7 +32,7 @@
                 <!-- BOTONES DE REGISTRO Y RECUPERAR CUENTA -->
                 <div class="row">
                   <div class="col-xs-6">
-                    <button type="button" class="btn btn-default MF_btnreg" name="button" style="margin-bottom:10%"><a href="index.php?c=views&a=signUp" style="text-decoration:none;color:white">REGISTRATE</a></button>
+                    <button type="button" class="btn btn-default MF_btnreg" name="button"><a href="index.php?c=views&a=signUp" style="text-decoration:none;color:white">REGISTRATE</a></button>
                   </div>
                   <div class="col-xs-6" style="padding-top: 7px">
                     <a href="index.php?c=views&a=forgetPass" style="text-decoration:none;color:black;font-size:13px">RECUPERAR CUENTA</a>
