@@ -45,6 +45,7 @@ class AccessController{
                     $_SESSION["user"]["name"] = $userData["nameUser"];
                     $_SESSION["user"]["role"] = $userData["code_role"];
                     $_SESSION["user"]["email"] = $_POST["email"];
+                    $this->UserM->againAccFile($data[0]);
                     if ($_SESSION["user"]["role"] == "ROLKK2MrmsRueKNRXF") {
                         $return = array(true, "index.php?c=views&a=dashboard");
                     } else {
@@ -52,7 +53,7 @@ class AccessController{
                     }
                 }else{
                   $intent = $this->UserM->updateAccFail($data[0]);
-                  if ($intent[0]>1 && $intent[0]<=3) {
+                  if ($intent[0]>1 && $intent[0]<=4) {
                     $return = array(false,"Contraseña Incorrecta");
                     if ($intent[0]==1) {
                       $return = array(false,"La cuenta esta a un inteto de bloqueo");

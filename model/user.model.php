@@ -13,7 +13,6 @@
         //FUNCION PARA CREAR UN USUARIO
         public function createUser($data){
             try {
-                $data[4] = isset($data[4]) ? $data[4] : "ROL3XIn4mITezUlwc1";
                 $sql = "INSERT INTO user VALUES(?,?,?)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute(array($data[6],$data[0],$data[4]));
@@ -40,17 +39,27 @@
             }
         }
 
-        public function readUser(){
+        public function readUser($de){
             try {
-                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user)";
+                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user) LIMIT $de,5";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
-
                 return $result;
             } catch (PDOException $e) {
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
+        }
+        public function contarUser(){
+          try {
+            $sql="SELECT * FROM user";
+            $query=$this->pdo->prepare($sql);
+            $query->execute();
+            $result=$query->fetchALL(PDO::FETCH_BOTH);
+          } catch (PDOException $e) {
+            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
+          }
+          return $result;
         }
 
         public function readUserByCode($field){
@@ -282,12 +291,11 @@
             ');
             $mail->CharSet = 'UTF-8';
             if ($mail->send()) {
-                $msn = "Envio correctamente";
-                header("Location: index.php?c=views&a=signUp&msn=$msn");
+                $msn="Usuario".$data[1]."Registrado";
             } else {
                 $msn = "Correo invalido";
-                header("Location: index.php?c=views&a=signUp&msn=$msn");
             }
+            return $msn;
         }
         public function updateAccFail($data){
       		try{
@@ -298,12 +306,20 @@
       				$query = $this->pdo->prepare($sql);
       				$query->execute(array($data));
       				$result = $query->fetch(PDO::FETCH_BOTH);
-
       			}catch (PDOException $e) {
       			die($e->getMessage());
       		}
       		return $result;
       	}
+        public function againAccFile($data){
+          try{
+              $sql = "UPDATE access SET tryAcc = 4 WHERE emailAcc = ?";
+              $query = $this->pdo->prepare($sql);
+              $query->execute(array($data));
+            }catch (PDOException $e) {
+            die($e->getMessage());
+          }
+        }
 
         public function __DESTRUCT(){
             DataBase::disconnect();

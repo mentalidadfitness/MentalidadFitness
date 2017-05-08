@@ -5,8 +5,8 @@ $("#pass").focus(function(){
     var email = $("#email").val();
     $.post("index.php?c=user&a=validEmail",{email:email},function(data){
         var data = JSON.parse(data);
-        $("#email").after("<span class='error'>"+data[0]+"</span>")
         if (data[1] == false) {
+          $("#email").after("<span class='error'>el correo no existe</span>");
             $("#btnSignIn").attr("disabled",true);
         } else {
             $("#btnSignIn").attr("disabled",false);
@@ -37,6 +37,53 @@ $("#frmSignIn").submit(function(e){
 })
 
 //<--------------- END SIGN IN --------------------------------------------->
+//----------------------- CREATE USER
+$("#pas_c_user").focus(function(){
+  $("#ema_c_user").siblings("span").remove();
+  var email = $("#ema_c_user").val();
+  $.post("index.php?c=user&a=validEmail",{email:email},function(data){
+          var data = JSON.parse(data);
+          if(data[1]==true){
+            $("#ema_c_user").after("<span class='error'>el correo existe</span>");
+            $("#btn_c_user").attr("disabled",true);
+          }else{
+            $("#btn_c_user").attr("disabled",false);
+          }
+  });
+});
+
+$("#ema_c_user").focus(function(){
+  $(this).siblings("span").remove();
+  $("#btn_c_user").attr("disabled",false);
+});
+
+$("#frm_c_user").submit(function(e){
+  e.preventDefault();
+  if ($(this).parsley().isValid()) {
+	var rol = $("#rol_c_user").val();
+	if (!rol) {
+		var datauser = [$("#nom_c_user").val(),
+	                   $("#ema_c_user").val(),
+	                   $("#pas_c_user").val(),
+	                   $("#rpw_c_user").val()];
+	}else{
+  	var datauser = [$("#nom_c_user").val(),
+                     $("#ema_c_user").val(),
+                     $("#pas_c_user").val(),
+                     $("#rpw_c_user").val()];
+  	datauser[4]=rol;
+	}
+  $.post("index.php?c=user&a=create",{datauser:datauser},function(data){
+    var data = JSON.parse(data);
+    if (data[0]==true) {
+      alert(data[1]);
+      document.location.href=data[2];
+    }else{
+      alert(data[1]);
+    }
+  });
+  }
+});
 //<--------------- CREATE BREAKFAST--------------------------------------------->
 
 

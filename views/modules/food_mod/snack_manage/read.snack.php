@@ -36,7 +36,7 @@
                             </a>
                             -
                             <a href="?c=snack&a=delete&scode=<?php echo $row['code_snack'];?>">
-                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red;" onclick="return confirm('¿Estas seguro?');"></i>
                             </a>
                         </td>
                     </tr>

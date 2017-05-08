@@ -46,7 +46,7 @@
                             </a>
                             -
                             <a href="?c=diet&a=delete&dicode=<?php echo $row['code_myDiet'];?>">
-                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; " onclick="return confirm('¿Estas seguro?');"></i>
                             </a>
                         </td>
                     </tr>

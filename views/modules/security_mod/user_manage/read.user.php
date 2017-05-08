@@ -24,7 +24,12 @@
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->UserM->readUser() as $row) {
+                    if (!isset($_GET["pag"])) {
+                      $de=0;
+                    }else{
+                      $de=$_GET["de"];
+                    }
+                    foreach ($this->UserM->readUser($de) as $row) {
                         $item++;
                 ?>
                     <tr>
@@ -38,13 +43,20 @@
                             </a>
                             -
                             <a href="?c=user&a=delete&uscode=<?php echo $row['code_user'];?>">
-                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red;" onclick="return confirm('¿Estas seguro?');"></i>
                             </a>
                         </td>
                     </tr>
                 <?php
                     }
+                    $contar=$this->UserM->contarUser();
+                    $contar=count($contar);
+                    $tamano_paginas=5;
+                    $tot=ceil($contar/$tamano_paginas);
+                    for ($i=1; $i <=$tot ; $i++) {
                 ?>
+                    <td><a href="index.php?c=user&a=paginacion&pag=<?php echo $i; ?>"><?php echo $i; ?></a></td>
+                <?php  }   ?>
             </tbody>
         </table>
     </div>
