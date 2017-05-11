@@ -39,9 +39,9 @@
             }
         }
 
-        public function readUser($de){
+        public function readUser(){
             try {
-                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user) LIMIT $de,5";
+                $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user)";
                 $query = $this->pdo->prepare($sql);
                 $query->execute();
                 $result = $query->fetchALL(PDO::FETCH_BOTH);
@@ -50,18 +50,7 @@
                 die($e->getMessage()."".$e->getLine()."".$e->getFile());
             }
         }
-        public function contarUser(){
-          try {
-            $sql="SELECT * FROM user";
-            $query=$this->pdo->prepare($sql);
-            $query->execute();
-            $result=$query->fetchALL(PDO::FETCH_BOTH);
-          } catch (PDOException $e) {
-            die($e->getMessage()." ".$e->getLine()." ".$e->getFile());
-          }
-          return $result;
-        }
-
+        
         public function readUserByCode($field){
             try {
                 $sql="SELECT * FROM user INNER JOIN access ON(user.code_user=access.code_user) WHERE user.code_user = ?";

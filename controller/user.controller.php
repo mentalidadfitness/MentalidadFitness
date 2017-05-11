@@ -107,26 +107,7 @@
             require_once 'views/modules/pag_prueba.php';
             require_once 'views/include/footer.php';
         }
-        public function paginacion(){
-          $pagina = $_GET["pag"];
-          switch ($pagina) {
-            case 1:
-              $de=0;
-              break;
-            case 2:
-              $de=5;
-              break;
-            case 3:
-              $de=10;
-              break;
-            case 4:
-              $de=15;
-              break;
-          }
-          $this->UserM->readUser($de);
-          header("location:index.php?c=user&pag=$pagina&de=$de");
-        }
-
+        
         public function updateData(){
             $data = $_POST["data"];
             $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
