@@ -26,7 +26,6 @@ $("#frmSignIn").submit(function(e){
         var pass = $("#pass").val();
         $.post("index.php?c=access&a=signIn",{email:email, pass:pass},function(data){
             var data = JSON.parse(data);
-
             if (data[0] == true) {
                 document.location.href = data[1];
             } else {
