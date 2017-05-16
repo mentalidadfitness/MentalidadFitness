@@ -44,7 +44,7 @@
                             <i class="fa fa-pencil fa-2x" aria-hidden="true" style="color:black"></i>
                         </a>
                         <a href="?c=food&a=delete&alicode=<?php echo $row['code_food'];?>">
-                            <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
+                            <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; " onclick="return confirm('¿Estas seguro?');"></i>
                         </a>
                     </td>
                 </tr>

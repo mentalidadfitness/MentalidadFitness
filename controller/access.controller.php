@@ -45,25 +45,27 @@ class AccessController{
                     $_SESSION["user"]["name"] = $userData["nameUser"];
                     $_SESSION["user"]["role"] = $userData["code_role"];
                     $_SESSION["user"]["email"] = $_POST["email"];
+                    $this->UserM->againAccFile($data[0]);
                     if ($_SESSION["user"]["role"] == "ROLKK2MrmsRueKNRXF") {
-                        $return = array(true, "index.php?c=views&a=dashboard");
+                        $return = array(true, "index.php?c=views&a=dashboard",$_SESSION["user"]["token"]);
                     } else {
-                        $return = array(true, "index.php?c=views&a=completeProfile");
+                        $return = array(true, "index.php?c=views&a=completeProfile",$_SESSION["user"]["token"]);
                     }
                 }else{
                   $intent = $this->UserM->updateAccFail($data[0]);
-                  if ($intent[0]>1 && $intent[0]<=3) {
-                    $return = array(false,"Contraseña Incorrecta");
+                  if ($intent[0]>1 && $intent[0]<=4) {
+                    $return = array(false,"Contraseña Incorrecta","");
                     if ($intent[0]==1) {
-                      $return = array(false,"La cuenta esta a un inteto de bloqueo");
+                      $return = array(false,"La cuenta esta a un intento de bloqueo","");
                     }
                   }else{
                     $blocking = $this->UserM->updateStatusBlocking($data[0]);
-                    $return = array(false,"Cuenta Bloqueada");
+                    //Envio de mensaje para desbloquear la cuenta
+                    $return = array(false,"Cuenta Bloqueada","");
                   }
                 }
             }else{
-                $return = array(false, "Por favor active su cuenta");
+                $return = array(false, "Por favor active su cuenta","");
             }
             echo json_encode($return);
         }
