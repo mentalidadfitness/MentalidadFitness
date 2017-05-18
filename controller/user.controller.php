@@ -107,7 +107,7 @@
             require_once 'views/modules/pag_prueba.php';
             require_once 'views/include/footer.php';
         }
-        
+
         public function updateData(){
             $data = $_POST["data"];
             $data[2] = password_hash($data[2],PASSWORD_DEFAULT);

@@ -24,7 +24,7 @@
             <tbody>
                 <?php
                     $item = 0;
-                    foreach ($this->UserM->readUser($de) as $row) {
+                    foreach ($this->UserM->readUser() as $row) {
                         $item++;
                 ?>
                     <tr>
