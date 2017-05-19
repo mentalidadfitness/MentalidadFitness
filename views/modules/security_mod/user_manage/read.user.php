@@ -38,7 +38,7 @@
                             </a>
                             -
                             <a href="?c=user&a=delete&uscode=<?php echo $row['code_user'];?>">
-                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red;" onclick="return confirm('¿Estas seguro?');"></i>
                             </a>
                         </td>
                     </tr>

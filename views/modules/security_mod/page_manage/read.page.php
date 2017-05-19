@@ -44,7 +44,7 @@
                             </a>
                             -
                             <a href="?c=page&a=delete&pcode=<?php echo $row['code_page'];?>">
-                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; "></i>
+                                <i class="fa fa-trash fa-2x" aria-hidden="true" style="color:red; " onclick="return confirm('¿Estas seguro?');"></i>
                             </a>
                         </td>
                     </tr>

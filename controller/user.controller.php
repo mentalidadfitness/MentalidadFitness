@@ -33,45 +33,49 @@
         }
 
         public function create(){
-          $data = $_POST["data"];
+          $data = $_POST["datauser"];
           if (isset($data[4])) {
-            $url="user";
+            $url="index.php?c=user";
           }else{
-            $url="views&a=signUp";
+            $url="index.php";
+            $data[4]="ROL3XIn4mITezUlwc1";
           }
-          if(empty($data[0]) || empty($data[1]) || empty($data[2])) {
-            $msn="Campos Nulos";
-            header("Location: index.php?c=$url&msn=$msn");
+          for ($i=0; $i <count($data) ; $i++) {
+            if(empty($data[$i])) {
+              $c=1;
+              break;
+            }else{
+              $c=2;
           }
-          elseif(strlen($data[2])<=8){
-            $msn="La contraseña debe tener mas de 8 caracteres";
-            header("Location: index.php?c=$url&msn=$msn");
+          }
+          if(strlen($data[2])<=8){
+            $return= array(false,"La contraseña debe tener mas de 8 caracteres","");
           }
           elseif(!preg_match('`[a-z]`',$data[2])) {
-            $msn="La contraseña debe tener minimo una miniscula";
-            header("Location: index.php?c=$url&msn=$msn");
+            $return= array(false,"La contraseña debe tener minimo una miniscula","");
           }
           elseif(!preg_match('`[0-9]`',$data[2])) {
-            $msn="La contraseña debe tener minimo un numero";
-            header("Location: index.php?c=$url&msn=$msn");
+            $return= array(false,"La contraseña debe tener minimo un numero","");
           }/*elseif(!preg_match('`[/\*+-%&@¡!|]`',$data[2])) {
                       $msn="La contraseña debe tener minimo un simbolo";
                       header("Location: index.php?c=$url&msn=$msn");
           }*/
           elseif($data[2]!==$data[3]){
-            $msn="La contraseñas no coinciden";
-            header("Location: index.php?c=$url&msn=$msn");
+            $return = array(false,"Las contraseñas no coinciden","");
+          }elseif($c==1){
+            $return = array(false,"Campos Nulos","");
           }else{
             $data[5]=randAlphanum('30');
             $data[6]="USU".randAlphanum('30');
-            $data[7]=3;
+            $data[7]=4;
             $data[8]="Inactivo";
             $data[2] = password_hash($data[2],PASSWORD_DEFAULT);
             $result = $this->UserM->createUser($data);
             $user = $this->UserM->readUserByEmail($data[1]);
             $user = $this->UserM->sendEmailActiveAccount($data);
-            header("Location: index.php?c=$url&msn=$result");
-          }
+            $return = array(true,$user,$url);
+            }
+          echo json_encode($return);
         }
         public function update(){
           /*if (!isset($_SESSION["user"])) {
@@ -119,10 +123,9 @@
 
         public function validEmail(){
             $data = $_POST["email"];
-            $response = $this->UserM->readUserByEmail($data);
-
-            if (count($response[0]) <= 0) {
-                $return = array("El correo no existe", false);
+            $result = $this->UserM->readUserByEmail($data);
+            if (count($result[0]) <= 0) {
+                $return = array("", false);
             } else {
                 $return = array("", true);
             }
