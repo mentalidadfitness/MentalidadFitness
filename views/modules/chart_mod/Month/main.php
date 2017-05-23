@@ -28,9 +28,9 @@ function drawChart() {
 }
 </script>
 </div>
-<!-- Sigue la grafica del mapa -->
+<!-- grafica del mapa -->
 <div class="bgb_mapa">
-<div id="regions_div" style="width: 900px; height: 500px;"></div>
+<div id="regions_div" style="height: 80vh;"></div>
 <script>
 google.charts.load('current', {'packages':['geochart']});
 google.charts.setOnLoadCallback(drawRegionsMap);
