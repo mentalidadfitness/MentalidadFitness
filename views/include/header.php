@@ -12,5 +12,7 @@
         <!-- <link rel="stylesheet" href="views/assets/css/bootstrap.min.css"> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="views/assets/css/main.css">
+        <script src="views/assets/js/bootstrap.min.js"></script>
+        <script src="views/assets/js/loader.min.js"></script>
     </head>
     <body>

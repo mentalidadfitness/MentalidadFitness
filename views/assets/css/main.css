@@ -257,6 +257,17 @@ h1{
 	border: none;
 }
 
+.bgb_meses{
+	margin-top: 5%;
+	position: relative;
+
+}
+
+.bgb_mapa{
+	position: relative;
+	top: 20vh;
+}
+
 /* -------------------- MF  --------------------- */
 
 .bodyMF{
