@@ -6,5 +6,6 @@
         <script src="views/assets/js/parsley/parsley.min.js"></script>
         <script src="views/assets/js/parsley/es.js"></script>
         <script src="views/assets/js/main.js"></script>
+        <script src="views/assets/js/loader.min.js"></script>
       </body>
     </html>
