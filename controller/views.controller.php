@@ -38,7 +38,7 @@
             if ($_SESSION["user"]["role"] == "ROLKK2MrmsRueKNRXF") {
                 require_once 'views/include/header.php';
                 require_once 'views/include/main.php';
-                //require_once 'views/modules/chart_mod/Graphics/main.php';
+                require_once 'views/modules/chart_mod/Graphics/main.php';
                 require_once 'views/include/footer.php';
             }
         }
