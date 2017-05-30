@@ -20,7 +20,7 @@
           ['Noviembre', 400, 30, 400],
           ['Diciembre', 1000, 40, 110]
       ]);
-      var options = {title: 'Oda chicos',hAxis: {title: 'Año',  titleTextStyle: {color: '#333'}},
+      var options = {title: 'Usuarios',hAxis: {title: 'Año',  titleTextStyle: {color: '#333'}},
           vAxis: {minValue: 0}
       };
       var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));

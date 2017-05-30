@@ -257,6 +257,40 @@ h1{
 	border: none;
 }
 
+#regions_div{
+  width: 50%;
+  height: 5%;
+  position: relative;
+}
+
+#chart_div{
+  width: 70%;
+  height: 50vh;
+  position: relative;
+
+}
+
+#piechart{
+  width: 70vh;
+  height: 20vh;
+  top: 20vh;
+  right: 25vh;
+  position: relative;
+}
+
+#donutchart{
+  width: 60vh;
+  height: 10vh;
+  left: 40%;
+  top: -30vh;
+  position: relative;
+
+}
+
+
+
+
+
 /* -------------------- MF  --------------------- */
 
 .bodyMF{
